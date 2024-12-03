@@ -3,9 +3,9 @@ public class Rodent extends Pet
   private boolean doesItBite;
 
   public Rodent(String name, int age, String colour, char gender,
-      String comment, boolean doesItBite)
+      String comment, int price, boolean doesItBite)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.doesItBite = doesItBite;
   }
 
@@ -22,7 +22,7 @@ public class Rodent extends Pet
   public Pet copy()
   {
     return new Rodent(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), getDoesItBite());
+        getComment(), getPrice(), getDoesItBite());
   }
 
   public String toString()
@@ -42,6 +42,7 @@ public class Rodent extends Pet
         && other.getAge() == super.getAge() && other.getColour()
         .equals(super.getColour()) && other.getGender() == super.getGender()
         && other.getComment().equals(super.getComment())
+        && other.getPrice() == super.getPrice()
         && other.getDoesItBite() == doesItBite;
   }
 }
