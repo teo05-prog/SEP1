@@ -7,14 +7,17 @@ public abstract class Pet
   private String colour;
   private char gender;
   private String comment;
+  private int price;
 
-  public Pet(String name, int age, String colour, char gender, String comment)
+  public Pet(String name, int age, String colour, char gender, String comment,
+      int price)
   {
     this.name = name;
     this.age = age;
     this.colour = colour;
     this.gender = gender;
     this.comment = comment;
+    this.price = price;
   }
 
   public String getName()
@@ -42,6 +45,11 @@ public abstract class Pet
     return comment;
   }
 
+  public int getPrice()
+  {
+    return price;
+  }
+
   public void setName(String name)
   {
     this.name = name;
@@ -67,6 +75,11 @@ public abstract class Pet
     this.comment = comment;
   }
 
+  public void setPrice(int price)
+  {
+    this.price = price;
+  }
+
   public abstract Pet copy();
 
   public abstract boolean equals(Object obj);
@@ -74,7 +87,7 @@ public abstract class Pet
   public String toString()
   {
     return "Name: " + name + ", age: " + age + ", colour: " + colour
-        + " gender: " + gender + " comment: " + comment;
+        + " gender: " + gender + " comment: " + comment + "price: " + price;
   }
 }
 

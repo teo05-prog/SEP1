@@ -5,9 +5,9 @@ public class Bird extends Pet
   private String preferredFood;
 
   public Bird(String name, int age, String colour, char gender, String comment,
-      String preferredFood)
+      int price, String preferredFood)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.preferredFood = preferredFood;
   }
 
@@ -24,7 +24,7 @@ public class Bird extends Pet
   public Pet copy()
   {
     return new Bird(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), preferredFood);
+        getComment(), getPrice(), preferredFood);
   }
 
   public String toString()
@@ -44,6 +44,7 @@ public class Bird extends Pet
         && other.getAge() == super.getAge() && other.getColour()
         .equals(super.getColour()) && other.getGender() == super.getGender()
         && other.getComment().equals(super.getComment())
-        && other.getPreferredFood().equals(preferredFood);
+        && other.getPrice() == super.getPrice() && other.getPreferredFood()
+        .equals(preferredFood);
   }
 }
