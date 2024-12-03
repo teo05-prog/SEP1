@@ -5,9 +5,9 @@ public class Fish extends Pet
   private String specie;
 
   public Fish(String name, int age, String colour, char gender, String comment,
-      String water, boolean predators, String specie)
+      int price, String water, boolean predators, String specie)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.water = water;
     this.predators = predators;
     this.specie = specie;
@@ -46,7 +46,7 @@ public class Fish extends Pet
   public Pet copy()
   {
     return new Fish(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), water, predators, specie);
+        getComment(), getPrice(), water, predators, specie);
   }
 
   public String toString()
@@ -65,7 +65,8 @@ public class Fish extends Pet
     return other.getName().equals(super.getName())
         && other.getAge() == super.getAge() && other.getColour()
         .equals(super.getColour()) && other.getGender() == super.getGender()
-        && other.getComment().equals(super.getComment()) && other.getWater()
+        && other.getComment().equals(super.getComment())
+        && other.getPrice() == super.getPrice() && other.getWater()
         .equals(water) && other.getPredators() == predators && other.getSpecie()
         .equals(specie);
   }

@@ -4,9 +4,9 @@ public class Cat extends Pet
   private String breederName;
 
   public Cat(String name, int age, String colour, char gender, String comment,
-      String breed, String breederName)
+      int price, String breed, String breederName)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.breed = breed;
     this.breederName = breederName;
   }
@@ -34,7 +34,7 @@ public class Cat extends Pet
   public Pet copy()
   {
     return new Cat(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), breed, breederName);
+        getComment(), getPrice(), breed, breederName);
   }
 
   public String toString()
@@ -53,7 +53,8 @@ public class Cat extends Pet
     return other.getName().equals(super.getName())
         && other.getAge() == super.getAge() && other.getColour()
         .equals(super.getColour()) && other.getGender() == super.getGender()
-        && other.getComment().equals(super.getComment()) && other.getBreed()
+        && other.getComment().equals(super.getComment())
+        && other.getPrice() == super.getPrice() && other.getBreed()
         .equals(breed) && other.getBreederName().equals(breederName);
   }
 }
