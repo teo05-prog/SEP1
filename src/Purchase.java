@@ -43,8 +43,8 @@ public class Purchase
     Purchase other = (Purchase) obj;
     return other.getDiscount() == discount &&
         other.getDateOfPurchase().equals(date) &&
-        other.getCustomer().equals(customer) &&
-        other.getPet().equals(pet);
+       this.pet.equals(other.pet)&&
+        this.customer.equals(other.customer);
   }
 
 
