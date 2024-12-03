@@ -45,4 +45,30 @@ public class Date
   {
     return new Date(day, month, year);
   }
+
+  public boolean isBefore(Date date1)
+  {
+    if (this.year < date1.year)
+    {
+      if (this.month < date1.month)
+      {
+        if (this.day < date1.day)
+          return true;
+      }
+    }
+    return false;
+  }
+
+  public String toString()
+  {
+    return day + "/" + month + "/" + year;
+  }
+
+  public boolean equals(Object obj)
+  {
+    if (obj == null || getClass() != obj.getClass())
+      return false;
+    Date other = (Date) obj;
+    return day == other.day && month == other.month && year == other.year;
+  }
 }
