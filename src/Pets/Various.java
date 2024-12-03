@@ -1,3 +1,5 @@
+package Pets;
+
 public class Various extends Pet
 {
   private String specie;
@@ -27,7 +29,7 @@ public class Various extends Pet
 
   public String toString()
   {
-    return "Various: " + super.toString() + ", specie: " + specie + "/n";
+    return "Pets.Various: " + super.toString() + ", specie: " + specie + "/n";
   }
 
   public boolean equals(Object obj)

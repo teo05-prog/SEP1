@@ -1,3 +1,5 @@
+package Pets;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -32,7 +34,7 @@ public class PetList
     }
     else
     {
-      System.out.println("Pet not found in the list.");
+      System.out.println("Pets.Pet not found in the list.");
     }
   }
 
