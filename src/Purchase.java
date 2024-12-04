@@ -1,7 +1,7 @@
 public class Purchase
 {
   private int discount;
-  private Date date;
+  private MyDate date;
   private Customer customer;
   private Pet pet;
 
@@ -22,11 +22,11 @@ public class Purchase
     this.discount = discount;
 
   }
-  public Date getDateOfPurchase()
+  public MyDate getDateOfPurchase()
   {
     return date;
   }
-  public void setDateOfPurchase(Date date)
+  public void setDateOfPurchase(MyDate date)
   {
     this.date = date;
   }
