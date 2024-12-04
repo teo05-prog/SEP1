@@ -1,10 +1,12 @@
-public class Date
+import java.text.DecimalFormat;
+
+public class MyDate
 {
   private int day;
   private int month;
   private int year;
 
-  public Date(int day, int month, int year)
+  public MyDate(int day, int month, int year)
   {
     this.day = day;
     this.month = month;
@@ -41,18 +43,18 @@ public class Date
     return year;
   }
 
-  public Date copy()
+  public MyDate copy()
   {
-    return new Date(day, month, year);
+    return new MyDate(day, month, year);
   }
 
-  public boolean isBefore(Date date1)
+  public boolean isBefore(MyDate date)
   {
-    if (this.year < date1.year)
+    if (this.year < date.year)
     {
-      if (this.month < date1.month)
+      if (this.month < date.month)
       {
-        if (this.day < date1.day)
+        if (this.day < date.day)
           return true;
       }
     }
@@ -61,14 +63,16 @@ public class Date
 
   public String toString()
   {
-    return day + "/" + month + "/" + year;
+    DecimalFormat formatter = new DecimalFormat("00");
+    return formatter.format(this.day) + "/" + formatter.format(this.month) + "/"
+        + this.year;
   }
 
   public boolean equals(Object obj)
   {
     if (obj == null || getClass() != obj.getClass())
       return false;
-    Date other = (Date) obj;
+    MyDate other = (MyDate) obj;
     return day == other.day && month == other.month && year == other.year;
   }
 }
