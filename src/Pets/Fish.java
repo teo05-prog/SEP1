@@ -1,3 +1,5 @@
+package Pets;
+
 public class Fish extends Pet
 {
   private String water;
@@ -51,7 +53,7 @@ public class Fish extends Pet
 
   public String toString()
   {
-    return "Fish: " + super.toString() + ", preferred type of water: " + water
+    return "Pets.Fish: " + super.toString() + ", preferred type of water: " + water
         + ", predator: " + predators + ", specie: " + specie + "/n";
   }
 

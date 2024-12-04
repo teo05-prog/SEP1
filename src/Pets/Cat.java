@@ -1,3 +1,5 @@
+package Pets;
+
 public class Cat extends Pet
 {
   private String breed;
@@ -39,7 +41,7 @@ public class Cat extends Pet
 
   public String toString()
   {
-    return "Cat: " + super.toString() + ", breed: " + breed + ", breeder name: "
+    return "Pets.Cat: " + super.toString() + ", breed: " + breed + ", breeder name: "
         + breederName + "/n";
   }
 

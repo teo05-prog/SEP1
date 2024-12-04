@@ -1,3 +1,5 @@
+package Pets;
+
 public class Bird extends Pet
 {
   private String preferredFood;
@@ -27,7 +29,7 @@ public class Bird extends Pet
 
   public String toString()
   {
-    return "Bird: " + super.toString() + ", preferred food: " + preferredFood
+    return "Pets.Bird: " + super.toString() + ", preferred food: " + preferredFood
         + "/n";
   }
 

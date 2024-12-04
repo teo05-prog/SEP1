@@ -1,3 +1,5 @@
+package Pets;
+
 public class Rodent extends Pet
 {
   private boolean doesItBite;
@@ -27,7 +29,7 @@ public class Rodent extends Pet
 
   public String toString()
   {
-    return "Rodent: " + super.toString() + ", does it bite?: " + doesItBite
+    return "Pets.Rodent: " + super.toString() + ", does it bite?: " + doesItBite
         + "/n";
   }
 
