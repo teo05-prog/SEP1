@@ -1,3 +1,4 @@
+
 public class Purchase
 {
   private int discount;

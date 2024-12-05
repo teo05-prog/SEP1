@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/KennelList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added Date class">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Purchase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="12899" />
+    <option name="totalTimeSeconds" value="13287" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -47,8 +43,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets&quot;,
-    &quot;accountId&quot;: &quot;0f67eb8a-44ca-4392-88e2-8c6ca53db332&quot;
+    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets.git&quot;,
+    &quot;accountId&quot;: &quot;db058943-8d80-4d0c-bb6f-2656c22ce853&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -69,6 +65,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Dell/Documents/PRO1",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -152,12 +149,30 @@
       <option name="project" value="LOCAL" />
       <updated>1733326098170</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added Date class">
+      <option name="closed" value="true" />
+      <created>1733354664105</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733354664105</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="78956f02-4218-4420-b9da-e6598a489b02" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="78956f02-4218-4420-b9da-e6598a489b02">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -168,11 +183,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding files" />
-    <MESSAGE value="added Date class" />
     <MESSAGE value="formatting" />
     <MESSAGE value="booking class" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="added Date class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Date class" />
   </component>
 </project>
