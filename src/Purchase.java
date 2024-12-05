@@ -1,3 +1,5 @@
+import Pets.Pet;
+
 public class Purchase
 {
   private int discount;
@@ -5,7 +7,7 @@ public class Purchase
   private Customer customer;
   private Pet pet;
 
-  public Purchase(int discount,Pet pet)
+  public Purchase(int discount, Pet pet)
   {
     this.discount = discount;
     this.pet = pet;
@@ -32,7 +34,7 @@ public class Purchase
   }
   public String toString()
   {
-    return "Discount: " + discount + ", Date: " + date + ", Customer: " + customer + ", Pet: " + pet + "/n";
+    return "Discount: " + discount + ", Date: " + date + ", Customer: " + customer + ", Pets.Pet: " + pet + "/n";
   }
   public boolean equals(Object obj)
   {
