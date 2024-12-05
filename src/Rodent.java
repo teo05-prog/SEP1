@@ -1,5 +1,3 @@
-package Pets;
-
 public class Rodent extends Pet
 {
   private boolean doesItBite;
@@ -7,7 +5,7 @@ public class Rodent extends Pet
   public Rodent(String name, int age, String colour, char gender,
       String comment, int price, boolean doesItBite)
   {
-    super(name, age, colour, gender, comment, price);
+    super(name, age, colour, gender, comment);
     this.doesItBite = doesItBite;
   }
 

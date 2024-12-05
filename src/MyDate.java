@@ -61,6 +61,19 @@ public class MyDate
     return false;
   }
 
+  public boolean isAfter(MyDate date)
+  {
+    if (this.year > date.year)
+    {
+      if (this.month > date.month)
+      {
+        if (this.day > date.day)
+          return true;
+      }
+    }
+    return false;
+  }
+
   public String toString()
   {
     DecimalFormat formatter = new DecimalFormat("00");

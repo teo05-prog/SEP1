@@ -1,5 +1,3 @@
-package Pets;
-
 public class Bird extends Pet
 {
   private String preferredFood;
@@ -7,7 +5,7 @@ public class Bird extends Pet
   public Bird(String name, int age, String colour, char gender, String comment,
       int price, String preferredFood)
   {
-    super(name, age, colour, gender, comment, price);
+    super(name, age, colour, gender, comment);
     this.preferredFood = preferredFood;
   }
 

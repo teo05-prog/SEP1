@@ -1,14 +1,12 @@
-package Pets;
-
 public class Dog extends Pet
 {
   private String breed;
   private String breederName;
 
   public Dog(String name, int age, String colour, char gender, String comment,
-      int price, String breed, String breederName)
+       String breed, String breederName)
   {
-    super(name, age, colour, gender, comment, price);
+    super(name, age, colour, gender, comment);
     this.breed = breed;
     this.breederName = breederName;
   }
@@ -36,7 +34,7 @@ public class Dog extends Pet
   public Pet copy()
   {
     return new Dog(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), getPrice(), breed, breederName);
+        getComment(), breed, breederName);
   }
 
   public String toString()
