@@ -1,5 +1,3 @@
-package Pets;
-
 public class Fish extends Pet
 {
   private String water;

@@ -1,5 +1,3 @@
-package Pets;
-
 public class Rodent extends Pet
 {
   private boolean doesItBite;
