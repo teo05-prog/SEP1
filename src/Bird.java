@@ -1,5 +1,3 @@
-package Pets;
-
 public class Bird extends Pet
 {
   private String preferredFood;
