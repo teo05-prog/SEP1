@@ -1,3 +1,5 @@
+package model;
+
 import java.text.DecimalFormat;
 
 public class MyDate

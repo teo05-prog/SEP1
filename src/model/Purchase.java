@@ -1,4 +1,6 @@
-import Pets.Pet;
+package model;
+
+import model.Pets.Pet;
 
 public class Purchase
 {
@@ -34,7 +36,7 @@ public class Purchase
   }
   public String toString()
   {
-    return "Discount: " + discount + ", Date: " + date + ", Customer: " + customer + ", Pets.Pet: " + pet + "/n";
+    return "Discount: " + discount + ", Date: " + date + ", model.Customer: " + customer + ", model.Pets.Pet: " + pet + "/n";
   }
   public boolean equals(Object obj)
   {

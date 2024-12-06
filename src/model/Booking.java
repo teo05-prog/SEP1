@@ -1,4 +1,6 @@
-import Pets.Pet;
+package model;
+
+import model.Pets.Pet;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

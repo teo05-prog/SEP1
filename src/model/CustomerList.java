@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 
 public class CustomerList
@@ -19,7 +21,24 @@ public class CustomerList
     customers.remove(customer);
   }
 
-  public Customer getCustomer(String phone){
+  public Customer get(int index)
+  {
+    if(index<customers.size())
+    {
+      return customers.get(index);
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  public int size()
+  {
+    return customers.size();
+  }
+
+  public Customer getCustomerByPhone(String phone){
     for (Customer customer : customers)
     {
       if (customer.getPhone().equals(phone))

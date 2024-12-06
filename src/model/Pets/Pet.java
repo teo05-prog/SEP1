@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 public abstract class Pet
 {

@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 public class Fish extends Pet
 {
@@ -53,7 +53,7 @@ public class Fish extends Pet
 
   public String toString()
   {
-    return "Pets.Pets.Fish: " + super.toString() + ", preferred type of water: " + water
+    return "model.Pets.model.Pets.Fish: " + super.toString() + ", preferred type of water: " + water
         + ", predator: " + predators + ", specie: " + specie + "/n";
   }
 

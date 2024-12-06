@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 public class Various extends Pet
 {
@@ -29,7 +29,7 @@ public class Various extends Pet
 
   public String toString()
   {
-    return "Pets.Pets.Various: " + super.toString() + ", specie: " + specie + "/n";
+    return "model.Pets.model.Pets.Various: " + super.toString() + ", specie: " + specie + "/n";
   }
 
   public boolean equals(Object obj)
