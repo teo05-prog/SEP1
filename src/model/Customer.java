@@ -2,40 +2,53 @@ package model;
 
 public class Customer
 {
-  private String name;
+  private String firstName;
+  private String lastName;
   private String phone;
   private String email;
 
-  public Customer(String name, String phone, String email)
+  public Customer(String firstName, String lastName, String phone, String email)
   {
-    setName(name);
+    setFirstName(firstName);
+    setLastName(lastName);
     setPhone(phone);
     setEmail(email);
   }
 
-  public String getName()
+  public String getFirstName()
   {
-    return name;
+    return firstName;
   }
 
-  public void setName(String name)
+  public String getLastName()
   {
-    if(name == null)
+    return lastName;
+  }
+
+  public void setFirstName(String firstName)
+  {
+    if(firstName == null)
     {
-      throw new IllegalArgumentException("Name must not be null");
+      throw new IllegalArgumentException("First name must not be null");
     }
-    String[] words = name.split("\\s+");
-    String temp = "";
-    for (String word : words) {
-      if(words.length != 2) {
-        throw new IllegalArgumentException("Name must be a string of 2 words");
-      }
-      if (word.length() < 2) {
-        throw new IllegalArgumentException("First and last name be strings of at least 2 characters");
-      }
-      temp += word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase() + " ";
+    if(firstName.length() < 2)
+    {
+      throw new IllegalArgumentException("First name must be a string of at least 2 characters");
     }
-    this.name = temp.trim();
+    this.firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
+  }
+
+  public void setLastName(String lastName)
+  {
+    if(lastName == null)
+    {
+      throw new IllegalArgumentException("Last name must not be null");
+    }
+    if(lastName.length() < 2)
+    {
+      throw new IllegalArgumentException("Last name must be a string of at least 2 characters");
+    }
+    this.lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1).toLowerCase();
   }
 
   public String getPhone()
@@ -84,7 +97,7 @@ public class Customer
 
   public String toString()
   {
-    return "Name: " + name + ", Phone: " + phone + ", Email: " + email;
+    return "Name: " + firstName + lastName + ", Phone: " + phone + ", Email: " + email;
   }
 
   public boolean equals(Object obj)
@@ -94,6 +107,6 @@ public class Customer
       return false;
     }
     Customer other = (Customer)obj;
-    return name.equals(other.getName()) && phone.equals(other.getPhone()) && email.equals(other.getEmail());
+    return firstName.equals(other.getFirstName()) && lastName.equals(other.getLastName()) && phone.equals(other.getPhone()) && email.equals(other.getEmail());
   }
 }
