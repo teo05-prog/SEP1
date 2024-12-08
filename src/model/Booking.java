@@ -110,7 +110,7 @@ public class Booking
 
   public String toString()
   {
-    return customer.getName() + " Booked from: " + startDate + " Until: "
+    return customer.getFirstName() + " " + customer.getLastName() + " Booked from: " + startDate + " Until: "
         + endDate + " For: " + petInfo.getName();
   }
 

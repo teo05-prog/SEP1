@@ -53,21 +53,21 @@ public class ModelManager
     }
   }
 
-//  public void manageCustomers(String firstName, String lastName, String phone, String email)
-//  {
-//    CustomerList allCustomers = getAllCustomers();
-//
-//    for (int i = 0; i < allCustomers.size(); i++)
-//    {
-//      Customer customer = allCustomers.get(i);
-//
-//      if (customer.getFirstName().equals(firstName) && customer.getLastName().equals(lastName))
-//      {
-//        customer.setPhone(phone);
-//        customer.setEmail(email);
-//      }
-//    }
-//
-//    saveCustomers(allCustomers);
-//  }
+  public void manageCustomers(String firstName, String lastName, String phone, String email)
+  {
+    CustomerList allCustomers = getAllCustomers();
+
+    for (int i = 0; i < allCustomers.size(); i++)
+    {
+      Customer customer = allCustomers.get(i);
+
+      if (customer.getFirstName().equals(firstName) && customer.getLastName().equals(lastName))
+      {
+        customer.setPhone(phone);
+        customer.setEmail(email);
+      }
+    }
+
+    saveCustomers(allCustomers);
+  }
 }

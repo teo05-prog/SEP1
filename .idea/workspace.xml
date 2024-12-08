@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/CustomersView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/CustomersViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/KennelViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/MainView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/MainViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/PetsViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/PurchasesViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/StoreApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added the guis">
+      <change afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="22262" />
+    <option name="totalTimeSeconds" value="34815" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -32,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -73,6 +70,7 @@
   "keyToString": {
     "Application.BookingTest.executor": "Run",
     "Application.CustomerTest.executor": "Run",
+    "Application.StartApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.preview.features.used": "true",
@@ -82,15 +80,19 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\Pets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\main" />
+      <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StartApplication">
     <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookingTest" />
       <module name="VIAPets" />
@@ -98,8 +100,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StartApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.StartApplication" />
+      <module name="VIAPets" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.BookingTest" />
       </list>
     </recent_temporary>
@@ -217,7 +233,39 @@
       <option name="project" value="LOCAL" />
       <updated>1733497608632</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added the guis">
+      <option name="closed" value="true" />
+      <created>1733583555597</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733583555597</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added the guis&#10;&#10;Took 1 hour 51 minutes">
+      <option name="closed" value="true" />
+      <created>1733590339832</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733590339832</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added the guis&#10;&#10;Took 1 hour 51 minutes">
+      <option name="closed" value="true" />
+      <created>1733590546069</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733590546069</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added the guis&#10;&#10;Took 1 hour 51 minutes">
+      <option name="closed" value="true" />
+      <created>1733668139770</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733668139770</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +290,8 @@
     <MESSAGE value="Made it work, YAY" />
     <MESSAGE value="added fileHandler" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="added the guis" />
+    <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
   </component>
 </project>
