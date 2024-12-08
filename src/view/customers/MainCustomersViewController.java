@@ -5,6 +5,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.ModelManager;
+import view.ViewHandler;
 
 public class MainCustomersViewController
 {
@@ -18,12 +19,18 @@ public class MainCustomersViewController
   @FXML private MenuItem aboutMenuItem;
 
   private ModelManager modelManager;
+  private ViewHandler viewHandler;
 
   public void initialize()
   {
     modelManager = new ModelManager("customers.bin");
-    customersController.init(modelManager);
-    manageCustomersController.init(modelManager);
+    customersController.init(viewHandler, modelManager);
+    manageCustomersController.init(viewHandler, modelManager);
+  }
+
+  public void reset()
+  {
+
   }
 
   public void tabChanged(Event event)
@@ -64,4 +71,6 @@ public class MainCustomersViewController
       alert.showAndWait();
     }
   }
+
+
 }

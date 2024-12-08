@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import model.ModelManager;
 import view.customers.MainCustomersViewController;
 import view.kennel.KennelViewController;
+import view.main.MainViewController;
 import view.pets.PetsViewController;
 import view.purchases.PurchasesViewController;
 

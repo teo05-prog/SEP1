@@ -9,12 +9,13 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.customers.MainCustomersViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
+                  <MenuItem mnemonicParsing="false" text="Change Price" />
               <MenuItem mnemonicParsing="false" text="Exit" />
             </items>
           </Menu>
@@ -25,16 +26,23 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TabPane prefHeight="320.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="320.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Customers">
+          <Tab text="Current">
                <content>
-                  <fx:include source="CustomersView.fxml" />
-               </content></Tab>
-          <Tab text="Manage">
+                  <fx:include source="CurrentView.fxml" />
+               </content>
+          </Tab>
+          <Tab text="Past">
                <content>
-                  <fx:include source="ManageCustomersView.fxml" />
-               </content></Tab>
+                  <fx:include source="PastView.fxml" />
+               </content>
+          </Tab>
+            <Tab text="New">
+               <content>
+                  <fx:include source="NewBookingView.fxml" />
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
       <Button mnemonicParsing="false" text="Back">

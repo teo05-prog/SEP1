@@ -1,4 +1,4 @@
-package view;
+package view.main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import model.ModelManager;
+import view.ViewHandler;
 
 public class MainViewController
 {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="520.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.main.MainViewController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                    <items>
+                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleActions" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <FlowPane alignment="CENTER" hgap="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.4" prefWidth="520.0" vgap="20.0">
+            <children>
+                <Button fx:id="customersButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="90.0" prefWidth="150.0" styleClass="MainButton" text="Customers" />
+                <Button fx:id="petsButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="90.0" prefWidth="150.0" styleClass="MainButton" text="Pets" />
+                <Button fx:id="kennelButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="90.0" prefWidth="150.0" styleClass="MainButton" text="Kennel" />
+                <Button fx:id="purchasesButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="90.0" prefWidth="150.0" styleClass="MainButton" text="Purchases" />
+            </children>
+        </FlowPane>
+    </children>
+</VBox>
