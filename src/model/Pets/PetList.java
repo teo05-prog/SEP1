@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -34,7 +34,7 @@ public class PetList
     }
     else
     {
-      System.out.println("Pets.Pets.Pet not found in the list.");
+      System.out.println("model.Pets.model.Pets.Pet not found in the list.");
     }
   }
 

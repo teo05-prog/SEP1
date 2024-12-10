@@ -1,14 +1,14 @@
-package Pets;
+package model.Pets;
 
-public class Dog extends Pet
+public class Cat extends Pet
 {
   private String breed;
   private String breederName;
 
-  public Dog(String name, int age, String colour, char gender, String comment,
+  public Cat(String name, int age, String colour, char gender, String comment,
       int price, String breed, String breederName)
   {
-    super(name, age, colour, gender, comment, price);
+    super(name, age, colour, gender, comment);
     this.breed = breed;
     this.breederName = breederName;
   }
@@ -35,13 +35,13 @@ public class Dog extends Pet
 
   public Pet copy()
   {
-    return new Dog(super.getName(), getAge(), getColour(), getGender(),
+    return new Cat(super.getName(), getAge(), getColour(), getGender(),
         getComment(), getPrice(), breed, breederName);
   }
 
   public String toString()
   {
-    return "Pets.Pets.Dog: " + super.toString() + ", breed: " + breed + ", breeder name: "
+    return "model.Pets.model.Pets.Cat: " + super.toString() + ", breed: " + breed + ", breeder name: "
         + breederName + "/n";
   }
 
@@ -51,7 +51,7 @@ public class Dog extends Pet
     {
       return false;
     }
-    Dog other = (Dog) obj;
+    Cat other = (Cat) obj;
     return other.getName().equals(super.getName())
         && other.getAge() == super.getAge() && other.getColour()
         .equals(super.getColour()) && other.getGender() == super.getGender()

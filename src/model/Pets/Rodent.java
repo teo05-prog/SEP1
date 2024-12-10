@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 public class Rodent extends Pet
 {
@@ -7,7 +7,7 @@ public class Rodent extends Pet
   public Rodent(String name, int age, String colour, char gender,
       String comment, int price, boolean doesItBite)
   {
-    super(name, age, colour, gender, comment, price);
+    super(name, age, colour, gender, comment);
     this.doesItBite = doesItBite;
   }
 
@@ -29,7 +29,7 @@ public class Rodent extends Pet
 
   public String toString()
   {
-    return "Pets.Pets.Rodent: " + super.toString() + ", does it bite?: " + doesItBite
+    return "model.Pets.model.Pets.Rodent: " + super.toString() + ", does it bite?: " + doesItBite
         + "/n";
   }
 

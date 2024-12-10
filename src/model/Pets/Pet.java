@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 public abstract class Pet
 {
@@ -9,8 +9,7 @@ public abstract class Pet
   private String comment;
   private int price;
 
-  public Pet(String name, int age, String colour, char gender, String comment,
-      int price)
+  public Pet(String name, int age, String colour, char gender, String comment)
   {
     this.name = name;
     this.age = age;

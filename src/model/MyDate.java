@@ -1,3 +1,5 @@
+package model;
+
 import java.text.DecimalFormat;
 
 public class MyDate
@@ -55,6 +57,19 @@ public class MyDate
       if (this.month < date.month)
       {
         if (this.day < date.day)
+          return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean isAfter(MyDate date)
+  {
+    if (this.year > date.year)
+    {
+      if (this.month > date.month)
+      {
+        if (this.day > date.day)
           return true;
       }
     }

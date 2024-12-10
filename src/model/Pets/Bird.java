@@ -1,4 +1,4 @@
-package Pets;
+package model.Pets;
 
 public class Bird extends Pet
 {
@@ -7,7 +7,7 @@ public class Bird extends Pet
   public Bird(String name, int age, String colour, char gender, String comment,
       int price, String preferredFood)
   {
-    super(name, age, colour, gender, comment, price);
+    super(name, age, colour, gender, comment);
     this.preferredFood = preferredFood;
   }
 
@@ -29,7 +29,7 @@ public class Bird extends Pet
 
   public String toString()
   {
-    return "Pets.Pets.Bird: " + super.toString() + ", preferred food: " + preferredFood
+    return "model.Pets.model.Pets.Bird: " + super.toString() + ", preferred food: " + preferredFood
         + "/n";
   }
 
