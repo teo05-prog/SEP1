@@ -1,5 +1,4 @@
 import Pets.Pet;
-
 public class Purchase
 {
   private int discount;
