@@ -23,7 +23,6 @@ public class ManageCustomersViewController
   @FXML private Button updateButton;
   @FXML private Button addButton;
   @FXML private Button removeButton;
-  @FXML private Button backButton;
 
   public void init(ViewHandler viewHandler, ModelManager modelManager)
   {
@@ -34,7 +33,7 @@ public class ManageCustomersViewController
 
   public void reset()
   {
-    if(modelManager!=null)
+    if (modelManager != null)
     {
       updateCustomerBox();
 
@@ -74,10 +73,6 @@ public class ManageCustomersViewController
       phoneNoField.setText("");
       emailField.setText("");
     }
-    else if (e.getSource() == backButton)
-    {
-      viewHandler.openView("MainView");
-    }
     else if (e.getSource() == customerBox)
     {
       Customer temp = customerBox.getSelectionModel().getSelectedItem();
@@ -93,8 +88,8 @@ public class ManageCustomersViewController
     else if (e.getSource() == exitMenuItem)
     {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-          "Do you really want to exit the program?",
-          ButtonType.YES, ButtonType.NO);
+          "Do you really want to exit the program?", ButtonType.YES,
+          ButtonType.NO);
       alert.setTitle("Exit");
       alert.setHeaderText(null);
 
@@ -110,7 +105,8 @@ public class ManageCustomersViewController
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
       alert.setTitle("About");
-      alert.setContentText("This is just a little program that demonstrates some of the GUI features in Java");
+      alert.setContentText(
+          "This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
     }
   }

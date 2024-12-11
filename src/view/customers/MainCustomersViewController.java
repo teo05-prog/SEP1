@@ -17,6 +17,7 @@ public class MainCustomersViewController
   @FXML private Tab manageCustomersTab;
   @FXML private MenuItem exitMenuItem;
   @FXML private MenuItem aboutMenuItem;
+  @FXML private Button backButton;
 
   private ModelManager modelManager;
   private ViewHandler viewHandler;
@@ -69,6 +70,10 @@ public class MainCustomersViewController
       alert.setTitle("About");
       alert.setContentText("This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
+    }
+    else if (e.getSource() == backButton)
+    {
+      viewHandler.openView("MainView");
     }
   }
 

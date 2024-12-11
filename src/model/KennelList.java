@@ -8,7 +8,7 @@ public class KennelList
 
   public KennelList()
   {
-    bookings = new ArrayList<>();
+    bookings = new ArrayList<>(20);
   }
 
   public void addBooking(Booking booking)
@@ -49,5 +49,15 @@ public class KennelList
 
     KennelList other = (KennelList) obj;
     return bookings.equals(other.bookings);
+  }
+
+  public int size()
+  {
+    return bookings.size();
+  }
+
+  public Booking get(int i)
+  {
+    return bookings.get(i);
   }
 }

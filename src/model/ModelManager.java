@@ -37,6 +37,29 @@ public class ModelManager
     return allCustomers;
   }
 
+  public KennelList getAllBookings()
+  {
+    KennelList allBookings = new KennelList();
+
+    try
+    {
+      allBookings = (KennelList) MyFileHandler.readFromBinaryFile(fileName);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+    return allBookings;
+  }
+
   public void saveCustomers(CustomerList customers)
   {
     try

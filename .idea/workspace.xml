@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added the guis">
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/PastView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/PastViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/purchases/AllPurchasesView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/purchases/AllPurchasesViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" afterDir="false" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="finished guis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/KennelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/KennelList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/PastViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/PastViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/main/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="38975" />
+    <option name="totalTimeSeconds" value="45748" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -281,7 +279,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733738149004</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Finished the look of the guis">
+      <option name="closed" value="true" />
+      <created>1733848658487</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733848658487</updated>
+    </task>
+    <task id="LOCAL-00020" summary="finished guis">
+      <option name="closed" value="true" />
+      <created>1733848814879</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733848814879</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,6 +323,10 @@
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes&#10;&#10;Took 31 minutes" />
     <MESSAGE value="added the guis" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the guis" />
+    <MESSAGE value="added the guis&#10;&#10;Took 1 hour 18 minutes" />
+    <MESSAGE value="Finished the look of the guis" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/customers/CustomersView.fxml&#10;#&#9;src/view/kennel/KennelView.fxml&#10;#&#9;src/view/purchases/PurchasesView.fxml&#10;&#10;Took 49 seconds" />
+    <MESSAGE value="finished guis" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished guis" />
   </component>
 </project>

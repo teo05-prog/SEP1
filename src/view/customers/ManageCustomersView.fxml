@@ -71,17 +71,17 @@
                         <Insets bottom="4.0" left="17.5" right="17.5" top="4.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets top="3.0" />
+                        <Insets top="2.0" />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false" text="Remove">
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets top="8.0" />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false" text="Save">
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets top="9.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="4.0" left="17.4" right="17.4" top="4.0" />
