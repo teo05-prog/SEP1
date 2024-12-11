@@ -2,6 +2,7 @@ package view.customers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import model.Customer;
@@ -11,6 +12,7 @@ import view.ViewHandler;
 
 public class CustomersViewController
 {
+  private Scene scene;
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
@@ -32,11 +34,12 @@ public class CustomersViewController
     }
   }
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
-    reset();
+    this.scene = scene;
   }
 
   public void reset()

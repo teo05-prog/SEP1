@@ -2,6 +2,7 @@ package view.customers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.Customer;
 import model.CustomerList;
@@ -10,6 +11,7 @@ import view.ViewHandler;
 
 public class ManageCustomersViewController
 {
+  private Scene scene;
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
@@ -24,11 +26,12 @@ public class ManageCustomersViewController
   @FXML private Button addButton;
   @FXML private Button removeButton;
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
-    reset();
+    this.scene = scene;
   }
 
   public void reset()
