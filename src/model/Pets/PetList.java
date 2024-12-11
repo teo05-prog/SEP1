@@ -50,6 +50,11 @@ public class PetList
     }
   }
 
+  public int getPetsCount()
+  {
+    return pets.size();
+  }
+
   public String toString()
   {
     String str = "";
