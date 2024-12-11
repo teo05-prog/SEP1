@@ -97,7 +97,7 @@ public class Customer
 
   public String toString()
   {
-    return "Name: " + firstName + lastName + ", Phone: " + phone + ", Email: " + email;
+    return "First name: " + firstName + ", Last name: " + lastName + ", Phone: " + phone + ", Email: " + email;
   }
 
   public boolean equals(Object obj)

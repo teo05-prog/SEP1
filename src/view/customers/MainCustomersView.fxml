@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -7,7 +9,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="520.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.customers.MainCustomersViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.customers.MainCustomersViewController">
    <children>
       <MenuBar>
         <menus>
@@ -23,17 +25,22 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TabPane tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="320.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Customers">
                <content>
                   <fx:include source="CustomersView.fxml" />
                </content></Tab>
-          <Tab text="Manage Customers">
+          <Tab text="Manage">
                <content>
                   <fx:include source="ManageCustomersView.fxml" />
                </content></Tab>
         </tabs>
       </TabPane>
+      <Button mnemonicParsing="false" text="Back">
+         <VBox.margin>
+            <Insets left="5.0" top="5.0" />
+         </VBox.margin>
+      </Button>
    </children>
 </VBox>

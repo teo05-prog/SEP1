@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+  <columns>
+    <TableColumn prefWidth="90.0" text="First Name" />
+    <TableColumn prefWidth="90.0" text="Last Name" />
+      <TableColumn text="Pet Type" />
+      <TableColumn prefWidth="90.0" text="Start Date" />
+      <TableColumn prefWidth="90.0" text="End Date" />
+      <TableColumn text="Total Price" />
+  </columns>
+</TableView>
