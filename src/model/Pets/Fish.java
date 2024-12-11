@@ -9,7 +9,7 @@ public class Fish extends Pet
   public Fish(String name, int age, String colour, char gender, String comment,
       int price, String water, boolean predators, String specie)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.water = water;
     this.predators = predators;
     this.specie = specie;
@@ -53,8 +53,9 @@ public class Fish extends Pet
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Fish: " + super.toString() + ", preferred type of water: " + water
-        + ", predator: " + predators + ", specie: " + specie + "/n";
+    return "model.Pets.model.Pets.Fish: " + super.toString()
+        + ", preferred type of water: " + water + ", predator: " + predators
+        + ", specie: " + specie + "/n";
   }
 
   public boolean equals(Object obj)

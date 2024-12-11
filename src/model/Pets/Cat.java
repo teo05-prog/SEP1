@@ -8,7 +8,7 @@ public class Cat extends Pet
   public Cat(String name, int age, String colour, char gender, String comment,
       int price, String breed, String breederName)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.breed = breed;
     this.breederName = breederName;
   }
@@ -41,8 +41,8 @@ public class Cat extends Pet
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Cat: " + super.toString() + ", breed: " + breed + ", breeder name: "
-        + breederName + "/n";
+    return "model.Pets.model.Pets.Cat: " + super.toString() + ", breed: "
+        + breed + ", breeder name: " + breederName + "/n";
   }
 
   public boolean equals(Object obj)

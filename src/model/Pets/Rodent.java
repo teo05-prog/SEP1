@@ -7,7 +7,7 @@ public class Rodent extends Pet
   public Rodent(String name, int age, String colour, char gender,
       String comment, int price, boolean doesItBite)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.doesItBite = doesItBite;
   }
 
@@ -16,7 +16,7 @@ public class Rodent extends Pet
     return doesItBite;
   }
 
-  public void setDoesItBite()
+  public void setDoesItBite(boolean doesItBite)
   {
     this.doesItBite = doesItBite;
   }
@@ -29,8 +29,8 @@ public class Rodent extends Pet
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Rodent: " + super.toString() + ", does it bite?: " + doesItBite
-        + "/n";
+    return "model.Pets.model.Pets.Rodent: " + super.toString()
+        + ", does it bite?: " + doesItBite + "/n";
   }
 
   public boolean equals(Object obj)
