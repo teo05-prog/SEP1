@@ -3,14 +3,17 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
+import model.ModelManager;
 import model.Pets.Cat;
 import model.Pets.PetList;
 import javafx.scene.control.TableView;
+import view.ViewHandler;
 
 public class CatsViewController
 {
@@ -25,6 +28,18 @@ public class CatsViewController
   @FXML private TableColumn<Cat, String> breederNameColumn;
   private PetList petList;
   private ObservableList<Cat> observableCats;
+
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML public void initialize()
   {
@@ -88,7 +103,7 @@ public class CatsViewController
       cat.setBreederName(event.getNewValue());
     });
 
-    petList = new PetList(10);
+    petList = new PetList();
     petList.addPet(new Cat("Whiskers", 2, "Black", 'F', "Friendly cat", 400,
         "British Shorthair", "Royal Paws Cattery"));
     petList.addPet(
@@ -131,6 +146,25 @@ public class CatsViewController
     {
       petList.removePet(selectedCat);
       updateTableDate();
+    }
+  }
+
+  public void reset()
+  {
+    if (modelManager != null)
+    {
+      updateCat();
+    }
+  }
+
+  private void updateCat()
+  {
+    catTable.getItems().clear();
+    PetList cats = modelManager.getAllCats(petList);
+
+    for (int i = 0; i < cats.size(); i++)
+    {
+      catTable.getItems().add(cats.getCat(i));
     }
   }
 }

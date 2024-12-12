@@ -3,14 +3,17 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
+import model.ModelManager;
 import model.Pets.Bird;
 import model.Pets.PetList;
+import view.ViewHandler;
 
 public class BirdsViewController
 {
@@ -24,6 +27,18 @@ public class BirdsViewController
   @FXML private TableColumn<Bird, String> preferredFoodColumn;
   private PetList petList;
   private ObservableList<Bird> observableBirds;
+
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML public void initialize()
   {
@@ -101,5 +116,24 @@ public class BirdsViewController
       }
     }
     birdTable.setItems(observableBirds);
+  }
+
+  public void reset()
+  {
+    if (modelManager != null)
+    {
+      updateBird();
+    }
+  }
+
+  private void updateBird()
+  {
+    birdTable.getItems().clear();
+    PetList birds = modelManager.getAllBirds(petList);
+
+    for (int i = 0; i < birds.size(); i++)
+    {
+      birdTable.getItems().add(birds.getBird(i));
+    }
   }
 }

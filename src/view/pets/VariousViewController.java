@@ -3,14 +3,17 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
+import model.ModelManager;
 import model.Pets.PetList;
 import model.Pets.Various;
+import view.ViewHandler;
 
 public class VariousViewController
 {
@@ -24,6 +27,18 @@ public class VariousViewController
   @FXML private TableColumn<Various, String> specieColumn;
   private PetList petList;
   private ObservableList<Various> observableVarious;
+
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML public void initialize()
   {
@@ -99,6 +114,25 @@ public class VariousViewController
       }
     }
     variousTable.setItems(observableVarious);
+  }
+
+  public void reset()
+  {
+    if (modelManager != null)
+    {
+      updateVarious();
+    }
+  }
+
+  private void updateVarious()
+  {
+    variousTable.getItems().clear();
+    PetList various = modelManager.getAllVarious(petList);
+
+    for (int i = 0; i < various.size(); i++)
+    {
+      variousTable.getItems().add(various.getVarious(i));
+    }
   }
 
 }
