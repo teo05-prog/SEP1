@@ -24,15 +24,19 @@ public class MainCustomersViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
+  public void initialize()
+  {
+    modelManager = new ModelManager("customers.bin");
+    customersController.init(viewHandler, modelManager, scene);
+    manageCustomersController.init(viewHandler, modelManager, scene);
+  }
+
   public void init(ViewHandler viewHandler, Scene scene,
       ModelManager modelManager)
   {
-    modelManager = new ModelManager("customers.bin");
     this.modelManager = modelManager;
     this.viewHandler = viewHandler;
     this.scene = scene;
-    customersController.init(this.viewHandler, this.modelManager, scene);
-    manageCustomersController.init(this.viewHandler, this.modelManager, scene);
   }
 
   public void reset()

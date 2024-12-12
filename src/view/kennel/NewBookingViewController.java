@@ -32,19 +32,17 @@ public class NewBookingViewController
 
   public void reset()
   {
-    if(modelManager!=null)
+    startDate.setValue(null);
+    endDate.setValue(null);
+    emailAndPhoneField.clear();
+    petNameField.clear();
+    petInfoArea.clear();
+    petTypes.getSelectionModel().clearSelection();
+
+    if (petTypes.getItems().isEmpty())
     {
-      updateCustomerBox();
-
-      Booking temp = customerBox.getSelectionModel().getSelectedItem();
-
-      if (temp != null)
-      {
-        firstNameField.setText(temp.getFirstName());
-        lastNameField.setText(temp.getLastName());
-        phoneNoField.setPromptText(temp.getPhone());
-        emailField.setPromptText(temp.getEmail());
-      }
+      petTypes.getItems()
+          .addAll("Dog", "Cat", "Bird", "Fish", "Rodent", "Various");
     }
   }
 }

@@ -9,46 +9,59 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Change Price" />
-              <MenuItem mnemonicParsing="false" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="About">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <TabPane prefHeight="320.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Current">
-               <content>
-                  <fx:include source="CurrentView.fxml" />
-               </content>
-          </Tab>
-          <Tab text="Past">
-               <content>
-                  <fx:include source="PastView.fxml" />
-               </content>
-          </Tab>
-            <Tab text="New">
-               <content>
-                  <fx:include source="NewBookingView.fxml" />
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-      <Button mnemonicParsing="false" text="Back">
-         <VBox.margin>
-            <Insets left="5.0" top="5.0" />
-         </VBox.margin>
-      </Button>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      fx:controller="view.kennel.KennelViewController"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="changePriceMenuItem"
+                                  mnemonicParsing="false"
+                                  onAction="#handleActions"
+                                  text="Change Price"/>
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
+                                  onAction="#handleActions" text="Exit"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                    <items>
+                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
+                                  onAction="#handleActions" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane prefHeight="320.0" prefWidth="200.0"
+                 tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Current">
+                    <content>
+                        <fx:include fx:id="currentTab"
+                                    source="CurrentView.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Past">
+                    <content>
+                        <fx:include fx:id="pastTab" source="PastView.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="New">
+                    <content>
+                        <fx:include fx:id="newBookingTab"
+                                    source="NewBookingView.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="backButton" mnemonicParsing="false"
+                onAction="#handleActions" text="Back">
+            <VBox.margin>
+                <Insets left="5.0" top="5.0"/>
+            </VBox.margin>
+        </Button>
+    </children>
 </VBox>

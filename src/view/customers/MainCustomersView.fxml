@@ -31,7 +31,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TabPane prefHeight="320.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="tabPane" prefHeight="320.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab fx:id="customersTab" onSelectionChanged="#tabChanged"
                      text="Customers">

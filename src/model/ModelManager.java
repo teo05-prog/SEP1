@@ -4,11 +4,14 @@ import model.Pets.*;
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class ModelManager
 {
   private String fileName;
+  private double price;
 
   public ModelManager(String fileName)
   {
@@ -228,4 +231,21 @@ public class ModelManager
     return various;
   }
 
+  public void updatePrice(double newPrice)
+  {
+    this.price = newPrice;
+    KennelList currentBookings = getAllBookings();
+    try
+    {
+      MyFileHandler.writeToBinaryFile(fileName, currentBookings);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
+  }
 }

@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="smol edit">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="finished pets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/PastView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/PastView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="47490" />
+    <option name="totalTimeSeconds" value="56106" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -301,7 +313,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733915950812</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="finished customers">
+      <option name="closed" value="true" />
+      <created>1734019091929</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1734019091930</updated>
+    </task>
+    <task id="LOCAL-00024" summary="finished pets">
+      <option name="closed" value="true" />
+      <created>1734021793944</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1734021793944</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,6 +365,10 @@
     <MESSAGE value="more work on guis" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 12 seconds" />
     <MESSAGE value="smol edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="smol edit" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 7 seconds" />
+    <MESSAGE value="finished customers" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 10 seconds" />
+    <MESSAGE value="finished pets" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished pets" />
   </component>
 </project>
