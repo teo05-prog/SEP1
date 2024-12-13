@@ -42,7 +42,7 @@ public class Bird extends Pet
   public String toString()
   {
     return "model.Pets.model.Pets.Bird: " + super.toString()
-        + ", preferred food: " + preferredFood + "/n";
+        + ", preferred food: " + preferredFood + specie + "/n";
   }
 
   public boolean equals(Object obj)
@@ -57,6 +57,6 @@ public class Bird extends Pet
         .equals(super.getColour()) && other.getGender() == super.getGender()
         && other.getComment().equals(super.getComment())
         && other.getPrice() == super.getPrice() && other.getPreferredFood()
-        .equals(preferredFood);
+        .equals(preferredFood) && other.getSpecie().equals(specie);
   }
 }
