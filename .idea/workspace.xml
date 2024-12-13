@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added the guis">
-      <change afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,23 +58,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BookingTest.executor": "Run",
-    "Application.CustomerTest.executor": "Run",
-    "Application.StartApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.preview.features.used": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Yuki/Downloads/StudentManagementGUIFXML3",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BookingTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yuki/Downloads/StudentManagementGUIFXML3&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\Pets" />
@@ -265,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733668139770</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added the guis">
+      <option name="closed" value="true" />
+      <created>1733846215463</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733846215463</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,8 +290,9 @@
     <MESSAGE value="Made it work, YAY" />
     <MESSAGE value="added fileHandler" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <MESSAGE value="added the guis" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
+    <MESSAGE value="purchase" />
+    <MESSAGE value="added the guis" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the guis" />
   </component>
 </project>
