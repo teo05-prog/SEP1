@@ -188,12 +188,14 @@ public class NewBookingViewController
         return new Cat(name, age, colour, gender, comment, price, tempStr,
             tempStr);
       case "Bird":
-        return new Bird(name, age, colour, gender, comment, price, tempStr);
+        return new Bird(name, age, colour, gender, comment, price, tempStr,
+            tempStr);
       case "Fish":
         return new Fish(name, age, colour, gender, comment, price, tempStr,
             tempBoo, tempStr);
       case "Rodent":
-        return new Rodent(name, age, colour, gender, comment, price, tempBoo);
+        return new Rodent(name, age, colour, gender, comment, price, tempBoo,
+            tempStr);
       case "Various":
         return new Various(name, age, colour, gender, comment, price, tempStr);
       default:

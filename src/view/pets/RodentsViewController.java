@@ -12,6 +12,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
+import model.Pets.Bird;
 import model.Pets.Dog;
 import model.Pets.PetList;
 import model.Pets.Rodent;
@@ -27,6 +28,7 @@ public class RodentsViewController
   @FXML private TableColumn<Rodent, String> commentColumn;
   @FXML private TableColumn<Rodent, Integer> priceColumn;
   @FXML private TableColumn<Rodent, Boolean> doesItBiteColumn;
+  @FXML private TableColumn<Bird, String> specieColumn;
   private PetList petList;
   private ObservableList<Rodent> observableRodents;
 
@@ -53,6 +55,8 @@ public class RodentsViewController
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     doesItBiteColumn.setCellValueFactory(
         new PropertyValueFactory<>("doesItBite"));
+    specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
+
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
@@ -96,6 +100,11 @@ public class RodentsViewController
     doesItBiteColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setDoesItBite(event.getNewValue());
+    });
+    specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+    specieColumn.setOnEditCommit(event -> {
+      Bird bird = event.getRowValue();
+      bird.setPreferredFood(event.getNewValue());
     });
     updateTableDate();
   }
