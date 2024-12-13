@@ -8,9 +8,8 @@ public class PetList
   private ArrayList<Pet> pets;
   private int maxNumberOfPets;
 
-  public PetList(int maxNumberOfPets)
+  public PetList()
   {
-    this.maxNumberOfPets = maxNumberOfPets;
     pets = new ArrayList<>();
   }
 
@@ -78,4 +77,40 @@ public class PetList
     return maxNumberOfPets == other.maxNumberOfPets && Objects.equals(pets,
         other.pets);
   }
+
+  public int size()
+  {
+    return pets.size();
+  }
+
+  public Dog getDog(int index)
+  {
+    return (Dog) pets.get(index);
+  }
+
+  public Cat getCat(int index)
+  {
+    return (Cat) pets.get(index);
+  }
+
+  public Bird getBird(int index)
+  {
+    return (Bird) pets.get(index);
+  }
+
+  public Fish getFish(int index)
+  {
+    return (Fish) pets.get(index);
+  }
+
+  public Rodent getRodent(int index)
+  {
+    return (Rodent) pets.get(index);
+  }
+
+  public Various getVarious(int index)
+  {
+    return (Various) pets.get(index);
+  }
+
 }

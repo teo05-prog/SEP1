@@ -3,14 +3,17 @@ package view.pets;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.ModelManager;
 import model.Pets.Dog;
 import javafx.scene.control.TableView;
 import model.Pets.PetList;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.CharacterStringConverter;
+import view.ViewHandler;
 
 public class DogsViewController
 {
@@ -25,6 +28,18 @@ public class DogsViewController
   @FXML private TableColumn<Dog, String> breederNameColumn;
   private PetList petList;
   private ObservableList<Dog> observableDogs;
+
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML public void initialize()
   {
@@ -88,7 +103,7 @@ public class DogsViewController
       dog.setBreederName(event.getNewValue());
     });
 
-    petList = new PetList(12);
+    petList = new PetList();
     petList.addPet(
         new Dog("Buddy", 3, "Brown", 'M', "Friendly dog", 500, "Labrador",
             "John Doe"));
@@ -136,4 +151,22 @@ public class DogsViewController
     }
   }
 
+  public void reset()
+  {
+    if (modelManager != null)
+    {
+      updateDog();
+    }
+  }
+
+  private void updateDog()
+  {
+    dogTable.getItems().clear();
+    PetList dogs = modelManager.getAllDogs(petList);
+
+    for (int i = 0; i < dogs.size(); i++)
+    {
+      dogTable.getItems().add(dogs.getDog(i));
+    }
+  }
 }

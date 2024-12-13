@@ -3,6 +3,7 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -10,9 +11,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
+import model.ModelManager;
 import model.Pets.Dog;
 import model.Pets.PetList;
 import model.Pets.Rodent;
+import view.ViewHandler;
 
 public class RodentsViewController
 {
@@ -26,6 +29,18 @@ public class RodentsViewController
   @FXML private TableColumn<Rodent,Boolean > doesItBiteColumn;
   private PetList petList;
   private ObservableList<Rodent> observableRodents;
+
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML public void initialize(){
     rodentTable.setEditable(true);
@@ -101,4 +116,22 @@ public class RodentsViewController
     rodentTable.setItems(observableRodents);
   }
 
+  public void reset()
+  {
+    if (modelManager != null)
+    {
+      updateRodents();
+    }
+  }
+
+  private void updateRodents()
+  {
+    rodentTable.getItems().clear();
+    PetList rodents = modelManager.getAllRodents(petList);
+
+    for (int i = 0; i < rodents.size(); i++)
+    {
+      rodentTable.getItems().add(rodents.getRodent(i));
+    }
+  }
 }

@@ -3,14 +3,17 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
+import model.ModelManager;
 import model.Pets.Fish;
 import model.Pets.PetList;
+import view.ViewHandler;
 
 public class FishViewController
 {
@@ -26,6 +29,18 @@ public class FishViewController
   @FXML private TableColumn<Fish, String> specieColumn;
   private PetList petList;
   private ObservableList<Fish> observableFish;
+
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML public void initialize()
   {
@@ -116,4 +131,24 @@ public class FishViewController
     }
     fishTable.setItems(observableFish);
   }
+
+  public void reset()
+  {
+    if (modelManager != null)
+    {
+      updateFish();
+    }
+  }
+
+  private void updateFish()
+  {
+    fishTable.getItems().clear();
+    PetList fish = modelManager.getAllFish(petList);
+
+    for (int i = 0; i < fish.size(); i++)
+    {
+      fishTable.getItems().add(fish.getFish(i));
+    }
+  }
+
 }

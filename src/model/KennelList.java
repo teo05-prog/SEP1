@@ -60,4 +60,9 @@ public class KennelList
   {
     return bookings.get(i);
   }
+
+  public void add(Booking booking)
+  {
+    bookings.add(booking);
+  }
 }

@@ -1,13 +1,17 @@
 package model;
 
+import model.Pets.*;
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class ModelManager
 {
   private String fileName;
+  private double price;
 
   public ModelManager(String fileName)
   {
@@ -76,7 +80,8 @@ public class ModelManager
     }
   }
 
-  public void manageCustomers(String firstName, String lastName, String phone, String email)
+  public void manageCustomers(String firstName, String lastName, String phone,
+      String email)
   {
     CustomerList allCustomers = getAllCustomers();
 
@@ -84,13 +89,163 @@ public class ModelManager
     {
       Customer customer = allCustomers.get(i);
 
-      if (customer.getFirstName().equals(firstName) && customer.getLastName().equals(lastName))
+      if (customer.getFirstName().equals(firstName) && customer.getLastName()
+          .equals(lastName))
       {
         customer.setPhone(phone);
         customer.setEmail(email);
       }
     }
-
     saveCustomers(allCustomers);
+  }
+
+  public PetList getAllDogs(PetList petList)
+  {
+    PetList dogs = new PetList();
+
+    for (int i = 0; i < petList.size(); i++)
+    {
+      try
+      {
+        Pet pet = petList.getPets(i);
+        if (pet.getClass() == Dog.class)
+        {
+          dogs.addPet(pet);
+        }
+      }
+      catch (Exception e)
+      {
+        System.err.println("Error accessing pet: " + e.getMessage());
+      }
+    }
+    return dogs;
+  }
+
+  public PetList getAllCats(PetList petList)
+  {
+    PetList cats = new PetList();
+
+    for (int i = 0; i < petList.size(); i++)
+    {
+      try
+      {
+        Pet pet = petList.getPets(i);
+        if (pet.getClass() == Cat.class)
+        {
+          cats.addPet(pet);
+        }
+      }
+      catch (Exception e)
+      {
+        System.err.println("Error accessing pet: " + e.getMessage());
+      }
+    }
+    return cats;
+  }
+
+  public PetList getAllBirds(PetList petList)
+  {
+    PetList birds = new PetList();
+
+    for (int i = 0; i < petList.size(); i++)
+    {
+      try
+      {
+        Pet pet = petList.getPets(i);
+        if (pet.getClass() == Bird.class)
+        {
+          birds.addPet(pet);
+        }
+      }
+      catch (Exception e)
+      {
+        System.err.println("Error accessing pet: " + e.getMessage());
+      }
+    }
+    return birds;
+  }
+
+  public PetList getAllFish(PetList petList)
+  {
+    PetList fish = new PetList();
+
+    for (int i = 0; i < petList.size(); i++)
+    {
+      try
+      {
+        Pet pet = petList.getPets(i);
+        if (pet.getClass() == Fish.class)
+        {
+          fish.addPet(pet);
+        }
+      }
+      catch (Exception e)
+      {
+        System.err.println("Error accessing pet: " + e.getMessage());
+      }
+    }
+    return fish;
+  }
+
+  public PetList getAllRodents(PetList petList)
+  {
+    PetList rodents = new PetList();
+
+    for (int i = 0; i < petList.size(); i++)
+    {
+      try
+      {
+        Pet pet = petList.getPets(i);
+        if (pet.getClass() == Rodent.class)
+        {
+          rodents.addPet(pet);
+        }
+      }
+      catch (Exception e)
+      {
+        System.err.println("Error accessing pet: " + e.getMessage());
+      }
+    }
+    return rodents;
+  }
+
+  public PetList getAllVarious(PetList petList)
+  {
+    PetList various = new PetList();
+
+    for (int i = 0; i < petList.size(); i++)
+    {
+      try
+      {
+        Pet pet = petList.getPets(i);
+        if (pet.getClass() == Various.class)
+        {
+          various.addPet(pet);
+        }
+      }
+      catch (Exception e)
+      {
+        System.err.println("Error accessing pet: " + e.getMessage());
+      }
+    }
+    return various;
+  }
+
+  public void updatePrice(double newPrice)
+  {
+    this.price = newPrice;
+    KennelList currentBookings = getAllBookings();
+    try
+    {
+      MyFileHandler.writeToBinaryFile(fileName, currentBookings);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
   }
 }

@@ -1,8 +1,7 @@
 package view.customers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import model.Customer;
 import model.ModelManager;
@@ -11,11 +10,10 @@ import view.ViewHandler;
 
 public class CustomersViewController
 {
+  private Scene scene;
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  @FXML private Button getButton;
-  @FXML private Button backButton;
   @FXML private TableView<Customer> allCustomersTable;
   @FXML private TableView.TableViewSelectionModel<Customer> defaultSelectionModel;
 
@@ -32,11 +30,12 @@ public class CustomersViewController
     }
   }
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
-    reset();
+    this.scene = scene;
   }
 
   public void reset()
@@ -44,18 +43,6 @@ public class CustomersViewController
     if (modelManager != null)
     {
       updateCustomerArea();
-    }
-  }
-
-  public void handleActions(ActionEvent e)
-  {
-    if (e.getSource() == getButton)
-    {
-      updateCustomerArea();
-    }
-    else if (e.getSource() == backButton)
-    {
-      viewHandler.openView("MainView");
     }
   }
 

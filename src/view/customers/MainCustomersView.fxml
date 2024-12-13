@@ -9,38 +9,51 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.customers.MainCustomersViewController">
-   <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="About">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <TabPane prefHeight="320.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Customers">
-               <content>
-                  <fx:include source="CustomersView.fxml" />
-               </content></Tab>
-          <Tab text="Manage">
-               <content>
-                  <fx:include source="ManageCustomersView.fxml" />
-               </content></Tab>
-        </tabs>
-      </TabPane>
-      <Button mnemonicParsing="false" text="Back">
-         <VBox.margin>
-            <Insets left="5.0" top="5.0" />
-         </VBox.margin>
-      </Button>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0"
+      stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.customers.MainCustomersViewController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
+                                  onAction="#handleActions" text="Exit"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                    <items>
+                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
+                                  onAction="#handleActions" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane fx:id="tabPane" prefHeight="320.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="customersTab" onSelectionChanged="#tabChanged"
+                     text="Customers">
+                    <content>
+                        <fx:include fx:id="customersView"
+                                    source="CustomersView.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="manageCustomersTab" onSelectionChanged="#tabChanged"
+                     text="Manage">
+                    <content>
+                        <fx:include fx:id="manageCustomersView"
+                                    source="ManageCustomersView.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="backButton" mnemonicParsing="false"
+                onAction="#handleActions" text="Back">
+            <VBox.margin>
+                <Insets left="5.0" top="5.0"/>
+            </VBox.margin>
+        </Button>
+    </children>
 </VBox>
