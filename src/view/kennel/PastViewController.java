@@ -5,6 +5,7 @@ import javafx.scene.control.TableView;
 import model.Booking;
 import model.KennelList;
 import model.ModelManager;
+import model.MyDate;
 import view.ViewHandler;
 
 public class PastViewController
@@ -47,10 +48,15 @@ public class PastViewController
   {
     allPastBookingsTable.getItems().clear();
     KennelList bookings = modelManager.getAllBookings();
+    MyDate today = MyDate.today();
 
     for (int i = 0; i < bookings.size(); i++)
     {
-      allPastBookingsTable.getItems().add(bookings.get(i));
+      Booking booking = bookings.get(i);
+      if (booking.getEndDate().isBefore(today))
+      {
+        allPastBookingsTable.getItems().add(booking);
+      }
     }
   }
 }
