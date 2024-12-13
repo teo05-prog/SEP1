@@ -9,7 +9,8 @@ public abstract class Pet
   private String comment;
   private int price;
 
-  public Pet(String name, int age, String colour, char gender, String comment)
+  public Pet(String name, int age, String colour, char gender, String comment,
+      int price)
   {
     this.name = name;
     this.age = age;

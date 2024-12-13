@@ -15,18 +15,13 @@ public class Booking
   private int numberOfRooms;
   private Room[] rooms;
 
-  public Booking(int numberOfRooms)
+  public Booking()
   {
     this.customer = null;
     this.petInfo = null;
     this.startDate = null;
     this.endDate = null;
     this.pricePerDay = 20;
-    this.numberOfRooms = numberOfRooms;
-    rooms = new Room[numberOfRooms];
-    for (int i = 0; i < numberOfRooms; i++) {
-      rooms[i] = new Room();
-    }
   }
 
   public MyDate getStartDate()
@@ -67,6 +62,11 @@ public class Booking
         endDate.getDay());
 
     return ChronoUnit.DAYS.between(date1, date2);
+  }
+
+  public void setPetInfo(Pet petInfo)
+  {
+    this.petInfo = petInfo;
   }
 
   public String getPetInfo()

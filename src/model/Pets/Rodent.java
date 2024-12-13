@@ -3,12 +3,14 @@ package model.Pets;
 public class Rodent extends Pet
 {
   private boolean doesItBite;
+  private String specie;
 
   public Rodent(String name, int age, String colour, char gender,
-      String comment, int price, boolean doesItBite)
+      String comment, int price, boolean doesItBite, String specie)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.doesItBite = doesItBite;
+    this.specie = specie;
   }
 
   public boolean getDoesItBite()
@@ -16,21 +18,31 @@ public class Rodent extends Pet
     return doesItBite;
   }
 
-  public void setDoesItBite()
+  public void setDoesItBite(boolean doesItBite)
   {
     this.doesItBite = doesItBite;
+  }
+
+  public String getSpecie()
+  {
+    return specie;
+  }
+
+  public void setSpecie(String specie)
+  {
+    this.specie = specie;
   }
 
   public Pet copy()
   {
     return new Rodent(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), getPrice(), getDoesItBite());
+        getComment(), getPrice(), doesItBite, specie);
   }
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Rodent: " + super.toString() + ", does it bite?: " + doesItBite
-        + "/n";
+    return "model.Pets.model.Pets.Rodent: " + super.toString()
+        + ", does it bite?: " + doesItBite + specie + "/n";
   }
 
   public boolean equals(Object obj)
@@ -45,6 +57,7 @@ public class Rodent extends Pet
         .equals(super.getColour()) && other.getGender() == super.getGender()
         && other.getComment().equals(super.getComment())
         && other.getPrice() == super.getPrice()
-        && other.getDoesItBite() == doesItBite;
+        && other.getDoesItBite() == doesItBite && other.getSpecie()
+        .equals(specie);
   }
 }

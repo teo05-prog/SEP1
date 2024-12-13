@@ -51,4 +51,14 @@ public class PurchaseList
     PurchaseList other = (PurchaseList) obj;
     return purchases.equals(other.purchases);
   }
+
+  public int size()
+  {
+    return purchases.size();
+  }
+
+  public Purchase get(int index)
+  {
+    return purchases.get(index);
+  }
 }

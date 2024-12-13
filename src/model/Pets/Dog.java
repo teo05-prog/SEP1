@@ -6,9 +6,9 @@ public class Dog extends Pet
   private String breederName;
 
   public Dog(String name, int age, String colour, char gender, String comment,
-       String breed, String breederName)
+      int price, String breed, String breederName)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.breed = breed;
     this.breederName = breederName;
   }
@@ -36,13 +36,13 @@ public class Dog extends Pet
   public Pet copy()
   {
     return new Dog(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), breed, breederName);
+        getComment(), getPrice(), breed, breederName);
   }
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Dog: " + super.toString() + ", breed: " + breed + ", breeder name: "
-        + breederName + "/n";
+    return "model.Pets.model.Pets.Dog: " + super.toString() + ", breed: "
+        + breed + ", breeder name: " + breederName + "/n";
   }
 
   public boolean equals(Object obj)
