@@ -19,14 +19,14 @@ public class BirdsViewController
 {
   @FXML private TableView<Bird> birdTable;
   @FXML private TableColumn<Bird, String> nameColumn;
-  @FXML private TableColumn<Bird, String> specieColumn;
   @FXML private TableColumn<Bird, Integer> ageColumn;
   @FXML private TableColumn<Bird, String> colourColumn;
   @FXML private TableColumn<Bird, Character> genderColumn;
   @FXML private TableColumn<Bird, String> commentColumn;
   @FXML private TableColumn<Bird, Integer> priceColumn;
   @FXML private TableColumn<Bird, String> preferredFoodColumn;
-  private PetList petList = new PetList();
+  @FXML private TableColumn<Bird, String> specieColumn;
+  private PetList petList;
   private ObservableList<Bird> observableBirds;
 
   private Scene scene;
@@ -48,31 +48,28 @@ public class BirdsViewController
     ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
     colourColumn.setCellValueFactory(new PropertyValueFactory<>("colour"));
     genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
-    specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
     commentColumn.setCellValueFactory(new PropertyValueFactory<>("comment"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     preferredFoodColumn.setCellValueFactory(
         new PropertyValueFactory<>("preferredFood"));
+    specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setName(event.getNewValue());
     });
-
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setAge(event.getNewValue());
     });
-
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setColour(event.getNewValue());
     });
-
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Bird, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
@@ -84,13 +81,6 @@ public class BirdsViewController
       });
       return cell;
     });
-
-    specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-    specieColumn.setOnEditCommit(event -> {
-      Bird bird = event.getRowValue();
-      bird.setSpecie(event.getNewValue());
-    });
-
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
@@ -106,6 +96,11 @@ public class BirdsViewController
     preferredFoodColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setPreferredFood(event.getNewValue());
+    });
+    specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+    specieColumn.setOnEditCommit(event -> {
+      Bird bird = event.getRowValue();
+      bird.setSpecie(event.getNewValue());
     });
     updateTableDate();
   }
