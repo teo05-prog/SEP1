@@ -1,8 +1,6 @@
 package view.kennel;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import model.*;
 import view.ViewHandler;
@@ -47,11 +45,20 @@ public class CurrentViewController
   {
     allBookingsTable.getItems().clear();
     KennelList bookings = modelManager.getAllBookings();
+    MyDate today = MyDate.today();
 
     for (int i = 0; i < bookings.size(); i++)
     {
-      allBookingsTable.getItems().add(bookings.get(i));
+      Booking booking = bookings.get(i);
+      if (isCurrentBooking(booking, today)) {
+        allBookingsTable.getItems().add(booking);
+      }
     }
+  }
+
+  private boolean isCurrentBooking(Booking booking, MyDate today) {
+    return (today.compareTo(booking.getStartDate()) >= 0 &&
+        today.compareTo(booking.getEndDate()) <= 0);
   }
 }
 
