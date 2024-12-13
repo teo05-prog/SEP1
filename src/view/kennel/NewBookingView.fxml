@@ -45,7 +45,7 @@
                                 vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Button fx:id="addButton" mnemonicParsing="false" text="Add"
+                <Button fx:id="addButton" mnemonicParsing="false" text="Add" onAction="#handleActions"
                         GridPane.rowIndex="3">
                     <GridPane.margin>
                         <Insets left="5.0" top="25.0"/>

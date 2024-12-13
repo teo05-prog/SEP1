@@ -74,7 +74,7 @@
                 </GridPane>
                 <VBox prefHeight="200.0" prefWidth="100.0">
                     <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" text="Add">
+                        <Button fx:id="addButton" mnemonicParsing="false" text="Add" onAction="#handleActions">
                             <padding>
                                 <Insets bottom="4.0" left="17.5" right="17.5" top="4.0" />
                             </padding>
@@ -82,7 +82,7 @@
                                 <Insets top="2.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="removeButton" mnemonicParsing="false" text="Remove">
+                        <Button fx:id="removeButton" mnemonicParsing="false" text="Remove" onAction="#handleActions">
                             <VBox.margin>
                                 <Insets top="8.0" />
                             </VBox.margin>

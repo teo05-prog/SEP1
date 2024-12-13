@@ -89,4 +89,8 @@ public class NewPurchasesViewController
     petNames.getItems().clear();
   }
 
+  public void handleActions()
+  {
+
+  }
 }

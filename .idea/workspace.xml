@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="finished kennel (hopefully)">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="almost finished purchases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PurchaseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/AllPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/AllPurchasesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="50540" />
+    <option name="totalTimeSeconds" value="48354" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -34,6 +34,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="bianca0203 &lt;biancabuzdugan00@gmail.com&gt;" />
         <option value="Tutel &lt;jas.lewek@gmail.com&gt;" />
         <option value="Elizabeth1401 &lt;140805762+elizabeth1401@users.noreply.github.com&gt;" />
       </list>
@@ -78,8 +79,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -313,23 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734084436577</updated>
     </task>
-    <task id="LOCAL-00024" summary="changed birds">
+    <task id="LOCAL-00024" summary="Pets view and Bird and Rodent(added specie)">
       <option name="closed" value="true" />
-      <created>1734086829249</created>
+      <created>1734085000378</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1734086829249</updated>
+      <updated>1734085000378</updated>
     </task>
-    <task id="LOCAL-00025" summary="finished kennel (hopefully)">
-      <option name="closed" value="true" />
-      <created>1734091578446</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1734091578446</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,6 +345,7 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
     <MESSAGE value="Made it work, YAY" />
     <MESSAGE value="added fileHandler" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes&#10;&#10;Took 31 minutes" />
     <MESSAGE value="added the guis" />
@@ -364,11 +357,7 @@
     <MESSAGE value="more work on guis" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/PetsViewController.java" />
     <MESSAGE value="Pets view and Bird(added specie)" />
-    <MESSAGE value="more work..." />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/BirdsViewController.java&#10;#&#9;src/view/pets/PetsView.fxml&#10;#&#9;src/view/pets/PetsViewController.java&#10;#&#9;src/view/pets/RodentsViewController.java&#10;&#10;Took 1 minute" />
-    <MESSAGE value="changed birds" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <MESSAGE value="finished kennel (hopefully)" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished kennel (hopefully)" />
+    <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pets view and Bird and Rodent(added specie)" />
   </component>
 </project>
