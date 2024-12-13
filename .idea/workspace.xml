@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="more work on guis" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Pets GUI">
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
