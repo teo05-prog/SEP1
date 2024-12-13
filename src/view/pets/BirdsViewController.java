@@ -25,6 +25,7 @@ public class BirdsViewController
   @FXML private TableColumn<Bird, String> commentColumn;
   @FXML private TableColumn<Bird, Integer> priceColumn;
   @FXML private TableColumn<Bird, String> preferredFoodColumn;
+  @FXML private TableColumn<Bird, String> specieColumn;
   private PetList petList;
   private ObservableList<Bird> observableBirds;
 
@@ -51,6 +52,7 @@ public class BirdsViewController
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     preferredFoodColumn.setCellValueFactory(
         new PropertyValueFactory<>("preferredFood"));
+    specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
@@ -92,6 +94,11 @@ public class BirdsViewController
     });
     preferredFoodColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     preferredFoodColumn.setOnEditCommit(event -> {
+      Bird bird = event.getRowValue();
+      bird.setPreferredFood(event.getNewValue());
+    });
+    specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+    specieColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setPreferredFood(event.getNewValue());
     });
