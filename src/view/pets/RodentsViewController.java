@@ -26,7 +26,7 @@ public class RodentsViewController
   @FXML private TableColumn<Rodent, Character> genderColumn;
   @FXML private TableColumn<Rodent, String> commentColumn;
   @FXML private TableColumn<Rodent, Integer> priceColumn;
-  @FXML private TableColumn<Rodent,Boolean > doesItBiteColumn;
+  @FXML private TableColumn<Rodent, Boolean> doesItBiteColumn;
   private PetList petList;
   private ObservableList<Rodent> observableRodents;
 
@@ -42,7 +42,8 @@ public class RodentsViewController
     this.scene = scene;
   }
 
-  @FXML public void initialize(){
+  @FXML public void initialize()
+  {
     rodentTable.setEditable(true);
     nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
     ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
@@ -50,7 +51,8 @@ public class RodentsViewController
     genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
     commentColumn.setCellValueFactory(new PropertyValueFactory<>("comment"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-    doesItBiteColumn.setCellValueFactory(new PropertyValueFactory<>("doesItBite"));
+    doesItBiteColumn.setCellValueFactory(
+        new PropertyValueFactory<>("doesItBite"));
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
@@ -89,13 +91,15 @@ public class RodentsViewController
       Rodent rodent = event.getRowValue();
       rodent.setPrice(event.getNewValue());
     });
-    doesItBiteColumn.setCellFactory(CheckBoxTableCell.forTableColumn(doesItBiteColumn));
+    doesItBiteColumn.setCellFactory(
+        CheckBoxTableCell.forTableColumn(doesItBiteColumn));
     doesItBiteColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setDoesItBite(event.getNewValue());
     });
     updateTableDate();
   }
+
   private void updateTableDate()
   {
     observableRodents = FXCollections.observableArrayList();

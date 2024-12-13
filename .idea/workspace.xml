@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="finished customer (again) and kennel (hopefully)">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="finished kennel(hopefully)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/KennelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/KennelList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="59583" />
+    <option name="totalTimeSeconds" value="62851" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -330,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734077648306</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="finished kennel(hopefully)">
+      <option name="closed" value="true" />
+      <created>1734083163530</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1734083163530</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,8 +357,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Date class" />
-    <MESSAGE value="formatting" />
     <MESSAGE value="booking class" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
@@ -368,8 +378,10 @@
     <MESSAGE value="finished customers" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 10 seconds" />
     <MESSAGE value="finished pets" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="finished customer (again) and kennel (hopefully)" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished customer (again) and kennel (hopefully)" />
+    <MESSAGE value="finished kennel (hopefully)" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="finished kennel(hopefully)" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished kennel(hopefully)" />
   </component>
 </project>

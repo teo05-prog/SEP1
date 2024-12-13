@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.ModelManager;
 import view.ViewHandler;
-import view.customers.CustomersViewController;
-import view.customers.ManageCustomersViewController;
 
 public class PetsViewController
 {
