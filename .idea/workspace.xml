@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="smol edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Purchase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="47490" />
+    <option name="totalTimeSeconds" value="48287" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -88,7 +87,7 @@
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StartApplication">
+  <component name="RunManager">
     <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookingTest" />
       <module name="VIAPets" />
