@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="finished kennel (hopefully)">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Pets view and Bird and Rodent(added specie)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PurchaseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/AllPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/AllPurchasesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="50540" />
+    <option name="totalTimeSeconds" value="46288" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -49,8 +56,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/teo05-prog/VIAPets",
-    "accountId": "0f67eb8a-44ca-4392-88e2-8c6ca53db332"
+    "url": "https://github.com/teo05-prog/VIAPets.git",
+    "accountId": "a5749d79-1b8a-4c11-bc7c-8deef3e8c63a"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -78,8 +85,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -313,23 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734084436577</updated>
     </task>
-    <task id="LOCAL-00024" summary="changed birds">
+    <task id="LOCAL-00024" summary="Pets view and Bird and Rodent(added specie)">
       <option name="closed" value="true" />
-      <created>1734086829249</created>
+      <created>1734085000378</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1734086829249</updated>
+      <updated>1734085000378</updated>
     </task>
-    <task id="LOCAL-00025" summary="finished kennel (hopefully)">
-      <option name="closed" value="true" />
-      <created>1734091578446</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1734091578446</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,6 +351,7 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
     <MESSAGE value="Made it work, YAY" />
     <MESSAGE value="added fileHandler" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes&#10;&#10;Took 31 minutes" />
     <MESSAGE value="added the guis" />
@@ -364,11 +363,7 @@
     <MESSAGE value="more work on guis" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/PetsViewController.java" />
     <MESSAGE value="Pets view and Bird(added specie)" />
-    <MESSAGE value="more work..." />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/BirdsViewController.java&#10;#&#9;src/view/pets/PetsView.fxml&#10;#&#9;src/view/pets/PetsViewController.java&#10;#&#9;src/view/pets/RodentsViewController.java&#10;&#10;Took 1 minute" />
-    <MESSAGE value="changed birds" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <MESSAGE value="finished kennel (hopefully)" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished kennel (hopefully)" />
+    <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pets view and Bird and Rodent(added specie)" />
   </component>
 </project>
