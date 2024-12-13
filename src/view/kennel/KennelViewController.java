@@ -132,7 +132,6 @@ public class KennelViewController
         }
       }
     }
-
   }
 
   private void showErrorAlert(String message)

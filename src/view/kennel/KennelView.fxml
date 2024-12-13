@@ -35,7 +35,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TabPane prefHeight="320.0" prefWidth="200.0"
+        <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
                  tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab text="Current">
