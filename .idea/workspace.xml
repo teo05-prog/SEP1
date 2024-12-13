@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="changed location of purchase list" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="changed birds">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MyDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MyDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="34958" />
+    <option name="totalTimeSeconds" value="47400" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -19,14 +23,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Tutel &lt;jas.lewek@gmail.com&gt;" />
         <option value="Elizabeth1401 &lt;140805762+elizabeth1401@users.noreply.github.com&gt;" />
       </list>
     </option>
@@ -41,8 +46,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/teo05-prog/VIAPets.git",
-    "accountId": "db058943-8d80-4d0c-bb6f-2656c22ce853"
+    "url": "https://github.com/teo05-prog/VIAPets",
+    "accountId": "0f67eb8a-44ca-4392-88e2-8c6ca53db332"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -70,7 +75,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -78,6 +84,7 @@
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\Pets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\kennel" />
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\main" />
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
     </key>
@@ -257,21 +264,61 @@
     </task>
     <task id="LOCAL-00018" summary="added the guis">
       <option name="closed" value="true" />
-      <created>1733846215463</created>
+      <created>1733738149004</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1733846215463</updated>
+      <updated>1733738149004</updated>
     </task>
-    <task id="LOCAL-00019" summary="changed location of purchase list">
+    <task id="LOCAL-00019" summary="Finished the look of the guis">
       <option name="closed" value="true" />
-      <created>1734092253691</created>
+      <created>1733848658487</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1734092253691</updated>
+      <updated>1733848658487</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="finished guis">
+      <option name="closed" value="true" />
+      <created>1733848814879</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733848814879</updated>
+    </task>
+    <task id="LOCAL-00021" summary="more work on guis">
+      <option name="closed" value="true" />
+      <created>1733915203653</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733915203653</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Pets view and Bird(added specie)">
+      <option name="closed" value="true" />
+      <created>1734084143977</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1734084143977</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Pets view and Bird(added specie)">
+      <option name="closed" value="true" />
+      <created>1734084436577</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1734084436577</updated>
+    </task>
+    <task id="LOCAL-00024" summary="changed birds">
+      <option name="closed" value="true" />
+      <created>1734086829249</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1734086829249</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,9 +344,19 @@
     <MESSAGE value="added fileHandler" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
-    <MESSAGE value="purchase" />
+    <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes&#10;&#10;Took 31 minutes" />
     <MESSAGE value="added the guis" />
-    <MESSAGE value="changed location of purchase list" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed location of purchase list" />
+    <MESSAGE value="added the guis&#10;&#10;Took 1 hour 18 minutes" />
+    <MESSAGE value="Finished the look of the guis" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/customers/CustomersView.fxml&#10;#&#9;src/view/kennel/KennelView.fxml&#10;#&#9;src/view/purchases/PurchasesView.fxml&#10;&#10;Took 49 seconds" />
+    <MESSAGE value="finished guis" />
+    <MESSAGE value="customer fix&#10;&#10;Took 20 minutes" />
+    <MESSAGE value="more work on guis" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/PetsViewController.java" />
+    <MESSAGE value="Pets view and Bird(added specie)" />
+    <MESSAGE value="more work..." />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/BirdsViewController.java&#10;#&#9;src/view/pets/PetsView.fxml&#10;#&#9;src/view/pets/PetsViewController.java&#10;#&#9;src/view/pets/RodentsViewController.java&#10;&#10;Took 1 minute" />
+    <MESSAGE value="changed birds" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed birds" />
   </component>
 </project>

@@ -3,6 +3,7 @@ package view.customers;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.ModelManager;
 import view.ViewHandler;
@@ -17,15 +18,25 @@ public class MainCustomersViewController
   @FXML private Tab manageCustomersTab;
   @FXML private MenuItem exitMenuItem;
   @FXML private MenuItem aboutMenuItem;
+  @FXML private Button backButton;
 
+  private Scene scene;
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
   public void initialize()
   {
     modelManager = new ModelManager("customers.bin");
-    customersController.init(viewHandler, modelManager);
-    manageCustomersController.init(viewHandler, modelManager);
+    customersController.init(viewHandler, modelManager, scene);
+    manageCustomersController.init(viewHandler, modelManager, scene);
+  }
+
+  public void init(ViewHandler viewHandler, Scene scene,
+      ModelManager modelManager)
+  {
+    this.modelManager = modelManager;
+    this.viewHandler = viewHandler;
+    this.scene = scene;
   }
 
   public void reset()
@@ -33,9 +44,14 @@ public class MainCustomersViewController
 
   }
 
+  public Scene getScene()
+  {
+    return scene;
+  }
+
   public void tabChanged(Event event)
   {
-    if(customersTab.isSelected())
+    if (customersTab.isSelected())
     {
       customersController.reset();
     }
@@ -50,8 +66,8 @@ public class MainCustomersViewController
     if (e.getSource() == exitMenuItem)
     {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-          "Do you really want to exit the program?",
-          ButtonType.YES, ButtonType.NO);
+          "Do you really want to exit the program?", ButtonType.YES,
+          ButtonType.NO);
       alert.setTitle("Exit");
       alert.setHeaderText(null);
 
@@ -67,10 +83,14 @@ public class MainCustomersViewController
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
       alert.setTitle("About");
-      alert.setContentText("This is just a little program that demonstrates some of the GUI features in Java");
+      alert.setContentText(
+          "This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
     }
+    else if (e.getSource() == backButton)
+    {
+      viewHandler.openView("MainView");
+    }
   }
-
 
 }

@@ -7,7 +7,7 @@ public class Various extends Pet
   public Various(String name, int age, String colour, char gender,
       String comment, int price, String specie)
   {
-    super(name, age, colour, gender, comment);
+    super(name, age, colour, gender, comment, price);
     this.specie = specie;
   }
 
@@ -29,7 +29,8 @@ public class Various extends Pet
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Various: " + super.toString() + ", specie: " + specie + "/n";
+    return "model.Pets.model.Pets.Various: " + super.toString() + ", specie: "
+        + specie + "/n";
   }
 
   public boolean equals(Object obj)

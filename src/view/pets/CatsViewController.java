@@ -1,33 +1,33 @@
 package view.pets;
 
-import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.ModelManager;
-import model.Pets.Dog;
-import javafx.scene.control.TableView;
-import model.Pets.PetList;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.CharacterStringConverter;
+import javafx.util.converter.IntegerStringConverter;
+import model.ModelManager;
+import model.Pets.Cat;
+import model.Pets.PetList;
+import javafx.scene.control.TableView;
 import view.ViewHandler;
 
-public class DogsViewController
+public class CatsViewController
 {
-  @FXML private TableView<Dog> dogTable;
-  @FXML private TableColumn<Dog, String> nameColumn;
-  @FXML private TableColumn<Dog, Integer> ageColumn;
-  @FXML private TableColumn<Dog, String> colourColumn;
-  @FXML private TableColumn<Dog, Character> genderColumn;
-  @FXML private TableColumn<Dog, String> commentColumn;
-  @FXML private TableColumn<Dog, Integer> priceColumn;
-  @FXML private TableColumn<Dog, String> breedColumn;
-  @FXML private TableColumn<Dog, String> breederNameColumn;
+  @FXML private TableView<Cat> catTable;
+  @FXML private TableColumn<Cat, String> nameColumn;
+  @FXML private TableColumn<Cat, Integer> ageColumn;
+  @FXML private TableColumn<Cat, String> colourColumn;
+  @FXML private TableColumn<Cat, Character> genderColumn;
+  @FXML private TableColumn<Cat, String> commentColumn;
+  @FXML private TableColumn<Cat, Integer> priceColumn;
+  @FXML private TableColumn<Cat, String> breedColumn;
+  @FXML private TableColumn<Cat, String> breederNameColumn;
   private PetList petList;
-  private ObservableList<Dog> observableDogs;
+  private ObservableList<Cat> observableCats;
 
   private Scene scene;
   private ModelManager modelManager;
@@ -43,7 +43,7 @@ public class DogsViewController
 
   @FXML public void initialize()
   {
-    dogTable.setEditable(true);
+    catTable.setEditable(true);
     nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
     ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
     colourColumn.setCellValueFactory(new PropertyValueFactory<>("colour"));
@@ -56,22 +56,22 @@ public class DogsViewController
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setName(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setName(event.getNewValue());
     });
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setAge(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setAge(event.getNewValue());
     });
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setColour(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setColour(event.getNewValue());
     });
     genderColumn.setCellFactory(column -> {
-      TextFieldTableCell<Dog, Character> cell = new TextFieldTableCell<>(
+      TextFieldTableCell<Cat, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
       cell.textProperty().addListener((obs, oldText, newText) -> {
         if (newText.length() > 1)
@@ -83,47 +83,45 @@ public class DogsViewController
     });
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setComment(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setComment(event.getNewValue());
     });
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setPrice(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setPrice(event.getNewValue());
     });
     breedColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     breedColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setBreed(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setBreed(event.getNewValue());
     });
     breederNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     breederNameColumn.setOnEditCommit(event -> {
-      Dog dog = event.getRowValue();
-      dog.setBreederName(event.getNewValue());
+      Cat cat = event.getRowValue();
+      cat.setBreederName(event.getNewValue());
     });
 
     petList = new PetList();
+    petList.addPet(new Cat("Whiskers", 2, "Black", 'F', "Friendly cat", 400,
+        "British Shorthair", "Royal Paws Cattery"));
     petList.addPet(
-        new Dog("Buddy", 3, "Brown", 'M', "Friendly dog", 500, "Labrador",
-            "John Doe"));
-    petList.addPet(
-        new Dog("Lucy", 2, "Black", 'F', "Energetic dog", 450, "Poodle",
-            "Jane Smith"));
-
+        new Cat("Shadow", 4, "Black", 'F', "Cute cat", 450, "Maine Coon",
+            "Forest King Cattery"));
     updateTableDate();
   }
 
   private void updateTableDate()
   {
-    observableDogs = FXCollections.observableArrayList();
+    observableCats = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Dog)
+        if (petList.getPets(i) instanceof Cat)
         {
-          observableDogs.add((Dog) petList.getPets(i));
+          observableCats.add((Cat) petList.getPets(i));
         }
       }
       catch (Exception e)
@@ -131,22 +129,22 @@ public class DogsViewController
         e.printStackTrace();
       }
     }
-    dogTable.setItems(observableDogs);
+    catTable.setItems(observableCats);
   }
 
-  @FXML private void addDog()
+  @FXML private void addCat()
   {
-    Dog newDog = new Dog("New Dog", 1, "White", 'M', "Newly added", 300,
+    Cat newCat = new Cat("New Cat", 1, "Brown", 'M', "Newly added", 200,
         "Unknown", "Unknown");
-    petList.addPet(newDog);
+    petList.addPet(newCat);
   }
 
-  @FXML private void removeSelectedDog()
+  @FXML private void removeSelectedCat()
   {
-    Dog selectedDog = dogTable.getSelectionModel().getSelectedItem();
-    if (selectedDog != null)
+    Cat selectedCat = catTable.getSelectionModel().getSelectedItem();
+    if (selectedCat != null)
     {
-      petList.removePet(selectedDog);
+      petList.removePet(selectedCat);
       updateTableDate();
     }
   }
@@ -155,18 +153,18 @@ public class DogsViewController
   {
     if (modelManager != null)
     {
-      updateDog();
+      updateCat();
     }
   }
 
-  private void updateDog()
+  private void updateCat()
   {
-    dogTable.getItems().clear();
-    PetList dogs = modelManager.getAllDogs(petList);
+    catTable.getItems().clear();
+    PetList cats = modelManager.getAllCats(petList);
 
-    for (int i = 0; i < dogs.size(); i++)
+    for (int i = 0; i < cats.size(); i++)
     {
-      dogTable.getItems().add(dogs.getDog(i));
+      catTable.getItems().add(cats.getCat(i));
     }
   }
 }
