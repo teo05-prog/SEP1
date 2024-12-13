@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -14,6 +15,9 @@ import model.Pets.Cat;
 import model.Pets.PetList;
 import javafx.scene.control.TableView;
 import view.ViewHandler;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class CatsViewController
 {
@@ -28,6 +32,8 @@ public class CatsViewController
   @FXML private TableColumn<Cat, String> breederNameColumn;
   private PetList petList;
   private ObservableList<Cat> observableCats;
+  @FXML private Button addButton;
+  @FXML private Button removeButton;
 
   private Scene scene;
   private ModelManager modelManager;
@@ -39,6 +45,7 @@ public class CatsViewController
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.scene = scene;
+    this.petList = modelManager.getAllPets();
   }
 
   @FXML public void initialize()
@@ -103,16 +110,10 @@ public class CatsViewController
       cat.setBreederName(event.getNewValue());
     });
 
-    petList = new PetList();
-    petList.addPet(new Cat("Whiskers", 2, "Black", 'F', "Friendly cat", 400,
-        "British Shorthair", "Royal Paws Cattery"));
-    petList.addPet(
-        new Cat("Shadow", 4, "Black", 'F', "Cute cat", 450, "Maine Coon",
-            "Forest King Cattery"));
-    updateTableDate();
+    updateTableData();
   }
 
-  private void updateTableDate()
+  private void updateTableData()
   {
     observableCats = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)
@@ -132,21 +133,44 @@ public class CatsViewController
     catTable.setItems(observableCats);
   }
 
-  @FXML private void addCat()
+  @FXML public void handleActions(ActionEvent e)
   {
-    Cat newCat = new Cat("New Cat", 1, "Brown", 'M', "Newly added", 200,
-        "Unknown", "Unknown");
-    petList.addPet(newCat);
+    if (e.getSource() == addButton)
+    {
+      handleAddCat();
+    }
+    else if (e.getSource() == removeButton)
+    {
+      handleRemoveCat();
+    }
   }
 
-  @FXML private void removeSelectedCat()
+  private void handleAddCat()
+  {
+    Cat newCat = new Cat("", 1, "", 'M', "", 100, "", "");
+    observableCats.add(newCat);
+  }
+
+  private void handleRemoveCat()
   {
     Cat selectedCat = catTable.getSelectionModel().getSelectedItem();
     if (selectedCat != null)
     {
-      petList.removePet(selectedCat);
-      updateTableDate();
+      observableCats.remove(selectedCat);
     }
+    else
+    {
+      showAlert("No selection", "Please select a dog to remove.");
+    }
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   public void reset()

@@ -97,6 +97,29 @@ public class ModelManager
     saveCustomers(allCustomers);
   }
 
+  public PetList getAllPets()
+  {
+    PetList allPets = new PetList();
+
+    try
+    {
+      allPets = (PetList) MyFileHandler.readFromBinaryFile(fileName);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+    return allPets;
+  }
+
   public PetList getAllDogs(PetList petList)
   {
     PetList dogs = new PetList();

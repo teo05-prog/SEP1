@@ -32,19 +32,23 @@ public class PetsViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
+  public void initialize()
+  {
+    modelManager = new ModelManager("pets.bin");
+    dogsViewController.init(viewHandler, modelManager, scene);
+    catsViewController.init(viewHandler, modelManager, scene);
+    birdsViewController.init(viewHandler, modelManager, scene);
+    fishViewController.init(viewHandler, modelManager, scene);
+    rodentsViewController.init(viewHandler, modelManager, scene);
+    variousViewController.init(viewHandler, modelManager, scene);
+  }
+
   public void init(ViewHandler viewHandler, Scene scene,
       ModelManager modelManager)
   {
-    modelManager = new ModelManager("customers.bin");
     this.modelManager = modelManager;
     this.viewHandler = viewHandler;
     this.scene = scene;
-    dogsViewController.init(this.viewHandler, this.modelManager, scene);
-    catsViewController.init(this.viewHandler, this.modelManager, scene);
-    birdsViewController.init(this.viewHandler, this.modelManager, scene);
-    fishViewController.init(this.viewHandler, this.modelManager, scene);
-    rodentsViewController.init(this.viewHandler, this.modelManager, scene);
-    variousViewController.init(this.viewHandler, this.modelManager, scene);
   }
 
   public void reset()

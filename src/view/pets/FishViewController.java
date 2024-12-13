@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -14,6 +15,9 @@ import model.ModelManager;
 import model.Pets.Fish;
 import model.Pets.PetList;
 import view.ViewHandler;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class FishViewController
 {
@@ -29,6 +33,8 @@ public class FishViewController
   @FXML private TableColumn<Fish, String> specieColumn;
   private PetList petList;
   private ObservableList<Fish> observableFish;
+  @FXML private Button addButton;
+  @FXML private Button removeButton;
 
   private Scene scene;
   private ModelManager modelManager;
@@ -40,6 +46,7 @@ public class FishViewController
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.scene = scene;
+    this.petList = modelManager.getAllPets();
   }
 
   @FXML public void initialize()
@@ -109,10 +116,10 @@ public class FishViewController
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
     });
-    updateTableDate();
+    updateTableData();
   }
 
-  private void updateTableDate()
+  private void updateTableData()
   {
     observableFish = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)
@@ -130,6 +137,46 @@ public class FishViewController
       }
     }
     fishTable.setItems(observableFish);
+  }
+
+  @FXML public void handleActions(ActionEvent e)
+  {
+    if (e.getSource() == addButton)
+    {
+      handleAddFish();
+    }
+    else if (e.getSource() == removeButton)
+    {
+      handleRemoveFish();
+    }
+  }
+
+  private void handleAddFish()
+  {
+    Fish newFish = new Fish("", 1, "", 'M', "", 100, "", true, "");
+    observableFish.add(newFish);
+  }
+
+  private void handleRemoveFish()
+  {
+    Fish selectedFish = fishTable.getSelectionModel().getSelectedItem();
+    if (selectedFish != null)
+    {
+      observableFish.remove(selectedFish);
+    }
+    else
+    {
+      showAlert("No selection", "Please select a dog to remove.");
+    }
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   public void reset()

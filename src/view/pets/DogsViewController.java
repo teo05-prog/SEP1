@@ -15,6 +15,11 @@ import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.CharacterStringConverter;
 import view.ViewHandler;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
+import javafx.scene.control.Alert;
+
 public class DogsViewController
 {
   @FXML private TableView<Dog> dogTable;
@@ -28,6 +33,8 @@ public class DogsViewController
   @FXML private TableColumn<Dog, String> breederNameColumn;
   private PetList petList;
   private ObservableList<Dog> observableDogs;
+  @FXML private Button addButton;
+  @FXML private Button removeButton;
 
   private Scene scene;
   private ModelManager modelManager;
@@ -39,6 +46,7 @@ public class DogsViewController
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.scene = scene;
+    this.petList = modelManager.getAllPets();
   }
 
   @FXML public void initialize()
@@ -103,18 +111,10 @@ public class DogsViewController
       dog.setBreederName(event.getNewValue());
     });
 
-    petList = new PetList();
-    petList.addPet(
-        new Dog("Buddy", 3, "Brown", 'M', "Friendly dog", 500, "Labrador",
-            "John Doe"));
-    petList.addPet(
-        new Dog("Lucy", 2, "Black", 'F', "Energetic dog", 450, "Poodle",
-            "Jane Smith"));
-
-    updateTableDate();
+    updateTableData();
   }
 
-  private void updateTableDate()
+  private void updateTableData()
   {
     observableDogs = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)
@@ -134,21 +134,45 @@ public class DogsViewController
     dogTable.setItems(observableDogs);
   }
 
-  @FXML private void addDog()
+  @FXML public void handleActions(ActionEvent e)
   {
-    Dog newDog = new Dog("New Dog", 1, "White", 'M', "Newly added", 300,
-        "Unknown", "Unknown");
-    petList.addPet(newDog);
+    if (e.getSource() == addButton)
+    {
+      handleAddDog();
+    }
+    else if (e.getSource() == removeButton)
+    {
+      handleRemoveDog();
+    }
   }
 
-  @FXML private void removeSelectedDog()
+  private void handleAddDog()
+  {
+    Dog newDog = new Dog("New Dog", 1, "Black", 'M', "Mixed", 100, "Friendly",
+        "Unknown Breeder");
+    observableDogs.add(newDog);
+  }
+
+  private void handleRemoveDog()
   {
     Dog selectedDog = dogTable.getSelectionModel().getSelectedItem();
     if (selectedDog != null)
     {
-      petList.removePet(selectedDog);
-      updateTableDate();
+      observableDogs.remove(selectedDog);
     }
+    else
+    {
+      showAlert("No selection", "Please select a dog to remove.");
+    }
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   public void reset()
