@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,6 +16,9 @@ import model.Pets.Bird;
 import model.Pets.PetList;
 import view.ViewHandler;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
 public class BirdsViewController
 {
   @FXML private TableView<Bird> birdTable;
@@ -25,8 +29,11 @@ public class BirdsViewController
   @FXML private TableColumn<Bird, String> commentColumn;
   @FXML private TableColumn<Bird, Integer> priceColumn;
   @FXML private TableColumn<Bird, String> preferredFoodColumn;
+  @FXML private TableColumn<Bird, String> specieColumn;
   private PetList petList;
   private ObservableList<Bird> observableBirds;
+  @FXML private Button addButton;
+  @FXML private Button removeButton;
 
   private Scene scene;
   private ModelManager modelManager;
@@ -38,6 +45,7 @@ public class BirdsViewController
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.scene = scene;
+    this.petList = modelManager.getAllPets();
   }
 
   @FXML public void initialize()
@@ -51,6 +59,7 @@ public class BirdsViewController
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     preferredFoodColumn.setCellValueFactory(
         new PropertyValueFactory<>("preferredFood"));
+    specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
@@ -95,10 +104,55 @@ public class BirdsViewController
       Bird bird = event.getRowValue();
       bird.setPreferredFood(event.getNewValue());
     });
-    updateTableDate();
+    specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+    specieColumn.setOnEditCommit(event -> {
+      Bird bird = event.getRowValue();
+      bird.setSpecie(event.getNewValue());
+    });
+    updateTableData();
   }
 
-  private void updateTableDate()
+  @FXML public void handleActions(ActionEvent e)
+  {
+    if (e.getSource() == addButton)
+    {
+      handleAddBird();
+    }
+    else if (e.getSource() == removeButton)
+    {
+      handleRemoveBird();
+    }
+  }
+
+  private void handleAddBird()
+  {
+    Bird newBird = new Bird("", 1, "", 'F', "", 1, "", "");
+    observableBirds.add(newBird);
+  }
+
+  private void handleRemoveBird()
+  {
+    Bird selectedBird = birdTable.getSelectionModel().getSelectedItem();
+    if (selectedBird != null)
+    {
+      observableBirds.remove(selectedBird);
+    }
+    else
+    {
+      showAlert("No selection", "Please select a dog to remove.");
+    }
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
+  }
+
+  private void updateTableData()
   {
     observableBirds = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)

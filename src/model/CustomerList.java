@@ -68,4 +68,14 @@ public class CustomerList
     CustomerList other = (CustomerList) obj;
     return customers.equals(other.customers);
   }
+
+  public void add(Customer customer)
+  {
+    customers.add(customer);
+  }
+
+  public void remove(Customer customer)
+  {
+    customers.remove(customer);
+  }
 }

@@ -8,51 +8,51 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TableView fx:id="dogTable" editable="true" prefHeight="275.0" prefWidth="520.0">
-        <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="70.0" text="Name" />
-          <TableColumn fx:id="ageColumn" prefWidth="40.0" text="Age" />
-            <TableColumn fx:id="colourColumn" prefWidth="75.0" text="Colour" />
-            <TableColumn fx:id="genderColumn" prefWidth="50.0" text="Gender" />
-            <TableColumn fx:id="commentColumn" prefWidth="75.0" text="Comment" />
-            <TableColumn fx:id="priceColumn" prefWidth="50.0" text="Price" />
-            <TableColumn fx:id="breedColumn" prefWidth="75.0" text="Breed" />
-            <TableColumn fx:id="breederNameColumn" prefWidth="85.0" text="Breeder name" />
-        </columns>
-      </TableView>
-      <HBox prefHeight="100.0" prefWidth="600.0">
-         <children>
-            <VBox prefHeight="50.0" prefWidth="299.0">
-               <children>
-                  <Label prefHeight="17.0" prefWidth="161.0" text="Do you want to add a dog?">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Button fx:id="addDog" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Add">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Button>
-               </children>
-            </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0">
-               <children>
-                  <Label text="Do you want to remove a dog?">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Button fx:id="removeSelectedDog" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" text="Remove">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Button>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.pets.DogsViewController">
+    <children>
+        <TableView fx:id="dogTable" editable="true" prefHeight="275.0" prefWidth="520.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="90.0" text="Name" />
+                <TableColumn fx:id="ageColumn" prefWidth="40.0" text="Age" />
+                <TableColumn fx:id="colourColumn" prefWidth="60.0" text="Colour" />
+                <TableColumn fx:id="genderColumn" prefWidth="50.0" text="Gender" />
+                <TableColumn fx:id="breedColumn" prefWidth="70.0" text="Breed" />
+                <TableColumn fx:id="breederNameColumn" prefWidth="95.0" text="Breeder name" />
+                <TableColumn fx:id="commentColumn" prefWidth="75.0" text="Comment" />
+                <TableColumn fx:id="priceColumn" prefWidth="38.0" text="Price" />
+            </columns>
+        </TableView>
+        <HBox prefHeight="100.0" prefWidth="600.0">
+            <children>
+                <VBox prefHeight="50.0" prefWidth="299.0">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="161.0" text="Do you want to add a dog?">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="100.0" text="Add">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Do you want to remove a dog?">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                        <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="96.0" text="Remove">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
 </VBox>

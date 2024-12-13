@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="smol edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Bird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Fish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Rodent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Rodent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="49731" />
+    <option name="totalTimeSeconds" value="47490" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -51,8 +46,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets.git&quot;,
-    &quot;accountId&quot;: &quot;2e0811e5-fa88-4508-a354-5330c5a858e3&quot;
+    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets&quot;,
+    &quot;accountId&quot;: &quot;0f67eb8a-44ca-4392-88e2-8c6ca53db332&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -70,7 +65,6 @@
   &quot;keyToString&quot;: {
     &quot;Application.BookingTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.CustomerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileWriter.executor&quot;: &quot;Run&quot;,
     &quot;Application.StartApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -94,7 +88,7 @@
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BookingTest">
+  <component name="RunManager" selected="Application.StartApplication">
     <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookingTest" />
       <module name="VIAPets" />

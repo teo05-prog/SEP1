@@ -1,6 +1,7 @@
 package model;
 
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 
 public class MyDate
 {
@@ -50,30 +51,34 @@ public class MyDate
     return new MyDate(day, month, year);
   }
 
+  public static MyDate today()
+  {
+    LocalDate today = LocalDate.now();
+    return new MyDate(today.getDayOfMonth(), today.getMonthValue(),
+        today.getYear());
+  }
+
+  public int compareTo(MyDate other)
+  {
+    if (this.year != other.year)
+    {
+      return this.year - other.year;
+    }
+    if (this.month != other.month)
+    {
+      return this.month - other.month;
+    }
+    return this.day - other.day;
+  }
+
   public boolean isBefore(MyDate date)
   {
-    if (this.year < date.year)
-    {
-      if (this.month < date.month)
-      {
-        if (this.day < date.day)
-          return true;
-      }
-    }
-    return false;
+    return this.compareTo(date) < 0;
   }
 
   public boolean isAfter(MyDate date)
   {
-    if (this.year > date.year)
-    {
-      if (this.month > date.month)
-      {
-        if (this.day > date.day)
-          return true;
-      }
-    }
-    return false;
+    return this.compareTo(date) > 0;
   }
 
   public String toString()

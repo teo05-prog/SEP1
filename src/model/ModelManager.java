@@ -9,6 +9,7 @@ import java.io.IOException;
 public class ModelManager
 {
   private String fileName;
+  private double price;
 
   public ModelManager(String fileName)
   {
@@ -61,6 +62,29 @@ public class ModelManager
     return allBookings;
   }
 
+  public PurchaseList getAllPurchases()
+  {
+    PurchaseList allPurchases = new PurchaseList();
+
+    try
+    {
+       allPurchases = (PurchaseList) MyFileHandler.readFromBinaryFile(fileName);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+    return allPurchases;
+  }
+
   public void saveCustomers(CustomerList customers)
   {
     try
@@ -94,6 +118,29 @@ public class ModelManager
       }
     }
     saveCustomers(allCustomers);
+  }
+
+  public PetList getAllPets()
+  {
+    PetList allPets = new PetList();
+
+    try
+    {
+      allPets = (PetList) MyFileHandler.readFromBinaryFile(fileName);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+    return allPets;
   }
 
   public PetList getAllDogs(PetList petList)
@@ -228,4 +275,21 @@ public class ModelManager
     return various;
   }
 
+  public void updatePrice(double newPrice)
+  {
+    this.price = newPrice;
+    KennelList currentBookings = getAllBookings();
+    try
+    {
+      MyFileHandler.writeToBinaryFile(fileName, currentBookings);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
+  }
 }

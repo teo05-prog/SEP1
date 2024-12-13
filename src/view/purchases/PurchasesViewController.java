@@ -3,6 +3,7 @@ package view.purchases;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.ModelManager;
 import view.ViewHandler;
@@ -17,20 +18,35 @@ public class PurchasesViewController
   @FXML private Tab newPurchaseTab;
   @FXML private MenuItem exitMenuItem;
   @FXML private MenuItem aboutMenuItem;
+  @FXML private Button backButton;
 
+  private Scene scene;
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
   public void initialize()
   {
     modelManager = new ModelManager("purchases.bin");
-    allPurchasesViewController.init(viewHandler, modelManager);
+    allPurchasesViewController.init(viewHandler, modelManager, scene);
     newPurchasesViewController.init(viewHandler, modelManager);
+  }
+
+  public void init(ViewHandler viewHandler, Scene scene,
+      ModelManager modelManager)
+  {
+    this.modelManager = modelManager;
+    this.viewHandler = viewHandler;
+    this.scene = scene;
   }
 
   public void reset()
   {
 
+  }
+
+  public Scene getScene()
+  {
+    return scene;
   }
 
   public void tabChanged(Event event)
@@ -69,6 +85,10 @@ public class PurchasesViewController
       alert.setTitle("About");
       alert.setContentText("This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
+    }
+    else if (e.getSource() == backButton)
+    {
+      viewHandler.openView("MainView");
     }
   }
 

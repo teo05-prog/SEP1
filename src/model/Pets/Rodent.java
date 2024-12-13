@@ -5,12 +5,14 @@ import java.io.Serializable;
 public class Rodent extends Pet implements Serializable
 {
   private boolean doesItBite;
+  private String specie;
 
   public Rodent(String name, int age, String colour, char gender,
-      String comment, int price, boolean doesItBite)
+      String comment, int price, boolean doesItBite, String specie)
   {
     super(name, age, colour, gender, comment, price);
     this.doesItBite = doesItBite;
+    this.specie = specie;
   }
 
   public boolean getDoesItBite()
@@ -23,16 +25,26 @@ public class Rodent extends Pet implements Serializable
     this.doesItBite = doesItBite;
   }
 
+  public String getSpecie()
+  {
+    return specie;
+  }
+
+  public void setSpecie(String specie)
+  {
+    this.specie = specie;
+  }
+
   public Pet copy()
   {
     return new Rodent(super.getName(), getAge(), getColour(), getGender(),
-        getComment(), getPrice(), getDoesItBite());
+        getComment(), getPrice(), doesItBite, specie);
   }
 
   public String toString()
   {
     return "model.Pets.model.Pets.Rodent: " + super.toString()
-        + ", does it bite?: " + doesItBite + "/n";
+        + ", does it bite?: " + doesItBite + specie + "/n";
   }
 
   public boolean equals(Object obj)
@@ -47,6 +59,7 @@ public class Rodent extends Pet implements Serializable
         .equals(super.getColour()) && other.getGender() == super.getGender()
         && other.getComment().equals(super.getComment())
         && other.getPrice() == super.getPrice()
-        && other.getDoesItBite() == doesItBite;
+        && other.getDoesItBite() == doesItBite && other.getSpecie()
+        .equals(specie);
   }
 }
