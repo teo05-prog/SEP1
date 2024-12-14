@@ -118,4 +118,9 @@ public class Booking
         && startDate.equals(other.startDate) && endDate.equals(other.endDate)
         && pricePerDay == other.pricePerDay;
   }
+
+  public void setPetInfo(Pet petInfo)
+  {
+    this.petInfo = petInfo;
+  }
 }
