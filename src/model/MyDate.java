@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 
-public class MyDate
+public class MyDate implements Serializable
 {
   private int day;
   private int month;

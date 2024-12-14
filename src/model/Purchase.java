@@ -2,7 +2,9 @@ package model;
 
 import model.Pets.Pet;
 
-public class Purchase
+import java.io.Serializable;
+
+public class Purchase implements Serializable
 {
   private int discount;
   private MyDate date;
@@ -13,7 +15,7 @@ public class Purchase
   {
     this.discount = discount;
     this.pet = pet;
-    this.date = null;
+    this.date = MyDate.today();
     this.customer = customer;
   }
 
@@ -21,23 +23,28 @@ public class Purchase
   {
     return discount;
   }
+
   public void setDiscount(int discount)
   {
     this.discount = discount;
 
   }
+
   public MyDate getDateOfPurchase()
   {
     return date;
   }
+
   public void setDateOfPurchase(MyDate date)
   {
     this.date = date;
   }
+
   public String toString()
   {
-    return "Discount: " + discount + ", Date: " + date + ", model.Customer: " + customer + ", model.Pets.Pet: " + pet + "/n";
+    return "Customer: " + customer + ", Pet: " + pet + ", Discount: " + discount + "%" + " ,Date: " + date;
   }
+
   public boolean equals(Object obj)
   {
     if (obj == null || getClass() != obj.getClass())
@@ -50,6 +57,4 @@ public class Purchase
         other.customer.equals(customer) &&
         other.pet.equals(pet);
   }
-
-
 }

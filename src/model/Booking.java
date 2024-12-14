@@ -2,10 +2,11 @@ package model;
 
 import model.Pets.Pet;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Booking
+public class Booking implements Serializable
 {
   private Pet petInfo;
   private Customer customer;
@@ -27,6 +28,15 @@ public class Booking
     for (int i = 0; i < numberOfRooms; i++) {
       rooms[i] = new Room();
     }
+  }
+
+  public Booking(Customer customer, Pet petInfo, MyDate startDate, MyDate endDate)
+  {
+    this.customer = customer;
+    this.petInfo = petInfo;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.pricePerDay = 20;
   }
 
   public MyDate getStartDate()
@@ -105,8 +115,8 @@ public class Booking
 
   public String toString()
   {
-    return customer.getFirstName() + " " + customer.getLastName() + " Booked from: " + startDate + " Until: "
-        + endDate + " For: " + petInfo.getName();
+    return "Customer: " + customer.getFirstName() + " " + customer.getLastName() + ", Pet: " + petInfo.getName() + ", Booked from: " + startDate
+        + " Until: " + endDate;
   }
 
   public boolean equals(Object obj)
