@@ -9,12 +9,12 @@ public class Purchase
   private Customer customer;
   private Pet pet;
 
-  public Purchase(int discount, Pet pet)
+  public Purchase(Customer customer, Pet pet, int discount)
   {
     this.discount = discount;
     this.pet = pet;
     this.date = null;
-    this.customer = null;
+    this.customer = customer;
   }
 
   public int getDiscount()

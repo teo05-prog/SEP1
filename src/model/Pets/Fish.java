@@ -1,6 +1,8 @@
 package model.Pets;
 
-public class Fish extends Pet
+import java.io.Serializable;
+
+public class Fish extends Pet implements Serializable
 {
   private String water;
   private boolean predators;
