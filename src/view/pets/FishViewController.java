@@ -3,21 +3,23 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.util.converter.BooleanStringConverter;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
 import model.Pets.Fish;
 import model.Pets.PetList;
 import view.ViewHandler;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class FishViewController
 {
@@ -29,12 +31,10 @@ public class FishViewController
   @FXML private TableColumn<Fish, String> commentColumn;
   @FXML private TableColumn<Fish, Integer> priceColumn;
   @FXML private TableColumn<Fish, String> waterColumn;
-  @FXML private TableColumn<Fish, String> predatorColumn;
+  @FXML private TableColumn<Fish, Boolean> predatorColumn;
   @FXML private TableColumn<Fish, String> specieColumn;
   private PetList petList;
-  private ObservableList<Fish> observableFish;
-  @FXML private Button addButton;
-  @FXML private Button removeButton;
+  private ObservableList<Fish> observableFish = FXCollections.observableArrayList();
 
   private Scene scene;
   private ModelManager modelManager;
@@ -106,10 +106,11 @@ public class FishViewController
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
     });
-    predatorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+    predatorColumn.setCellFactory(
+        TextFieldTableCell.forTableColumn(new BooleanStringConverter()));
     predatorColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
-      fish.setComment(event.getNewValue());
+      fish.setComment(String.valueOf(event.getNewValue()));
     });
     specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     specieColumn.setOnEditCommit(event -> {
@@ -139,22 +140,32 @@ public class FishViewController
     fishTable.setItems(observableFish);
   }
 
-  @FXML public void handleActions(ActionEvent e)
+  @FXML private void handleAddFish()
   {
-    if (e.getSource() == addButton)
+    try
     {
-      handleAddFish();
-    }
-    else if (e.getSource() == removeButton)
-    {
-      handleRemoveFish();
-    }
-  }
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("AddFishView.fxml"));
+      Parent root = loader.load();
 
-  private void handleAddFish()
-  {
-    Fish newFish = new Fish("", 1, "", 'M', "", 100, "", true, "");
-    observableFish.add(newFish);
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Fish");
+      stage.setScene(new Scene(root));
+      stage.showAndWait();
+
+      AddFishViewController controller = loader.getController();
+      Fish newFish = controller.getNewFish();
+      if (newFish != null)
+      {
+        observableFish.add(newFish);
+      }
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
+    }
+
   }
 
   private void handleRemoveFish()

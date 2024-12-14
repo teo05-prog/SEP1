@@ -3,21 +3,22 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
 import model.Pets.Bird;
 import model.Pets.PetList;
 import view.ViewHandler;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class BirdsViewController
 {
@@ -31,9 +32,7 @@ public class BirdsViewController
   @FXML private TableColumn<Bird, String> preferredFoodColumn;
   @FXML private TableColumn<Bird, String> specieColumn;
   private PetList petList;
-  private ObservableList<Bird> observableBirds;
-  @FXML private Button addButton;
-  @FXML private Button removeButton;
+  private ObservableList<Bird> observableBirds = FXCollections.observableArrayList();
 
   private Scene scene;
   private ModelManager modelManager;
@@ -112,22 +111,32 @@ public class BirdsViewController
     updateTableData();
   }
 
-  @FXML public void handleActions(ActionEvent e)
+  @FXML private void handleAddBird()
   {
-    if (e.getSource() == addButton)
+    try
     {
-      handleAddBird();
-    }
-    else if (e.getSource() == removeButton)
-    {
-      handleRemoveBird();
-    }
-  }
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("AddBirdView.fxml"));
+      Parent root = loader.load();
 
-  private void handleAddBird()
-  {
-    Bird newBird = new Bird("", 1, "", 'F', "", 1, "", "");
-    observableBirds.add(newBird);
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Bird");
+      stage.setScene(new Scene(root));
+      stage.showAndWait();
+
+      AddBirdViewController controller = loader.getController();
+      Bird newBird = controller.getNewBird();
+      if (newBird != null)
+      {
+        observableBirds.add(newBird);
+      }
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
+    }
+
   }
 
   private void handleRemoveBird()
