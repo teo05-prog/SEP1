@@ -3,6 +3,8 @@ package view.pets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
@@ -10,15 +12,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
+import model.Pets.Fish;
 import model.Pets.PetList;
 import model.Pets.Rodent;
 import view.ViewHandler;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class RodentsViewController
 {
@@ -32,9 +34,7 @@ public class RodentsViewController
   @FXML private TableColumn<Rodent, Boolean> doesItBiteColumn;
   @FXML private TableColumn<Rodent, String> specieColumn;
   private PetList petList;
-  private ObservableList<Rodent> observableRodents;
-  @FXML private Button addButton;
-  @FXML private Button removeButton;
+  private ObservableList<Rodent> observableRodents = FXCollections.observableArrayList();
 
   private Scene scene;
   private ModelManager modelManager;
@@ -134,22 +134,32 @@ public class RodentsViewController
     rodentTable.setItems(observableRodents);
   }
 
-  @FXML public void handleActions(ActionEvent e)
+  @FXML private void handleAddRodent()
   {
-    if (e.getSource() == addButton)
+    try
     {
-      handleAddRodent();
-    }
-    else if (e.getSource() == removeButton)
-    {
-      handleRemoveRodent();
-    }
-  }
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("AddRodentView.fxml"));
+      Parent root = loader.load();
 
-  private void handleAddRodent()
-  {
-    Rodent newRodent = new Rodent("", 1, "", 'M', "", 100, true, "");
-    observableRodents.add(newRodent);
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Rodent");
+      stage.setScene(new Scene(root));
+      stage.showAndWait();
+
+      AddRodentViewController controller = loader.getController();
+      Rodent newRodent = controller.getNewRodent();
+      if (newRodent != null)
+      {
+        observableRodents.add(newRodent);
+      }
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
+    }
+
   }
 
   private void handleRemoveRodent()

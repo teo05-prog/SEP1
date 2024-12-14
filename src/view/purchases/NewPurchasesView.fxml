@@ -32,7 +32,7 @@
                 <Insets right="5.0" />
             </GridPane.margin>
         </ChoiceBox>
-        <ChoiceBox fx:id="discount" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+        <ChoiceBox fx:id="discount" maxWidth="104.0" minWidth="104.0" prefWidth="104.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <GridPane.margin>
                 <Insets right="5.0" />
             </GridPane.margin>
@@ -42,7 +42,7 @@
                 <Insets right="5.0" />
             </GridPane.margin>
         </TextField>
-        <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="priceField" maxWidth="99.2" prefWidth="99.2" GridPane.columnIndex="4" GridPane.rowIndex="3" />
         <TextField fx:id="emailOrPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <TextField fx:id="timeField" GridPane.columnIndex="2" />
         <DatePicker fx:id="purchaseDate" GridPane.columnIndex="1" />
@@ -63,13 +63,13 @@
             </GridPane.margin>
         </Label>
         <Label text="Pet Name:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-        <Label text="Discount:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-        <Label text="Price:" GridPane.rowIndex="3">
+        <Label text="Discount:" GridPane.rowIndex="3" />
+        <Label text="Price:" GridPane.columnIndex="3" GridPane.rowIndex="3">
             <GridPane.margin>
                 <Insets left="5.0" />
             </GridPane.margin>
         </Label>
-        <Button fx:id="addButton" mnemonicParsing="false" text="Add" GridPane.rowIndex="4" onAction="#handleActions">
+        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleActions" text="Add" GridPane.rowIndex="4">
             <GridPane.margin>
                 <Insets left="5.0" top="15.0" />
             </GridPane.margin>

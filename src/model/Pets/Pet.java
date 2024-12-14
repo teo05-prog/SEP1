@@ -1,6 +1,8 @@
 package model.Pets;
 
-public abstract class Pet
+import java.io.Serializable;
+
+public abstract class Pet implements Serializable
 {
   private String name;
   private int age;

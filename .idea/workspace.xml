@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="almost finished purchases">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added buttons to Pets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" afterDir="false" />
     </list>
@@ -18,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="48354" />
+    <option name="totalTimeSeconds" value="47737" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -34,7 +31,6 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="bianca0203 &lt;biancabuzdugan00@gmail.com&gt;" />
         <option value="Tutel &lt;jas.lewek@gmail.com&gt;" />
         <option value="Elizabeth1401 &lt;140805762+elizabeth1401@users.noreply.github.com&gt;" />
       </list>
@@ -48,12 +44,12 @@
     &quot;assignee&quot;: &quot;teo05-prog&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/teo05-prog/VIAPets",
-    "accountId": "0f67eb8a-44ca-4392-88e2-8c6ca53db332"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets.git&quot;,
+    &quot;accountId&quot;: &quot;a5749d79-1b8a-4c11-bc7c-8deef3e8c63a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -321,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734085000378</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added buttons to Pets">
+      <option name="closed" value="true" />
+      <created>1734096358520</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1734096358520</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -358,6 +362,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/PetsViewController.java" />
     <MESSAGE value="Pets view and Bird(added specie)" />
     <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pets view and Bird and Rodent(added specie)" />
+    <MESSAGE value="added buttons to Pets" />
+    <option name="LAST_COMMIT_MESSAGE" value="added buttons to Pets" />
   </component>
 </project>
