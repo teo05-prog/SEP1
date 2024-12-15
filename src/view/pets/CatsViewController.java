@@ -141,7 +141,7 @@ public class CatsViewController
       try
       {
         FXMLLoader loader = new FXMLLoader(
-            getClass().getResource("AddCatView.fxml"));
+            getClass().getResource("/view/pets/AddCatView.fxml"));
         Parent root = loader.load();
 
         Stage stage = new Stage();

@@ -145,7 +145,7 @@ public class FishViewController
     try
     {
       FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("AddFishView.fxml"));
+          getClass().getResource("/view/pets/AddFishView.fxml"));
       Parent root = loader.load();
 
       Stage stage = new Stage();

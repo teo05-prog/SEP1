@@ -4,8 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="something">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="kennel view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/main/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddBirdView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddBirdView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddCatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddCatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddFishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddFishView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddRodentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddRodentView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddVariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddVariousView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +118,7 @@
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FileReader">
+  <component name="RunManager" selected="Application.StartApplication">
     <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookingTest" />
       <module name="VIAPets" />
@@ -137,9 +167,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.FileReader" />
         <item itemvalue="Application.FileWriter" />
-        <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.BookingTest" />
       </list>
     </recent_temporary>
@@ -385,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734273435384</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="kennel view">
+      <option name="closed" value="true" />
+      <created>1734277981171</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1734277981171</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -400,7 +438,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding files" />
     <MESSAGE value="added Date class" />
     <MESSAGE value="formatting" />
     <MESSAGE value="booking class" />
@@ -425,7 +462,8 @@
     <MESSAGE value="added buttons to Pets" />
     <MESSAGE value="added extra windows for adding pets" />
     <MESSAGE value="something" />
-    <option name="LAST_COMMIT_MESSAGE" value="something" />
+    <MESSAGE value="kennel view" />
+    <option name="LAST_COMMIT_MESSAGE" value="kennel view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

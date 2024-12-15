@@ -125,4 +125,14 @@ public class PetsViewController
       viewHandler.openView("MainView");
     }
   }
+
+  public TabPane getTabPane()
+  {
+    return tabPane;
+  }
+
+  public void setTabPane(TabPane tabPane)
+  {
+    this.tabPane = tabPane;
+  }
 }

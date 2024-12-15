@@ -139,7 +139,7 @@ public class RodentsViewController
     try
     {
       FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("AddRodentView.fxml"));
+          getClass().getResource("/view/pets/AddRodentView.fxml"));
       Parent root = loader.load();
 
       Stage stage = new Stage();

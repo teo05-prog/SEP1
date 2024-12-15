@@ -127,7 +127,7 @@ public class VariousViewController
     try
     {
       FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("AddVariousView.fxml"));
+          getClass().getResource("/view/pets/AddVariousView.fxml"));
       Parent root = loader.load();
 
       Stage stage = new Stage();

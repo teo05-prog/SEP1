@@ -138,7 +138,7 @@ public class DogsViewController
     try
     {
       FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("AddDogView.fxml"));
+          getClass().getResource("/view/pets/AddDogView.fxml"));
       Parent root = loader.load();
 
       Stage stage = new Stage();

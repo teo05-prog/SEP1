@@ -116,7 +116,7 @@ public class BirdsViewController
     try
     {
       FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("AddBirdView.fxml"));
+          getClass().getResource("/view/pets/AddBirdView.fxml"));
       Parent root = loader.load();
 
       Stage stage = new Stage();

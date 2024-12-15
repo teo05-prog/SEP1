@@ -26,12 +26,12 @@ public class MainCustomersViewController
 
   public void initialize()
   {
-    ModelManager modelManager = new ModelManager(
-        "customers.bin",
-        "pets.bin",
-        "kennel.bin",
-        "purchases.bin"
-    );
+//    ModelManager modelManager = new ModelManager(
+//        "customers.bin",
+//        "pets.bin",
+//        "kennel.bin",
+//        "purchases.bin"
+//    );
     customersController.init(viewHandler, modelManager, scene);
     manageCustomersController.init(viewHandler, modelManager, scene);
   }
@@ -56,14 +56,17 @@ public class MainCustomersViewController
 
   public void tabChanged(Event event)
   {
-    if (customersTab.isSelected())
-    {
-      customersController.reset();
+    if (customersTab.isSelected()){
+      if (customersController != null) {
+        customersController.reset();
+      }
     }
-    else if (manageCustomersTab.isSelected())
-    {
-      manageCustomersController.reset();
+    else if (manageCustomersTab.isSelected()){
+      if (manageCustomersController != null) {
+        manageCustomersController.reset();
+      }
     }
+
   }
 
   public void handleActions(ActionEvent e)

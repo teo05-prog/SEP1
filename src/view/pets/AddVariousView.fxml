@@ -9,43 +9,45 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="500.0" prefWidth="320.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.pets.AddVariousViewController">
-    <children>
-        <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Add a New Various" />
-
-        <Label text="Name:" />
-        <TextField fx:id="nameField" />
-
-        <Label text="Age:" />
-        <TextField fx:id="ageField" />
-
-        <Label text="Colour:" />
-        <TextField fx:id="colorField" />
-
-        <Label text="Gender:" />
-        <ComboBox fx:id="genderComboBox">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="M" />
-                    <String fx:value="F" />
-                </FXCollections>
-            </items>
-        </ComboBox>
-
-
-        <Label text="Price:" />
-        <TextField fx:id="priceField" />
-
-        <Label text="Comment:" />
-        <TextField fx:id="commentField" />
-
-        <Label text="Specie:" />
-        <TextField fx:id="specieField" />
-
-        <Button  onAction="#handleSave" text="Save" />
-        <Button  onAction="#handleCancel" text="Cancel" />
-    </children>
+<VBox prefHeight="500.0" prefWidth="320.0" spacing="10.0"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.pets.AddVariousViewController">
     <padding>
-        <Insets bottom="10" left="10" right="10" top="10" />
+        <Insets bottom="10" left="10" right="10" top="10"/>
     </padding>
+    <Label style="-fx-font-size: 16; -fx-font-weight: bold;"
+           text="Add a New Various"/>
+
+    <Label text="Name:"/>
+    <TextField fx:id="nameField"/>
+
+    <Label text="Age:"/>
+    <TextField fx:id="ageField"/>
+
+    <Label text="Colour:"/>
+    <TextField fx:id="colorField"/>
+
+    <Label text="Gender:"/>
+    <ComboBox fx:id="genderComboBox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="M"/>
+                <String fx:value="F"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+
+    <Label text="Price:"/>
+    <TextField fx:id="priceField"/>
+
+    <Label text="Comment:"/>
+    <TextField fx:id="commentField"/>
+
+    <Label text="Specie:"/>
+    <TextField fx:id="specieField"/>
+
+    <Button onAction="#handleSave" text="Save"/>
+    <Button onAction="#handleCancel" text="Cancel"/>
 </VBox>
