@@ -23,11 +23,11 @@ public class MainViewController
   @FXML MenuItem exitMenuItem;
   @FXML MenuItem aboutMenuItem;
 
-  public void init(ViewHandler viewHandler, Scene scene,
+  public void init(ViewHandler viewHandler,
       ModelManager modelManager)
   {
     this.viewHandler = viewHandler;
-    this.scene = scene;
+//    this.scene = scene;
     this.modelManager = modelManager;
   }
 
