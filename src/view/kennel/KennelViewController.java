@@ -42,7 +42,7 @@ public class KennelViewController
   {
     this.modelManager = modelManager;
     this.viewHandler = viewHandler;
-    this.scene = scene;
+//    this.scene = scene;
   }
 
   public void reset()
