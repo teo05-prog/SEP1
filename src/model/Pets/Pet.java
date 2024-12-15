@@ -22,6 +22,15 @@ public abstract class Pet implements Serializable
     this.price = price;
   }
 
+  public Pet(String name, int age, String colour, char gender, String comment)
+  {
+    this.name = name;
+    this.age = age;
+    this.colour = colour;
+    this.gender = gender;
+    this.comment = comment;
+  }
+
   public String getName()
   {
     return name;
@@ -88,8 +97,14 @@ public abstract class Pet implements Serializable
 
   public String toString()
   {
-    return "Name: " + name + ", age: " + age + ", colour: " + colour
-        + " gender: " + gender + " comment: " + comment + "price: " + price;
+    if (price != 0)
+    {
+      return "name: " + name + ", age: " + age + ", colour: " + colour
+          + ", gender: " + gender + ", comment: " + comment + ", price: "
+          + price;
+    }
+    return "name: " + name + ", age: " + age + ", colour: " + colour
+        + ", gender: " + gender + ", comment: " + comment;
   }
 }
 

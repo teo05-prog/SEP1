@@ -29,8 +29,8 @@ public class Various extends Pet
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Various: " + super.toString() + ", specie: "
-        + specie + "/n";
+    return "Various: " + super.toString() + ", specie: "
+        + specie;
   }
 
   public boolean equals(Object obj)

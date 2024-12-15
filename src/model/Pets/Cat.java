@@ -15,6 +15,14 @@ public class Cat extends Pet implements Serializable
     this.breederName = breederName;
   }
 
+  public Cat(String name, int age, String colour, char gender, String comment,
+      String breed, String breederName)
+  {
+    super(name, age, colour, gender, comment);
+    this.breed = breed;
+    this.breederName = breederName;
+  }
+
   public String getBreed()
   {
     return breed;
@@ -43,8 +51,8 @@ public class Cat extends Pet implements Serializable
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Cat: " + super.toString() + ", breed: "
-        + breed + ", breeder name: " + breederName + "/n";
+    return "Cat: " + super.toString() + ", breed: " + breed
+        + ", breeder name: " + breederName;
   }
 
   public boolean equals(Object obj)
