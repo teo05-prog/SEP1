@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="some debugging">
-      <change afterPath="$PROJECT_DIR$/purchases.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers.bin" beforeDir="false" afterPath="$PROJECT_DIR$/customers.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets.bin" beforeDir="false" afterPath="$PROJECT_DIR$/pets.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/KennelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/KennelList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="55804" />
+    <option name="totalTimeSeconds" value="56162" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -56,6 +49,9 @@
     &quot;accountId&quot;: &quot;0f67eb8a-44ca-4392-88e2-8c6ca53db332&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -96,7 +92,7 @@
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FileReader">
+  <component name="RunManager" selected="Application.StartApplication">
     <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookingTest" />
       <module name="VIAPets" />
@@ -145,9 +141,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.FileReader" />
         <item itemvalue="Application.FileWriter" />
-        <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.BookingTest" />
       </list>
     </recent_temporary>
@@ -385,7 +381,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734273403312</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="some debugging">
+      <option name="closed" value="true" />
+      <created>1734277212408</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1734277212408</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
