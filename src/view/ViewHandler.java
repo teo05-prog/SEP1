@@ -42,6 +42,9 @@ public class ViewHandler
       Parent root = loader.load();
       Scene scene = new Scene(root);
 
+      MainViewController controller= loader.getController();
+      controller.init(this,modelManager,scene);
+
       stage.setScene(scene);
       stage.setTitle("VIAPets App");
       stage.show();
@@ -135,43 +138,148 @@ public class ViewHandler
 
   public void openView(String id)
   {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main/MainView.fxml"));
+    try
+    {
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      MainViewController controller = loader.getController();
+      controller.init(this, modelManager,scene);
+      stage.setScene(scene);
+      stage.show();
+    }catch (IOException e) {
+      e.printStackTrace();
+    }
+
     if(stage.getScene() == null)
     {
       System.err.println("Error: Scene is null. Cannot open view " + id);
       return;
     }
-    switch (id)
+//    switch (id)
+//    {
+//      case "MainView":
+//        stage.setScene(mainViewController.getScene());
+//        mainViewController.reset();
+//        break;
+//      case "CustomersView":
+//        stage.setScene(customersViewController.getScene());
+//        customersViewController.reset();
+//        break;
+//      case "PetsView":
+//        stage.setScene(petsViewController.getScene());
+//        petsViewController.reset();
+//        break;
+//      case "KennelView":
+//        stage.setScene(kennelViewController.getScene());
+//        kennelViewController.reset();
+//        break;
+//      case "PurchasesView":
+//        stage.setScene(purchasesViewController.getScene());
+//        purchasesViewController.reset();
+//        break;
+    }
+  public void openKennelView(String id)
+  {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/kennel/KennelView.fxml"));
+    try
     {
-      case "MainView":
-        stage.setScene(mainViewController.getScene());
-        mainViewController.reset();
-        break;
-      case "CustomersView":
-        stage.setScene(customersViewController.getScene());
-        customersViewController.reset();
-        break;
-      case "PetsView":
-        stage.setScene(petsViewController.getScene());
-        petsViewController.reset();
-        break;
-      case "KennelView":
-        stage.setScene(kennelViewController.getScene());
-        kennelViewController.reset();
-        break;
-      case "PurchasesView":
-        stage.setScene(purchasesViewController.getScene());
-        purchasesViewController.reset();
-        break;
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      MainViewController controller = loader.getController();
+      controller.init(this, modelManager, scene);
+      stage.setScene(scene);
+      stage.show();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
     }
 
-    String title = "";
-
-    if (stage.getScene().getRoot().getUserData() != null)
+    if (stage.getScene() == null)
     {
-      title = stage.getScene().getRoot().getUserData().toString();
+      System.err.println("Error: Scene is null. Cannot open view " + id);
+      return;
     }
-
-    stage.setTitle(title);
-    stage.show();
   }
+  public void openPurchasesView(String id)
+  {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/purchases/PurchasesView.fxml"));
+    try
+    {
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      MainViewController controller = loader.getController();
+      controller.init(this, modelManager, scene);
+      stage.setScene(scene);
+      stage.show();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+
+    if (stage.getScene() == null)
+    {
+      System.err.println("Error: Scene is null. Cannot open view " + id);
+      return;
+    }
+  }
+  public void openCustomersView(String id)
+  {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/customers/MainCustomersView.fxml"));
+    try
+    {
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      MainViewController controller = loader.getController();
+      controller.init(this, modelManager, scene);
+      stage.setScene(scene);
+      stage.show();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+
+    if (stage.getScene() == null)
+    {
+      System.err.println("Error: Scene is null. Cannot open view " + id);
+      return;
+    }
+  }
+  public void openPetsView(String id)
+  {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/pets/PetsView.fxml"));
+    try
+    {
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      MainViewController controller = loader.getController();
+      controller.init(this, modelManager, scene);
+      stage.setScene(scene);
+      stage.show();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+
+    if (stage.getScene() == null)
+    {
+      System.err.println("Error: Scene is null. Cannot open view " + id);
+      return;
+    }
+  }
+//
+//    String title = "";
+//
+//    if (stage.getScene().getRoot().getUserData() != null)
+//    {
+//      title = stage.getScene().getRoot().getUserData().toString();
+//    }
+//
+//    stage.setTitle(title);
+//    stage.show();
+//  }
 }

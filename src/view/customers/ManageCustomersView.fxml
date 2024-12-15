@@ -14,115 +14,121 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.customers.ManageCustomersViewController">
-    <children>
-        <HBox maxWidth="510.0" prefHeight="150.0" prefWidth="200.0" spacing="20.0">
-            <children>
-                <GridPane prefWidth="250.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="69.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="181.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <Label text="First Name">
-                            <GridPane.margin>
-                                <Insets left="5.0" top="5.0" />
-                            </GridPane.margin>
-                        </Label>
-                        <Label text="Last Name" GridPane.rowIndex="1">
-                            <GridPane.margin>
-                                <Insets left="5.0" top="5.0" />
-                            </GridPane.margin>
-                        </Label>
-                        <Label text="Phone No." GridPane.rowIndex="2">
-                            <GridPane.margin>
-                                <Insets left="5.0" top="5.0" />
-                            </GridPane.margin>
-                        </Label>
-                        <Label text="E-mail" GridPane.rowIndex="3">
-                            <GridPane.margin>
-                                <Insets left="5.0" top="5.0" />
-                            </GridPane.margin>
-                        </Label>
-                        <TextField fx:id="firstNameField" GridPane.columnIndex="1">
-                            <GridPane.margin>
-                                <Insets top="5.0" />
-                            </GridPane.margin>
-                        </TextField>
-                        <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <GridPane.margin>
-                                <Insets top="5.0" />
-                            </GridPane.margin>
-                        </TextField>
-                        <TextField fx:id="phoneNoField" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                            <GridPane.margin>
-                                <Insets top="5.0" />
-                            </GridPane.margin>
-                        </TextField>
-                        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                            <GridPane.margin>
-                                <Insets top="5.0" />
-                            </GridPane.margin>
-                        </TextField>
-                    </children>
-                </GridPane>
-                <VBox prefHeight="200.0" prefWidth="100.0">
-                    <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" text="Add" onAction="#handleActions">
-                            <padding>
-                                <Insets bottom="4.0" left="17.5" right="17.5" top="4.0" />
-                            </padding>
-                            <VBox.margin>
-                                <Insets top="2.0" />
-                            </VBox.margin>
-                        </Button>
-                        <Button fx:id="removeButton" mnemonicParsing="false" text="Remove" onAction="#handleActions">
-                            <VBox.margin>
-                                <Insets top="8.0" />
-                            </VBox.margin>
-                        </Button>
-                        <Button fx:id="updateButton" mnemonicParsing="false" text="Save">
-                            <VBox.margin>
-                                <Insets top="9.0" />
-                            </VBox.margin>
-                            <padding>
-                                <Insets bottom="4.0" left="17.4" right="17.4" top="4.0" />
-                            </padding>
-                        </Button>
-                    </children>
-                    <HBox.margin>
-                        <Insets top="5.0" />
-                    </HBox.margin>
-                </VBox>
-            </children>
-        </HBox>
-        <FlowPane prefHeight="170.0" prefWidth="500.0">
-            <children>
-                <ScrollPane fitToWidth="true" prefHeight="145.0" prefWidth="510.0">
-                    <FlowPane.margin>
-                        <Insets left="5.0" />
-                    </FlowPane.margin>
-                    <content>
-                        <TableView prefHeight="150.0" prefWidth="520.0">
-                            <columns>
-                                <TableColumn prefWidth="110.0" text="First Name" />
-                                <TableColumn prefWidth="110.0" text="Last Name" />
-                                <TableColumn prefWidth="110.0" text="Phone No." />
-                                <TableColumn prefWidth="170.0" text="E-mail" />
-                            </columns>
-                        </TableView>
-                    </content>
-                </ScrollPane>
-            </children>
-            <VBox.margin>
-                <Insets top="-15.0" />
-            </VBox.margin>
-        </FlowPane>
-    </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0" spacing="20.0"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.customers.ManageCustomersViewController">
+    <HBox maxWidth="510.0" prefHeight="150.0" prefWidth="200.0" spacing="20.0">
+        <GridPane prefWidth="250.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0"
+                                   minWidth="10.0" prefWidth="69.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0"
+                                   minWidth="10.0" prefWidth="181.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Label text="First Name">
+                <GridPane.margin>
+                    <Insets left="5.0" top="5.0"/>
+                </GridPane.margin>
+            </Label>
+            <Label text="Last Name" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="5.0" top="5.0"/>
+                </GridPane.margin>
+            </Label>
+            <Label text="Phone No." GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="5.0" top="5.0"/>
+                </GridPane.margin>
+            </Label>
+            <Label text="E-mail" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets left="5.0" top="5.0"/>
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="firstNameField" GridPane.columnIndex="1">
+                <GridPane.margin>
+                    <Insets top="5.0"/>
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="lastNameField" GridPane.columnIndex="1"
+                       GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets top="5.0"/>
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="phoneNoField" GridPane.columnIndex="1"
+                       GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets top="5.0"/>
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="emailField" GridPane.columnIndex="1"
+                       GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets top="5.0"/>
+                </GridPane.margin>
+            </TextField>
+        </GridPane>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <HBox.margin>
+                <Insets top="5.0"/>
+            </HBox.margin>
+            <Button fx:id="addButton" mnemonicParsing="false" text="Add"
+                    onAction="#handleActions">
+                <padding>
+                    <Insets bottom="4.0" left="17.5" right="17.5"
+                            top="4.0"/>
+                </padding>
+                <VBox.margin>
+                    <Insets top="2.0"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="removeButton" mnemonicParsing="false"
+                    text="Remove" onAction="#handleActions">
+                <VBox.margin>
+                    <Insets top="8.0"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="updateButton" mnemonicParsing="false"
+                    text="Save">
+                <VBox.margin>
+                    <Insets top="9.0"/>
+                </VBox.margin>
+                <padding>
+                    <Insets bottom="4.0" left="17.4" right="17.4"
+                            top="4.0"/>
+                </padding>
+            </Button>
+        </VBox>
+    </HBox>
+    <FlowPane prefHeight="170.0" prefWidth="500.0">
+        <VBox.margin>
+            <Insets top="-15.0"/>
+        </VBox.margin>
+        <ScrollPane fitToWidth="true" prefHeight="145.0" prefWidth="510.0">
+            <FlowPane.margin>
+                <Insets left="5.0"/>
+            </FlowPane.margin>
+            <TableView prefHeight="150.0" prefWidth="520.0">
+                <columns>
+                    <TableColumn prefWidth="110.0" text="First Name"/>
+                    <TableColumn prefWidth="110.0" text="Last Name"/>
+                    <TableColumn prefWidth="110.0" text="Phone No."/>
+                    <TableColumn prefWidth="170.0" text="E-mail"/>
+                </columns>
+            </TableView>
+        </ScrollPane>
+    </FlowPane>
 </VBox>

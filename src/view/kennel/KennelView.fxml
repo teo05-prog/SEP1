@@ -14,54 +14,38 @@
       xmlns="http://javafx.com/javafx/23.0.1"
       fx:controller="view.kennel.KennelViewController"
       xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <MenuBar>
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem fx:id="changePriceMenuItem"
-                                  mnemonicParsing="false"
-                                  onAction="#handleActions"
-                                  text="Change Price"/>
-                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
-                                  onAction="#handleActions" text="Exit"/>
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="About">
-                    <items>
-                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
-                                  onAction="#handleActions" text="About"/>
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
-                 tabClosingPolicy="UNAVAILABLE">
-            <tabs>
-                <Tab text="Current">
-                    <content>
-                        <fx:include fx:id="currentTab"
-                                    source="CurrentView.fxml"/>
-                    </content>
-                </Tab>
-                <Tab text="Past">
-                    <content>
-                        <fx:include fx:id="pastTab" source="PastView.fxml"/>
-                    </content>
-                </Tab>
-                <Tab text="New">
-                    <content>
-                        <fx:include fx:id="newBookingTab"
-                                    source="NewBookingView.fxml"/>
-                    </content>
-                </Tab>
-            </tabs>
-        </TabPane>
-        <Button fx:id="backButton" mnemonicParsing="false"
-                onAction="#handleActions" text="Back">
-            <VBox.margin>
-                <Insets left="5.0" top="5.0"/>
-            </VBox.margin>
-        </Button>
-    </children>
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="changePriceMenuItem"
+                      mnemonicParsing="false"
+                      onAction="#handleActions"
+                      text="Change Price"/>
+            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
+                      onAction="#handleActions" text="Exit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="About">
+            <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
+                      onAction="#handleActions" text="About"/>
+        </Menu>
+    </MenuBar>
+    <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
+             tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Current">
+            <fx:include fx:id="currentTab"
+                        source="/view/kennel/CurrentView.fxml"/>
+        </Tab>
+        <Tab text="Past">
+            <fx:include fx:id="pastTab" source="/view/kennel/PastView.fxml"/>
+        </Tab>
+        <Tab text="New">
+            <fx:include fx:id="newBookingTab"
+                        source="/view/kennel/NewBookingView.fxml"/>
+        </Tab>
+    </TabPane>
+    <Button fx:id="backButton" mnemonicParsing="false"
+            onAction="#handleActions" text="Back">
+        <VBox.margin>
+            <Insets left="5.0" top="5.0"/>
+        </VBox.margin>
+    </Button>
 </VBox>

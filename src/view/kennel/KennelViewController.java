@@ -99,7 +99,7 @@ public class KennelViewController
     }
     else if (e.getSource() == backButton)
     {
-      viewHandler.openView("MainView");
+      viewHandler.openKennelView("KennelView");
     }
     else if (e.getSource() == changePriceMenuItem)
     {

@@ -14,42 +14,32 @@
       xmlns="http://javafx.com/javafx/23.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="view.purchases.PurchasesViewController">
-    <children>
-        <MenuBar>
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
-                                  onAction="#handleActions" text="Exit"/>
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="About">
-                    <items>
-                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
-                                  onAction="#handleActions" text="About"/>
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
-                 tabClosingPolicy="UNAVAILABLE">
-            <tabs>
-                <Tab fx:id="allPurchasesTab" onSelectionChanged="#tabChanged" text="Purchases">
-                    <content>
-                        <fx:include fx:id="allPurchasesView" source="AllPurchasesView.fxml"/>
-                    </content>
-                </Tab>
-                <Tab fx:id="newPurchaseTab" onSelectionChanged="#tabChanged" text="New">
-                    <content>
-                        <fx:include fx:id="newPurchasesView" source="NewPurchasesView.fxml"/>
-                    </content>
-                </Tab>
-            </tabs>
-        </TabPane>
-        <Button fx:id="backButton" mnemonicParsing="false" text="Back">
-            <VBox.margin>
-                <Insets left="5.0" top="5.0"/>
-            </VBox.margin>
-        </Button>
-    </children>
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
+                      onAction="#handleActions" text="Exit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="About">
+            <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
+                      onAction="#handleActions" text="About"/>
+        </Menu>
+    </MenuBar>
+    <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
+             tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="allPurchasesTab" onSelectionChanged="#tabChanged"
+             text="Purchases">
+            <fx:include fx:id="allPurchasesView"
+                        source="/view/purchases/AllPurchasesView.fxml"/>
+        </Tab>
+        <Tab fx:id="newPurchaseTab" onSelectionChanged="#tabChanged"
+             text="New">
+            <fx:include fx:id="newPurchasesView"
+                        source="/view/purchases/NewPurchasesView.fxml"/>
+        </Tab>
+    </TabPane>
+    <Button fx:id="backButton" mnemonicParsing="false" text="Back">
+        <VBox.margin>
+            <Insets left="5.0" top="5.0"/>
+        </VBox.margin>
+    </Button>
 </VBox>

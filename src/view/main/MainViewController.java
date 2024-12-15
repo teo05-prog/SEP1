@@ -23,45 +23,35 @@ public class MainViewController
   @FXML MenuItem exitMenuItem;
   @FXML MenuItem aboutMenuItem;
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager, Scene scene)
   {
     this.viewHandler = viewHandler;
-//    this.scene = scene;
-      this.modelManager = modelManager;
-  }
-
-  public void reset()
-  {
-
-  }
-
-  public Scene getScene()
-  {
-    return scene;
+    this.modelManager = modelManager;
+    this.scene=scene;
   }
 
   public void handleActions(ActionEvent e)
   {
-    if(viewHandler == null)
+    if (viewHandler == null)
     {
       System.err.println("ViewHandler is not initialized!");
       return;
     }
     if (e.getSource() == customersButton)
     {
-      viewHandler.openView("CustomersView");
+      viewHandler.openCustomersView("CustomersView");
     }
     else if (e.getSource() == petsButton)
     {
-      viewHandler.openView("PetsView");
+      viewHandler.openPetsView("PetsView");
     }
     else if (e.getSource() == kennelButton)
     {
-      viewHandler.openView("KennelView");
+      viewHandler.openKennelView("KennelView");
     }
     else if (e.getSource() == purchasesButton)
     {
-      viewHandler.openView("PurchasesView");
+      viewHandler.openPurchasesView("PurchasesView");
     }
     else if (e.getSource() == exitMenuItem)
     {
@@ -83,10 +73,24 @@ public class MainViewController
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
       alert.setTitle("About");
-      alert.setContentText("This is just a little program that demonstrates some of the GUI features in Java");
+      alert.setContentText(
+          "This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
     }
   }
+  public void setScene(Scene scene)
+  {
+    this.scene = scene;
+  }
 
+  public void reset()
+  {
+
+  }
+
+  public Scene getScene()
+  {
+    return scene;
+  }
 
 }

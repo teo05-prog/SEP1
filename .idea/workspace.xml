@@ -4,8 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="booking now works">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="kennel view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/main/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddBirdView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddBirdView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddCatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddCatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddFishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddFishView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddRodentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddRodentView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddVariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddVariousView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/FishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +43,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="57606" />
+    <option name="totalTimeSeconds" value="49902" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -48,9 +78,6 @@
     &quot;accountId&quot;: &quot;0f67eb8a-44ca-4392-88e2-8c6ca53db332&quot;
   }
 }</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -62,25 +89,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BookingTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileReader.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileWriter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StartApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yuki/Downloads/StudentManagementGUIFXML3&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BookingTest.executor": "Run",
+    "Application.CustomerTest.executor": "Run",
+    "Application.FileReader.executor": "Run",
+    "Application.FileWriter.executor": "Run",
+    "Application.StartApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging master",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Yuki/Downloads/StudentManagementGUIFXML3",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\Pets" />
@@ -364,37 +391,37 @@
       <option name="project" value="LOCAL" />
       <updated>1734183919009</updated>
     </task>
-    <task id="LOCAL-00027" summary="main one works">
+    <task id="LOCAL-00027" summary="something">
       <option name="closed" value="true" />
-      <created>1734270240996</created>
+      <created>1734266446877</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1734270240996</updated>
+      <updated>1734266446877</updated>
     </task>
-    <task id="LOCAL-00028" summary="some debugging">
+    <task id="LOCAL-00028" summary="something">
       <option name="closed" value="true" />
-      <created>1734273403312</created>
+      <created>1734270543621</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1734273403312</updated>
+      <updated>1734270543621</updated>
     </task>
-    <task id="LOCAL-00029" summary="some debugging">
+    <task id="LOCAL-00029" summary="something">
       <option name="closed" value="true" />
-      <created>1734277212408</created>
+      <created>1734273435384</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1734277212408</updated>
+      <updated>1734273435384</updated>
     </task>
-    <task id="LOCAL-00030" summary="booking now works">
+    <task id="LOCAL-00030" summary="kennel view">
       <option name="closed" value="true" />
-      <created>1734277673667</created>
+      <created>1734277981171</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1734277673667</updated>
+      <updated>1734277981171</updated>
     </task>
     <option name="localTasksCounter" value="31" />
     <servers />
@@ -411,6 +438,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="formatting" />
+    <MESSAGE value="booking class" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
     <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
     <MESSAGE value="Made it work, YAY" />
@@ -430,12 +460,19 @@
     <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
     <MESSAGE value="added buttons to Pets" />
     <MESSAGE value="added extra windows for adding pets" />
-    <MESSAGE value="idk" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 10 seconds" />
-    <MESSAGE value="main one works&#10;&#10;Took 1 hour 2 minutes" />
-    <MESSAGE value="main one works" />
-    <MESSAGE value="some debugging" />
+    <MESSAGE value="something" />
+    <MESSAGE value="kennel view" />
     <MESSAGE value="booking now works" />
     <option name="LAST_COMMIT_MESSAGE" value="booking now works" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
