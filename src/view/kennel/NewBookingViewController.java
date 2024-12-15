@@ -127,7 +127,8 @@ public class NewBookingViewController
       return null;
     }
 
-    Booking newBooking = new Booking();
+    int numberOfRooms = 10;
+    Booking newBooking = new Booking(numberOfRooms);
     newBooking.setStartDate(bookingStartDate);
     newBooking.setEndDate(bookingEndDate);
     newBooking.setCustomer(customer);

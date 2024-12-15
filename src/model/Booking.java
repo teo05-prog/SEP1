@@ -87,11 +87,6 @@ public class Booking
         return true;
     }
     return false;
-    //we need to go through each one of the 10 rooms in the kennel
-    //we need to check the availability during the specified time
-    //we need to return false if we find everything occupied
-    //we need to keep searching through all 10 rooms even if the first ones are occupied
-    //we need to return true only if we found a free room and mark the room as occupied
   }
 
   public void bookTo(Customer customer, Pet petInfo, MyDate startDate,
@@ -122,5 +117,10 @@ public class Booking
     return petInfo.equals(other.petInfo) && customer.equals(other.customer)
         && startDate.equals(other.startDate) && endDate.equals(other.endDate)
         && pricePerDay == other.pricePerDay;
+  }
+
+  public void setPetInfo(Pet petInfo)
+  {
+    this.petInfo = petInfo;
   }
 }

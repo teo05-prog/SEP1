@@ -29,15 +29,15 @@ public class FileWriter
     Pet pet8 = new Cat("Tiger", 4, "Orange", 'm', "Curious", 0, "Savannah", "Savannah Breeders");
     Pet pet9 = new Cat("Smokey", 5, "Grey", 'm', "Lazy", 0, "Chartreux", "Chartreux Cats");
     Pet pet10 = new Cat("Luna", 1, "White", 'f', "Independent", 17500, "Ragdoll", "Ragdoll Royalty");
-    Pet pet11 = new Bird("Polly", 2, "Green", 'f', "Talkative", 0, "Seeds");
-    Pet pet12 = new Bird("Apollo", 2, "Gray", 'm', "eloquent", 0, "pistachios");
-    Pet pet13 = new Bird("Zeus", 1, "Yellow", 'm', "Loud", 1600, "Sunflower seeds");
+    Pet pet11 = new Bird("Polly", 2, "Green", 'f', "Talkative", 0, "Seeds", "Budgerigar");
+    Pet pet12 = new Bird("Apollo", 2, "Gray", 'm', "eloquent", 0, "pistachios", "Parrot");
+    Pet pet13 = new Bird("Zeus", 1, "Yellow", 'm', "Loud", 1600, "Sunflower seeds", "Budgerigar");
     Pet pet14 = new Fish("Bubbles", 1, "Orange", 'm', "Shy", 80, "Freshwater", false, "Goldfish");
     Pet pet15 = new Fish("Nemo", 1, "Orange", 'm', "Adventurous", 160, "Saltwater", true, "Clownfish");
     Pet pet16 = new Fish("Dory", 1, "Blue", 'f', "Forgetful", 450, "Saltwater", true, "Regal Tang");
-    Pet pet17 = new Rodent("Nibbles", 1, "Grey", 'm', "Curious", 200, false);
-    Pet pet18 = new Rodent("Squeaky", 1, "White", 'f', "Loud", 180, true);
-    Pet pet19 = new Rodent("Fluffy", 1, "Brown", 'f', "Soft", 220, false);
+    Pet pet17 = new Rodent("Nibbles", 1, "Grey", 'm', "Curious", 200, false, "Hamster");
+    Pet pet18 = new Rodent("Squeaky", 1, "White", 'f', "Loud", 180, true, "Rat");
+    Pet pet19 = new Rodent("Fluffy", 1, "Brown", 'f', "Soft", 220, false, "Chinchilla");
     Pet pet20 = new Various("Maturin", 100, "Green", 'm', "Wise", 500, "Turtle");
 
     try{FileOutputStream fileOut = new FileOutputStream("pets.bin");
