@@ -23,12 +23,11 @@ public class MainViewController
   @FXML MenuItem exitMenuItem;
   @FXML MenuItem aboutMenuItem;
 
-  public void init(ViewHandler viewHandler,
-      ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager)
   {
     this.viewHandler = viewHandler;
 //    this.scene = scene;
-    this.modelManager = modelManager;
+      this.modelManager = modelManager;
   }
 
   public void reset()
@@ -43,6 +42,11 @@ public class MainViewController
 
   public void handleActions(ActionEvent e)
   {
+    if(viewHandler == null)
+    {
+      System.err.println("ViewHandler is not initialized!");
+      return;
+    }
     if (e.getSource() == customersButton)
     {
       viewHandler.openView("CustomersView");
