@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added buttons to Pets">
-      <change afterPath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" afterDir="false" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="added extra windows for adding pets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734096358520</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="added extra windows for adding pets">
+      <option name="closed" value="true" />
+      <created>1734183919009</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1734183919009</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,6 +369,7 @@
     <MESSAGE value="Pets view and Bird(added specie)" />
     <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
     <MESSAGE value="added buttons to Pets" />
-    <option name="LAST_COMMIT_MESSAGE" value="added buttons to Pets" />
+    <MESSAGE value="added extra windows for adding pets" />
+    <option name="LAST_COMMIT_MESSAGE" value="added extra windows for adding pets" />
   </component>
 </project>
