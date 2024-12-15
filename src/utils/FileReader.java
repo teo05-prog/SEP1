@@ -8,12 +8,12 @@ import java.io.*;
 public class FileReader
 {
   public static void main(String[] args){
-    try{FileInputStream fileIn = new FileInputStream("bookings.bin");
+    try{FileInputStream fileIn = new FileInputStream("purchases.bin");
       ObjectInputStream read = new ObjectInputStream(fileIn);
       while(true){
         try {
-          Booking something = (Booking) read.readObject();
-        System.out.println(something);
+          Purchase something = (Purchase) read.readObject();
+          System.out.println(something);
         }
         catch(EOFException eof) {
           System.out.println("End of file");

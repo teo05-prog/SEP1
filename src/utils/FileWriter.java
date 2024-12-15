@@ -40,9 +40,9 @@ public class FileWriter
     Pet pet19 = new Rodent("Fluffy", 1, "Brown", 'f', "Soft", 220, false, "Chinchilla");
     Pet pet20 = new Various("Maturin", 100, "Green", 'm', "Wise", 500, "Turtle");
 
-    try{FileOutputStream fileOut = new FileOutputStream("bookings.bin");
+    try{FileOutputStream fileOut = new FileOutputStream("purchases.bin");
       ObjectOutputStream write = new ObjectOutputStream(fileOut);
-
+/*
       write.writeObject(new Booking(customer1, pet1, new MyDate(1, 10, 2024), new MyDate(10, 10, 2024)));
       write.writeObject(new Booking(customer2, pet2, new MyDate(2, 12, 2024), new MyDate(24, 12, 2024)));
       write.writeObject(new Booking(customer3, pet3, new MyDate(3, 1, 2025), new MyDate(10, 1, 2025)));
@@ -53,7 +53,7 @@ public class FileWriter
       write.writeObject(new Booking(customer8, pet9, new MyDate(6, 4, 2025), new MyDate(16, 4, 2025)));
       write.writeObject(new Booking(customer9, pet11, new MyDate(31, 12, 2024), new MyDate(7, 1, 2025)));
       write.writeObject(new Booking(customer10, pet12, new MyDate(7, 1, 2025), new MyDate(25, 1, 2025)));
-
+*/
 /*
       write.writeObject(pet1);
       write.writeObject(pet2);
@@ -76,7 +76,7 @@ public class FileWriter
       write.writeObject(pet19);
       write.writeObject(pet20);
 */
-      /*
+
       write.writeObject(new Purchase(customer1, pet1, 0));
       write.writeObject(new Purchase(customer2, pet2, 0));
       write.writeObject(new Purchase(customer3, pet3, 0));
@@ -87,8 +87,19 @@ public class FileWriter
       write.writeObject(new Purchase(customer8, pet9, 0));
       write.writeObject(new Purchase(customer9, pet11, 30));
       write.writeObject(new Purchase(customer10, pet12, 0));
-       */
 
+/*
+      write.writeObject(customer1);
+      write.writeObject(customer2);
+      write.writeObject(customer3);
+      write.writeObject(customer4);
+      write.writeObject(customer5);
+      write.writeObject(customer6);
+      write.writeObject(customer7);
+      write.writeObject(customer8);
+      write.writeObject(customer9);
+      write.writeObject(customer10);
+*/
       write.close();
     }
     catch(FileNotFoundException e){
