@@ -46,6 +46,7 @@ public class DogsViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -110,7 +111,7 @@ public class DogsViewController
       dog.setBreederName(event.getNewValue());
     });
 
-    updateTableData();
+
   }
 
   private void updateTableData()

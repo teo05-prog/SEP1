@@ -8,8 +8,7 @@ import javafx.scene.control.*;
 import model.ModelManager;
 import view.ViewHandler;
 
-public class PetsViewController
-{
+public class PetsViewController {
   @FXML private DogsViewController dogsViewController;
   @FXML private CatsViewController catsViewController;
   @FXML private BirdsViewController birdsViewController;
@@ -32,8 +31,17 @@ public class PetsViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  public void initialize()
-  {
+  @FXML
+  public void initialize() {
+    // Leave empty or handle only UI setup that doesn't require dependencies
+  }
+
+  public void init(ViewHandler viewHandler, Scene scene, ModelManager modelManager) {
+    this.modelManager = modelManager;
+    this.viewHandler = viewHandler;
+    this.scene = scene;
+
+    // Initialize all child controllers after dependencies are set
     if (dogsViewController != null)
       dogsViewController.init(viewHandler, modelManager, scene);
     if (catsViewController != null)
@@ -48,56 +56,57 @@ public class PetsViewController
       variousViewController.init(viewHandler, modelManager, scene);
   }
 
-  public void init(ViewHandler viewHandler, Scene scene,
-      ModelManager modelManager)
-  {
-    this.modelManager = modelManager;
-    this.viewHandler = viewHandler;
-    this.scene = scene;
-  }
-
-  public void reset()
-  {
-
-  }
-
-  public Scene getScene()
-  {
-    return scene;
-  }
-
-  public void tabChanged(Event event)
-  {
-    if (dogsTab.isSelected())
-    {
+  public void reset() {
+    // Reset the current tab's view
+    if (dogsTab.isSelected()) {
       dogsViewController.reset();
     }
-    else if (catsTab.isSelected())
-    {
+    else if (catsTab.isSelected()) {
       catsViewController.reset();
     }
-    else if (birdsTab.isSelected())
-    {
+    else if (birdsTab.isSelected()) {
       birdsViewController.reset();
     }
-    else if (fishTab.isSelected())
-    {
+    else if (fishTab.isSelected()) {
       fishViewController.reset();
     }
-    else if (rodentsTab.isSelected())
-    {
+    else if (rodentsTab.isSelected()) {
       rodentsViewController.reset();
     }
-    else if (variousTab.isSelected())
-    {
+    else if (variousTab.isSelected()) {
       variousViewController.reset();
     }
   }
 
-  public void handleActions(ActionEvent e)
-  {
-    if (e.getSource() == exitMenuItem)
-    {
+  public Scene getScene() {
+    return scene;
+  }
+
+  @FXML
+  public void tabChanged(Event event) {
+    if (dogsTab.isSelected()) {
+      dogsViewController.reset();
+    }
+    else if (catsTab.isSelected()) {
+      catsViewController.reset();
+    }
+    else if (birdsTab.isSelected()) {
+      birdsViewController.reset();
+    }
+    else if (fishTab.isSelected()) {
+      fishViewController.reset();
+    }
+    else if (rodentsTab.isSelected()) {
+      rodentsViewController.reset();
+    }
+    else if (variousTab.isSelected()) {
+      variousViewController.reset();
+    }
+  }
+
+  @FXML
+  public void handleActions(ActionEvent e) {
+    if (e.getSource() == exitMenuItem) {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
           "Do you really want to exit the program?", ButtonType.YES,
           ButtonType.NO);
@@ -106,13 +115,11 @@ public class PetsViewController
 
       alert.showAndWait();
 
-      if (alert.getResult() == ButtonType.YES)
-      {
+      if (alert.getResult() == ButtonType.YES) {
         System.exit(0);
       }
     }
-    else if (e.getSource() == aboutMenuItem)
-    {
+    else if (e.getSource() == aboutMenuItem) {
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
       alert.setTitle("About");
@@ -120,19 +127,16 @@ public class PetsViewController
           "This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
     }
-    else if (e.getSource() == backButton)
-    {
+    else if (e.getSource() == backButton) {
       viewHandler.openView("MainView");
     }
   }
 
-  public TabPane getTabPane()
-  {
+  public TabPane getTabPane() {
     return tabPane;
   }
 
-  public void setTabPane(TabPane tabPane)
-  {
+  public void setTabPane(TabPane tabPane) {
     this.tabPane = tabPane;
   }
 }

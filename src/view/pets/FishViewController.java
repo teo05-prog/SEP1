@@ -47,6 +47,7 @@ public class FishViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -117,7 +118,6 @@ public class FishViewController
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
     });
-    updateTableData();
   }
 
   private void updateTableData()

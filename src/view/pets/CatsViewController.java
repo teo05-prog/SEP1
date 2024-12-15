@@ -49,6 +49,7 @@ public class CatsViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -113,7 +114,7 @@ public class CatsViewController
       cat.setBreederName(event.getNewValue());
     });
 
-    updateTableData();
+
   }
 
   private void updateTableData()
@@ -164,7 +165,7 @@ public class CatsViewController
 
     }
 
-
+  @FXML
   private void handleRemoveCat()
   {
     Cat selectedCat = catTable.getSelectionModel().getSelectedItem();

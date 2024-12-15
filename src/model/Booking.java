@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class Booking implements Serializable
-{
+{  private static final long serialVersionUID = 5898788688332424564L;
   private Pet petInfo;
   private Customer customer;
   private MyDate startDate;

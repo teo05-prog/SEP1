@@ -232,8 +232,8 @@ public class ViewHandler
     {
       Parent root = loader.load();
       Scene scene = new Scene(root);
-      MainViewController controller = loader.getController();
-      controller.init(this, modelManager, scene);
+      MainCustomersViewController controller = loader.getController(); // Changed this line
+      controller.init(this, scene, modelManager); // Changed parameter order to match your init method
       stage.setScene(scene);
       stage.show();
     }
@@ -255,8 +255,8 @@ public class ViewHandler
     {
       Parent root = loader.load();
       Scene scene = new Scene(root);
-      MainViewController controller = loader.getController();
-      controller.init(this, modelManager, scene);
+      PetsViewController controller = loader.getController();
+      controller.init(this, scene, modelManager);  // This will initialize child controllers
       stage.setScene(scene);
       stage.show();
     }

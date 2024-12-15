@@ -44,6 +44,7 @@ public class VariousViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -99,7 +100,6 @@ public class VariousViewController
       Various various = event.getRowValue();
       various.setComment(event.getNewValue());
     });
-    updateTableDate();
   }
 
   private void updateTableDate()
@@ -149,18 +149,36 @@ public class VariousViewController
     }
 
   }
-
+  private void updateTableData() // was updateTableDate
+  {
+    observableVarious = FXCollections.observableArrayList();
+    for (int i = 0; i < petList.getPetsCount(); i++)
+    {
+      try
+      {
+        if (petList.getPets(i) instanceof Various)
+        {
+          observableVarious.add((Various) petList.getPets(i));
+        }
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    variousTable.setItems(observableVarious);
+  }
+  @FXML // Add this annotation
   private void handleRemoveVarious()
   {
-    Various selectedVarious = variousTable.getSelectionModel()
-        .getSelectedItem();
+    Various selectedVarious = variousTable.getSelectionModel().getSelectedItem();
     if (selectedVarious != null)
     {
       observableVarious.remove(selectedVarious);
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a various pet to remove."); // Fix message
     }
   }
 

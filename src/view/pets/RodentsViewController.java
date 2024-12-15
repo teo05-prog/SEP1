@@ -47,6 +47,7 @@ public class RodentsViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -111,7 +112,6 @@ public class RodentsViewController
       Rodent rodent = event.getRowValue();
       rodent.setSpecie(event.getNewValue());
     });
-    updateTableDate();
   }
 
   private void updateTableDate()
@@ -162,6 +162,7 @@ public class RodentsViewController
 
   }
 
+  @FXML // Add this annotation
   private void handleRemoveRodent()
   {
     Rodent selectedRodent = rodentTable.getSelectionModel().getSelectedItem();
@@ -171,7 +172,7 @@ public class RodentsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a rodent to remove."); // Fix message
     }
   }
 
@@ -191,7 +192,25 @@ public class RodentsViewController
       updateRodents();
     }
   }
-
+  private void updateTableData() // was updateTableDate
+  {
+    observableRodents = FXCollections.observableArrayList();
+    for (int i = 0; i < petList.getPetsCount(); i++)
+    {
+      try
+      {
+        if (petList.getPets(i) instanceof Rodent)
+        {
+          observableRodents.add((Rodent) petList.getPets(i));
+        }
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    rodentTable.setItems(observableRodents);
+  }
   private void updateRodents()
   {
     rodentTable.getItems().clear();

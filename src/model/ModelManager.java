@@ -9,8 +9,8 @@ import utils.MyFileHandler;
 import view.ViewHandler;
 import view.main.MainViewController;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 public class ModelManager
 {
@@ -135,21 +135,49 @@ public class ModelManager
 
     try
     {
-      allCustomers = (CustomerList) MyFileHandler.readFromBinaryFile(
-          customersFileName);
+      ArrayList<Object> objects = new ArrayList<>();
+      ObjectInputStream readFromFile = null;
+
+      try {
+        FileInputStream fileInStream = new FileInputStream(customersFileName);
+        readFromFile = new ObjectInputStream(fileInStream);
+
+        while (true) {
+          try {
+            Object obj = readFromFile.readObject();
+            if (obj instanceof CustomerList) {
+              return (CustomerList) obj;  // Return the CustomerList directly
+            }
+            else if (obj instanceof Customer) {
+              allCustomers.add((Customer) obj);
+            }
+          }
+          catch (EOFException eof) {
+            break;  // End of file reached
+          }
+        }
+      }
+      finally {
+        if (readFromFile != null) {
+          readFromFile.close();
+        }
+      }
     }
     catch (FileNotFoundException e)
     {
-      System.out.println("File not found");
+      System.out.println("File not found - Creating new customer list");
     }
     catch (IOException e)
     {
       System.out.println("IO Error reading file");
+      e.printStackTrace();
     }
     catch (ClassNotFoundException e)
     {
       System.out.println("Class Not Found");
+      e.printStackTrace();
     }
+
     return allCustomers;
   }
 
@@ -201,19 +229,13 @@ public class ModelManager
     return allPurchases;
   }
 
-  public void saveCustomers(CustomerList customers)
-  {
-    try
-    {
+  public void saveCustomers(CustomerList customers) {
+    try {
       MyFileHandler.writeToBinaryFile(customersFileName, customers);
     }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("File not found");
-    }
-    catch (IOException e)
-    {
+    catch (IOException e) {
       System.out.println("IO Error writing to file");
+      e.printStackTrace();
     }
   }
 

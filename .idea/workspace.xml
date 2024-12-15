@@ -5,37 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="kennel view">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookings.bin" beforeDir="false" afterPath="$PROJECT_DIR$/bookings.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers.bin" beforeDir="false" afterPath="$PROJECT_DIR$/customers.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets.bin" beforeDir="false" afterPath="$PROJECT_DIR$/pets.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purchases.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CustomerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CustomerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/KennelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/KennelList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pets/PetList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/PetList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/CustomersViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/main/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddBirdView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddBirdView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddCatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddCatView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddDogView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddFishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddFishView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddRodentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddRodentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddVariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddVariousView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/FishView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/FishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/PurchasesView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="49902" />
+    <option name="totalTimeSeconds" value="55553" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -97,7 +95,8 @@
     "Application.FileWriter.executor": "Run",
     "Application.StartApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging master",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
     "ignore.preview.features.used": "true",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -423,7 +422,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734277981171</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="kennel view">
+      <option name="closed" value="true" />
+      <created>1734291871780</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1734291871780</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -438,7 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formatting" />
     <MESSAGE value="booking class" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
@@ -461,9 +467,10 @@
     <MESSAGE value="added buttons to Pets" />
     <MESSAGE value="added extra windows for adding pets" />
     <MESSAGE value="something" />
-    <MESSAGE value="kennel view" />
     <MESSAGE value="booking now works" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking now works" />
+    <MESSAGE value="booking now works&#10;&#10;Took 21 minutes" />
+    <MESSAGE value="kennel view" />
+    <option name="LAST_COMMIT_MESSAGE" value="kennel view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

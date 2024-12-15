@@ -24,8 +24,8 @@ public class MainCustomersViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  public void initialize()
-  {
+  @FXML
+  private void initialize() {
 //    ModelManager modelManager = new ModelManager(
 //        "customers.bin",
 //        "pets.bin",
@@ -36,12 +36,14 @@ public class MainCustomersViewController
     manageCustomersController.init(viewHandler, modelManager, scene);
   }
 
-  public void init(ViewHandler viewHandler, Scene scene,
-      ModelManager modelManager)
+  public void init(ViewHandler viewHandler, Scene scene, ModelManager modelManager)
   {
-    this.modelManager = modelManager;
     this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
     this.scene = scene;
+
+    customersController.init(viewHandler, modelManager, scene);
+    manageCustomersController.init(viewHandler, modelManager, scene);
   }
 
   public void reset()
@@ -56,17 +58,23 @@ public class MainCustomersViewController
 
   public void tabChanged(Event event)
   {
-    if (customersTab.isSelected()){
-      if (customersController != null) {
-        customersController.reset();
+    if (modelManager != null)
+    {
+      if (customersTab.isSelected())
+      {
+        if (customersController != null)
+        {
+          customersController.reset();
+        }
+      }
+      else if (manageCustomersTab.isSelected())
+      {
+        if (manageCustomersController != null)
+        {
+          manageCustomersController.reset();
+        }
       }
     }
-    else if (manageCustomersTab.isSelected()){
-      if (manageCustomersController != null) {
-        manageCustomersController.reset();
-      }
-    }
-
   }
 
   public void handleActions(ActionEvent e)

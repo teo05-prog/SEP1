@@ -26,15 +26,15 @@
     </MenuBar>
     <TabPane fx:id="tabPane" prefHeight="320.0"
              tabClosingPolicy="UNAVAILABLE">
-        <Tab fx:id="customersTab" onSelectionChanged="#tabChanged"
-             text="Customers">
-            <fx:include fx:id="customersController"
-                        source="/view/customers/CustomersView.fxml"/>
+        <Tab fx:id="customersTab" onSelectionChanged="#tabChanged" text="Customers">
+            <content>
+                <fx:include fx:id="customers" source="CustomersView.fxml"/>
+            </content>
         </Tab>
-        <Tab fx:id="manageCustomersTab" onSelectionChanged="#tabChanged"
-             text="Manage">
-            <fx:include fx:id="manageCustomersController"
-                        source="/view/customers/ManageCustomersView.fxml"/>
+        <Tab fx:id="manageCustomersTab" onSelectionChanged="#tabChanged" text="Manage">
+            <content>
+                <fx:include fx:id="manageCustomers" source="ManageCustomersView.fxml"/>
+            </content>
         </Tab>
     </TabPane>
     <Button fx:id="backButton" mnemonicParsing="false"

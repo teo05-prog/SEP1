@@ -1,10 +1,11 @@
 package model.Pets;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class PetList
-{
+public class PetList implements Serializable
+{  private static final long serialVersionUID = -1818279810449535543L;
   private ArrayList<Pet> pets;
   private int maxNumberOfPets;
 
@@ -15,14 +16,7 @@ public class PetList
 
   public void addPet(Pet pet)
   {
-    if (pets.size() < maxNumberOfPets)
-    {
       pets.add(pet);
-    }
-    else
-    {
-      System.out.println("Cannot add more pets.");
-    }
   }
 
   public void removePet(Pet pet)
@@ -113,4 +107,13 @@ public class PetList
     return (Various) pets.get(index);
   }
 
+  public void add(Pet pet1)
+  {
+    pets.add(pet1);
+  }
+
+  public Pet get(int i)
+  {
+    return pets.get(i);
+  }
 }
