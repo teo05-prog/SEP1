@@ -28,10 +28,12 @@ public class FileReader
     }
     catch(IOException e) {
       System.out.println("IO Error reading file");
+      e.printStackTrace();
       System.exit(1);
     }
     catch(ClassNotFoundException e){
       System.out.println("Class Not Found");
+      e.printStackTrace();
       System.exit(1);
     }
   }

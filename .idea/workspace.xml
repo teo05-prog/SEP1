@@ -4,31 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="now the code runs but Exceptions :&quot;)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookings.bin" beforeDir="false" afterPath="$PROJECT_DIR$/bookings.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets.bin" beforeDir="false" afterPath="$PROJECT_DIR$/pets.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MyDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MyDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Bird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Fish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Rodent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Rodent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Various.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Various.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Purchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" afterDir="false" />
-    </list>
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="something" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="51906" />
+    <option name="totalTimeSeconds" value="49860" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -59,8 +42,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets.git&quot;,
-    &quot;accountId&quot;: &quot;a5749d79-1b8a-4c11-bc7c-8deef3e8c63a&quot;
+    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets&quot;,
+    &quot;accountId&quot;: &quot;0f67eb8a-44ca-4392-88e2-8c6ca53db332&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -74,25 +57,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BookingTest.executor": "Run",
-    "Application.CustomerTest.executor": "Run",
-    "Application.FileReader.executor": "Run",
-    "Application.FileWriter.executor": "Run",
-    "Application.StartApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.preview.features.used": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Yuki/Downloads/StudentManagementGUIFXML3",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BookingTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yuki/Downloads/StudentManagementGUIFXML3&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\Pets" />
@@ -103,10 +84,36 @@
       <recent name="C:\Users\Yuki\IdeaProjects\VIAPets\src\view\customers" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.FileReader">
     <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookingTest" />
       <module name="VIAPets" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.FileReader" />
+      <module name="VIAPets" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileWriter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.FileWriter" />
+      <module name="VIAPets" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,6 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileReader" />
+        <item itemvalue="Application.FileWriter" />
         <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.BookingTest" />
       </list>
@@ -340,29 +349,29 @@
       <option name="project" value="LOCAL" />
       <updated>1734096358520</updated>
     </task>
-    <task id="LOCAL-00026" summary="finished purchase view gui">
+    <task id="LOCAL-00026" summary="added extra windows for adding pets">
       <option name="closed" value="true" />
-      <created>1734199707576</created>
+      <created>1734183919009</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1734199707576</updated>
+      <updated>1734183919009</updated>
     </task>
-    <task id="LOCAL-00027" summary="added missing fields">
+    <task id="LOCAL-00027" summary="something">
       <option name="closed" value="true" />
-      <created>1734200208218</created>
+      <created>1734266446877</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1734200208218</updated>
+      <updated>1734266446877</updated>
     </task>
-    <task id="LOCAL-00028" summary="now the code runs but Exceptions :&quot;)">
+    <task id="LOCAL-00028" summary="something">
       <option name="closed" value="true" />
-      <created>1734200565515</created>
+      <created>1734270543621</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1734200565515</updated>
+      <updated>1734270543621</updated>
     </task>
     <option name="localTasksCounter" value="29" />
     <servers />
@@ -379,6 +388,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding files" />
+    <MESSAGE value="added Date class" />
+    <MESSAGE value="formatting" />
+    <MESSAGE value="booking class" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
     <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
     <MESSAGE value="Made it work, YAY" />
@@ -397,21 +411,16 @@
     <MESSAGE value="Pets view and Bird(added specie)" />
     <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
     <MESSAGE value="added buttons to Pets" />
-    <MESSAGE value="smol fixes" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="finished purchase view gui" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 11 seconds" />
-    <MESSAGE value="added missing fields" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 8 seconds" />
-    <MESSAGE value="now the code runs but Exceptions :&quot;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="now the code runs but Exceptions :&quot;)" />
+    <MESSAGE value="added extra windows for adding pets" />
+    <MESSAGE value="something" />
+    <option name="LAST_COMMIT_MESSAGE" value="something" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

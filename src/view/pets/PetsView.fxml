@@ -9,65 +9,59 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0"
-      xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.pets.PetsViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.pets.PetsViewController">
     <children>
         <MenuBar>
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Close"/>
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleActions" text="About"/>
+                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleActions" text="About" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="587.0"
-                 tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="587.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab fx:id="dogsTab" text="Dogs">
                     <content>
-                        <fx:include source="DogsView.fxml"/>
+                        <fx:include source="DogsView.fxml" />
                     </content>
                 </Tab>
                 <Tab fx:id="catsTab" text="Cats">
                     <content>
-                        <fx:include source="CatsView.fxml"/>
+                        <fx:include source="CatsView.fxml" />
                     </content>
                 </Tab>
                 <Tab fx:id="birdsTab" text="Birds">
                     <content>
-                        <fx:include source="BirdsView.fxml"/>
+                        <fx:include source="BirdsView.fxml" />
                     </content>
                 </Tab>
                 <Tab fx:id="fishTab" text="Fish">
                     <content>
-                        <fx:include source="FishView.fxml"/>
+                        <fx:include source="FishView.fxml" />
                     </content>
                 </Tab>
                 <Tab fx:id="rodentsTab" text="Rodents">
                     <content>
-                        <fx:include source="RodentsView.fxml"/>
+                        <fx:include source="RodentsView.fxml" />
                     </content>
                 </Tab>
                 <Tab fx:id="variousTab" text="Various">
                     <content>
-                        <fx:include source="VariousView.fxml"/>
+                        <fx:include source="VariousView.fxml" />
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="backButton" mnemonicParsing="false"
-                onAction="#handleActions" text="Back">
+        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions" text="Back">
             <VBox.margin>
-                <Insets left="10.0"/>
+                <Insets left="10.0" />
             </VBox.margin>
         </Button>
     </children>

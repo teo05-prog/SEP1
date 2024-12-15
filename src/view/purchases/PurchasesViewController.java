@@ -26,9 +26,10 @@ public class PurchasesViewController
 
   public void initialize()
   {
-    modelManager = new ModelManager("purchases.bin");
-    allPurchasesViewController.init(viewHandler, modelManager, scene);
-    newPurchasesViewController.init(viewHandler, modelManager);
+    if (allPurchasesViewController != null)
+      allPurchasesViewController.init(viewHandler, modelManager, scene);
+    if (newPurchasesViewController != null)
+      newPurchasesViewController.init(viewHandler, modelManager);
   }
 
   public void init(ViewHandler viewHandler, Scene scene,

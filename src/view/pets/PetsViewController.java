@@ -34,13 +34,18 @@ public class PetsViewController
 
   public void initialize()
   {
-    modelManager = new ModelManager("pets.bin");
-    dogsViewController.init(viewHandler, modelManager, scene);
-    catsViewController.init(viewHandler, modelManager, scene);
-    birdsViewController.init(viewHandler, modelManager, scene);
-    fishViewController.init(viewHandler, modelManager, scene);
-    rodentsViewController.init(viewHandler, modelManager, scene);
-    variousViewController.init(viewHandler, modelManager, scene);
+    if (dogsViewController != null)
+      dogsViewController.init(viewHandler, modelManager, scene);
+    if (catsViewController != null)
+      catsViewController.init(viewHandler, modelManager, scene);
+    if (birdsViewController != null)
+      birdsViewController.init(viewHandler, modelManager, scene);
+    if (fishViewController != null)
+      fishViewController.init(viewHandler, modelManager, scene);
+    if (rodentsViewController != null)
+      rodentsViewController.init(viewHandler, modelManager, scene);
+    if (variousViewController != null)
+      variousViewController.init(viewHandler, modelManager, scene);
   }
 
   public void init(ViewHandler viewHandler, Scene scene,
