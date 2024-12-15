@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="some debugging">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="booking now works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="56162" />
+    <option name="totalTimeSeconds" value="57606" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -389,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734277212408</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="booking now works">
+      <option name="closed" value="true" />
+      <created>1734277673667</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1734277673667</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,7 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
     <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
     <MESSAGE value="Made it work, YAY" />
@@ -429,6 +435,7 @@
     <MESSAGE value="main one works&#10;&#10;Took 1 hour 2 minutes" />
     <MESSAGE value="main one works" />
     <MESSAGE value="some debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="some debugging" />
+    <MESSAGE value="booking now works" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking now works" />
   </component>
 </project>
