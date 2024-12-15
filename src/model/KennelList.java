@@ -8,25 +8,24 @@ public class KennelList
 
   public KennelList()
   {
-    bookings = new ArrayList<>(20);
+    bookings = new ArrayList<>(10);
   }
 
-  public void addBooking(Booking booking)
+  public void add(Booking booking)
   {
     bookings.add(booking);
   }
 
-  public void removeBooking(Booking booking)
+  public void remove(Booking booking)
   {
     bookings.remove(booking);
   }
 
   public Booking getBooking(int index)
   {
-    for (int i = 0; i < bookings.size(); i++)
+    if(index >= 0 && index < bookings.size())
     {
-      if(i == index)
-        return bookings.get(index);
+      return bookings.get(index);
     }
     return null;
   }
@@ -61,8 +60,4 @@ public class KennelList
     return bookings.get(i);
   }
 
-  public void add(Booking booking)
-  {
-    bookings.add(booking);
-  }
 }

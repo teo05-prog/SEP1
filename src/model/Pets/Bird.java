@@ -15,6 +15,14 @@ public class Bird extends Pet implements Serializable
     this.specie = specie;
   }
 
+  public Bird(String name, int age, String colour, char gender, String comment,
+      String preferredFood, String specie)
+  {
+    super(name, age, colour, gender, comment);
+    this.preferredFood = preferredFood;
+    this.specie = specie;
+  }
+
   public String getPreferredFood()
   {
     return preferredFood;
@@ -43,8 +51,8 @@ public class Bird extends Pet implements Serializable
 
   public String toString()
   {
-    return "model.Pets.model.Pets.Bird: " + super.toString()
-        + ", preferred food: " + preferredFood + specie + "/n";
+    return "Bird: " + super.toString()
+        + ", preferred food: " + preferredFood + ", specie: " + specie;
   }
 
   public boolean equals(Object obj)

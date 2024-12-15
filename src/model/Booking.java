@@ -2,31 +2,37 @@ package model;
 
 import model.Pets.Pet;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
-public class Booking
+public class Booking implements Serializable
 {
   private Pet petInfo;
   private Customer customer;
   private MyDate startDate;
   private MyDate endDate;
   private int pricePerDay;
-  private int numberOfRooms;
-  private Room[] rooms;
+  private List<Room> rooms;
 
-  public Booking(int numberOfRooms)
+  public Booking(Customer customer, Pet petInfo, MyDate startDate, MyDate endDate, List<Room> rooms)
   {
-    this.customer = null;
-    this.petInfo = null;
-    this.startDate = null;
-    this.endDate = null;
+    this.customer = customer;
+    this.petInfo = petInfo;
+    this.startDate = startDate;
+    this.endDate = endDate;
     this.pricePerDay = 20;
-    this.numberOfRooms = numberOfRooms;
-    rooms = new Room[numberOfRooms];
-    for (int i = 0; i < numberOfRooms; i++) {
-      rooms[i] = new Room();
-    }
+    this.rooms = rooms;
+  }
+
+  public Booking(Customer customer, Pet petInfo, MyDate startDate, MyDate endDate)
+  {
+    this.customer = customer;
+    this.petInfo = petInfo;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.pricePerDay = 20;
   }
 
   public MyDate getStartDate()
@@ -81,32 +87,27 @@ public class Booking
 
   public boolean isAvailable(MyDate startDate, MyDate endDate)
   {
-    for (int i = 0; i < numberOfRooms; i++)
+    for (Room room : rooms)
     {
-      if (rooms[i].isAvailableDuring(startDate, endDate))
-        return true;
+      if (!room.isAvailableDuring(startDate, endDate))
+        return false;
     }
-    return false;
+    return true;
   }
 
   public void bookTo(Customer customer, Pet petInfo, MyDate startDate,
       MyDate endDate)
   {
-    for (int i = 0; i < numberOfRooms; i++)
-    {
-      if (rooms[i].isAvailableDuring(startDate, endDate)
-          && this.customer == null)
-      {
-        this.customer = customer;
-        this.petInfo = petInfo;
-      }
-    }
+    this.customer = customer;
+    this.petInfo = petInfo;
+    this.startDate = startDate;
+    this.endDate = endDate;
   }
 
   public String toString()
   {
-    return customer.getFirstName() + " " + customer.getLastName() + " Booked from: " + startDate + " Until: "
-        + endDate + " For: " + petInfo.getName();
+    return "Customer: " + customer.getFirstName() + " " + customer.getLastName() + ", Pet: " + petInfo.getName() + ", Booked from: " + startDate
+        + " Until: " + endDate;
   }
 
   public boolean equals(Object obj)
