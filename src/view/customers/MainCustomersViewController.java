@@ -26,7 +26,12 @@ public class MainCustomersViewController
 
   public void initialize()
   {
-    modelManager = new ModelManager("customers.bin");
+    ModelManager modelManager = new ModelManager(
+        "customers.bin",
+        "pets.bin",
+        "kennel.bin",
+        "purchases.bin"
+    );
     customersController.init(viewHandler, modelManager, scene);
     manageCustomersController.init(viewHandler, modelManager, scene);
   }

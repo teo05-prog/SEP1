@@ -29,10 +29,12 @@ public class KennelViewController
 
   public void initialize()
   {
-    modelManager = new ModelManager("bookings.bin");
-    currentViewController.init(viewHandler, modelManager);
-    pastViewController.init(viewHandler, modelManager);
-    newBookingViewController.init(viewHandler, modelManager);
+    if (currentViewController != null)
+      currentViewController.init(viewHandler, modelManager);
+    if (pastViewController != null)
+      pastViewController.init(viewHandler, modelManager);
+    if (newBookingViewController != null)
+      newBookingViewController.init(viewHandler, modelManager);
   }
 
   public void init(ViewHandler viewHandler, Scene scene,
