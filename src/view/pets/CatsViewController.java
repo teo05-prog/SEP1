@@ -114,7 +114,6 @@ public class CatsViewController
       cat.setBreederName(event.getNewValue());
     });
 
-
   }
 
   private void updateTableData()
@@ -138,35 +137,34 @@ public class CatsViewController
   }
 
   @FXML private void handleAddCat()
+  {
+    try
     {
-      try
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("/view/pets/AddCatView.fxml"));
+      Parent root = loader.load();
+
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Cat");
+      stage.setScene(new Scene(root));
+      stage.showAndWait();
+
+      AddCatViewController controller = loader.getController();
+      Cat newCat = controller.getNewCat();
+      if (newCat != null)
       {
-        FXMLLoader loader = new FXMLLoader(
-            getClass().getResource("/view/pets/AddCatView.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Add a New Cat");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
-        AddCatViewController controller = loader.getController();
-        Cat newCat = controller.getNewCat();
-        if (newCat != null)
-        {
-          observableCats.add(newCat);
-        }
+        observableCats.add(newCat);
       }
-      catch (Exception e)
-      {
-        System.out.println("Error opening window: " + e.getMessage());
-      }
-
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
     }
 
-  @FXML
-  private void handleRemoveCat()
+  }
+
+  @FXML private void handleRemoveCat()
   {
     Cat selectedCat = catTable.getSelectionModel().getSelectedItem();
     if (selectedCat != null)
@@ -175,7 +173,7 @@ public class CatsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a cat to remove.");
     }
   }
 

@@ -32,7 +32,8 @@ public class AddVariousViewController
       int price = Integer.parseInt(priceField.getText().trim());
       String specie = specieField.getText().trim();
 
-      newVarious = new Various(name, age, color, gender, comment, price, specie);
+      newVarious = new Various(name, age, color, gender, comment, price,
+          specie);
 
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();

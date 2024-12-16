@@ -111,7 +111,6 @@ public class DogsViewController
       dog.setBreederName(event.getNewValue());
     });
 
-
   }
 
   private void updateTableData()

@@ -30,28 +30,34 @@ public class Customer implements Serializable
 
   public void setFirstName(String firstName)
   {
-    if(firstName == null)
+    if (firstName == null)
     {
       throw new IllegalArgumentException("First name must not be null");
     }
-    if(firstName.length() < 2)
+    if (firstName.length() < 2)
     {
-      throw new IllegalArgumentException("First name must be a string of at least 2 characters");
+      throw new IllegalArgumentException(
+          "First name must be a string of at least 2 characters");
     }
-    this.firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
+    this.firstName =
+        firstName.substring(0, 1).toUpperCase() + firstName.substring(1)
+            .toLowerCase();
   }
 
   public void setLastName(String lastName)
   {
-    if(lastName == null)
+    if (lastName == null)
     {
       throw new IllegalArgumentException("Last name must not be null");
     }
-    if(lastName.length() < 2)
+    if (lastName.length() < 2)
     {
-      throw new IllegalArgumentException("Last name must be a string of at least 2 characters");
+      throw new IllegalArgumentException(
+          "Last name must be a string of at least 2 characters");
     }
-    this.lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1).toLowerCase();
+    this.lastName =
+        lastName.substring(0, 1).toUpperCase() + lastName.substring(1)
+            .toLowerCase();
   }
 
   public String getPhone()
@@ -61,21 +67,24 @@ public class Customer implements Serializable
 
   public void setPhone(String phone)
   {
-    if(phone == null)
+    if (phone == null)
     {
       throw new IllegalArgumentException("Phone must not be null");
     }
-    if(phone.length() != 8){
+    if (phone.length() != 8)
+    {
       throw new IllegalArgumentException("Phone number must be 8 digits long");
     }
     for (int i = 0; i < 8; i++)
     {
-      if(phone.charAt(i) != '0' && phone.charAt(i) != '1'
+      if (phone.charAt(i) != '0' && phone.charAt(i) != '1'
           && phone.charAt(i) != '2' && phone.charAt(i) != '3'
           && phone.charAt(i) != '4' && phone.charAt(i) != '5'
           && phone.charAt(i) != '6' && phone.charAt(i) != '7'
-          && phone.charAt(i) != '8' && phone.charAt(i) != '9'){
-        throw new IllegalArgumentException("Phone number must contain only digits");
+          && phone.charAt(i) != '8' && phone.charAt(i) != '9')
+      {
+        throw new IllegalArgumentException(
+            "Phone number must contain only digits");
       }
     }
     this.phone = phone;
@@ -88,11 +97,12 @@ public class Customer implements Serializable
 
   public void setEmail(String email)
   {
-    if(email == null)
+    if (email == null)
     {
       throw new IllegalArgumentException("Email must not be null");
     }
-    if(!email.contains("@") || !email.contains(".")){
+    if (!email.contains("@") || !email.contains("."))
+    {
       throw new IllegalArgumentException("Email must contain '@' and '.'");
     }
     this.email = email;
@@ -100,16 +110,19 @@ public class Customer implements Serializable
 
   public String toString()
   {
-    return "First name: " + firstName + ", Last name: " + lastName + ", Phone: " + phone + ", Email: " + email;
+    return "First name: " + firstName + ", Last name: " + lastName + ", Phone: "
+        + phone + ", Email: " + email;
   }
 
   public boolean equals(Object obj)
   {
-    if(obj == null || getClass() != obj.getClass())
+    if (obj == null || getClass() != obj.getClass())
     {
       return false;
     }
-    Customer other = (Customer)obj;
-    return firstName.equals(other.getFirstName()) && lastName.equals(other.getLastName()) && phone.equals(other.getPhone()) && email.equals(other.getEmail());
+    Customer other = (Customer) obj;
+    return firstName.equals(other.getFirstName()) && lastName.equals(
+        other.getLastName()) && phone.equals(other.getPhone()) && email.equals(
+        other.getEmail());
   }
 }

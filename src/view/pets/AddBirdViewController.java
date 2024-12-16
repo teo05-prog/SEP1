@@ -34,8 +34,8 @@ public class AddBirdViewController
       String preferredFood = preferredFoodField.getText().trim();
       String specie = specieField.getText().trim();
 
-      newBird = new Bird(name, age, color, gender, comment, price, preferredFood,
-          specie);
+      newBird = new Bird(name, age, color, gender, comment, price,
+          preferredFood, specie);
 
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();

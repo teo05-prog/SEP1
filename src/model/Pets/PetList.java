@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class PetList implements Serializable
-{  private static final long serialVersionUID = -1818279810449535543L;
+{
+  private static final long serialVersionUID = -1818279810449535543L;
   private ArrayList<Pet> pets;
   private int maxNumberOfPets;
 
@@ -16,7 +17,7 @@ public class PetList implements Serializable
 
   public void addPet(Pet pet)
   {
-      pets.add(pet);
+    pets.add(pet);
   }
 
   public void removePet(Pet pet)

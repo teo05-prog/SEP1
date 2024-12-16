@@ -148,7 +148,7 @@ public class BirdsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a bird to remove.");
     }
   }
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+
 public class PurchaseList
 {
   private ArrayList<Purchase> purchases;
@@ -10,14 +11,17 @@ public class PurchaseList
   {
     purchases = new ArrayList<>();
   }
+
   public void addPurchase(Purchase purchase)
   {
     purchases.add(purchase);
   }
+
   public void removePurchase(Purchase purchase)
   {
     purchases.remove(purchase);
   }
+
   public Purchase getPurchase(int index) throws Exception
   {
     if (index >= 0 && index < purchases.size())
@@ -29,6 +33,7 @@ public class PurchaseList
       throw new IndexOutOfBoundsException("Invalid index");
     }
   }
+
   public String toString()
   {
     String str = "";
@@ -42,7 +47,7 @@ public class PurchaseList
     return str;
   }
 
- public boolean equals(Object obj)
+  public boolean equals(Object obj)
   {
     if (obj == null & getClass() != obj.getClass())
     {

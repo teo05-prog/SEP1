@@ -172,7 +172,8 @@ public class RodentsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a rodent to remove."); // Fix message
+      showAlert("No selection",
+          "Please select a rodent to remove."); // Fix message
     }
   }
 
@@ -192,6 +193,7 @@ public class RodentsViewController
       updateRodents();
     }
   }
+
   private void updateTableData() // was updateTableDate
   {
     observableRodents = FXCollections.observableArrayList();
@@ -211,6 +213,7 @@ public class RodentsViewController
     }
     rodentTable.setItems(observableRodents);
   }
+
   private void updateRodents()
   {
     rodentTable.getItems().clear();

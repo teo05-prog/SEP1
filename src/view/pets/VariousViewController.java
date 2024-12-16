@@ -149,6 +149,7 @@ public class VariousViewController
     }
 
   }
+
   private void updateTableData() // was updateTableDate
   {
     observableVarious = FXCollections.observableArrayList();
@@ -168,17 +169,20 @@ public class VariousViewController
     }
     variousTable.setItems(observableVarious);
   }
+
   @FXML // Add this annotation
   private void handleRemoveVarious()
   {
-    Various selectedVarious = variousTable.getSelectionModel().getSelectedItem();
+    Various selectedVarious = variousTable.getSelectionModel()
+        .getSelectedItem();
     if (selectedVarious != null)
     {
       observableVarious.remove(selectedVarious);
     }
     else
     {
-      showAlert("No selection", "Please select a various pet to remove."); // Fix message
+      showAlert("No selection",
+          "Please select a various pet to remove."); // Fix message
     }
   }
 

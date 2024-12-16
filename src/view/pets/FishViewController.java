@@ -177,7 +177,7 @@ public class FishViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a fish to remove.");
     }
   }
 

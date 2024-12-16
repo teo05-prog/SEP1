@@ -51,8 +51,8 @@ public class Bird extends Pet implements Serializable
 
   public String toString()
   {
-    return "Bird: " + super.toString()
-        + ", preferred food: " + preferredFood + ", specie: " + specie;
+    return "Bird: " + super.toString() + ", preferred food: " + preferredFood
+        + ", specie: " + specie;
   }
 
   public boolean equals(Object obj)
