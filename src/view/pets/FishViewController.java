@@ -61,7 +61,7 @@ public class FishViewController
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     waterColumn.setCellValueFactory(new PropertyValueFactory<>("water"));
     predatorColumn.setCellValueFactory(
-        new PropertyValueFactory<>("predatorColumn"));
+        new PropertyValueFactory<>("predators"));
     specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -84,7 +84,7 @@ public class FishViewController
       TextFieldTableCell<Fish, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
       cell.textProperty().addListener((obs, oldText, newText) -> {
-        if (newText.length() > 1)
+        if (newText != null && newText.length() > 1)
         {
           cell.setText(oldText);
         }

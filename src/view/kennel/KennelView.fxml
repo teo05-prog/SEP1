@@ -32,14 +32,14 @@
              tabClosingPolicy="UNAVAILABLE">
         <Tab text="Current">
             <fx:include fx:id="currentTab"
-                        source="/view/kennel/CurrentView.fxml"/>
+                        source="CurrentView.fxml"/>
         </Tab>
         <Tab text="Past">
-            <fx:include fx:id="pastTab" source="/view/kennel/PastView.fxml"/>
+            <fx:include fx:id="pastTab" source="PastView.fxml"/>
         </Tab>
         <Tab text="New">
             <fx:include fx:id="newBookingTab"
-                        source="/view/kennel/NewBookingView.fxml"/>
+                        source="NewBookingView.fxml"/>
         </Tab>
     </TabPane>
     <Button fx:id="backButton" mnemonicParsing="false"

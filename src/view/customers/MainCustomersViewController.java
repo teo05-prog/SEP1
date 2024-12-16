@@ -95,7 +95,7 @@ public class MainCustomersViewController
       alert.setHeaderText(null);
       alert.setTitle("About");
       alert.setContentText(
-          "This is just a little program that demonstrates some of the GUI features in Java");
+          "Here you can see all the customers and also edit, remove and add information about them");
       alert.showAndWait();
     }
     else if (e.getSource() == backButton)

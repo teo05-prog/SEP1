@@ -2,7 +2,7 @@ package model;
 
 import model.Pets.*;
 import utils.MyFileHandler;
-import view.main.MainViewController;
+import view.mainview.MainViewController;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,8 +1,10 @@
 package view.kennel;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import model.*;
+import model.Pets.Pet;
 import view.ViewHandler;
 
 public class CurrentViewController
@@ -12,6 +14,19 @@ public class CurrentViewController
 
   @FXML private TableView<Booking> allBookingsTable;
   @FXML private TableView.TableViewSelectionModel<Booking> defaultSelectionModel;
+
+  @FXML private TableColumn<Customer, String> firstName;
+  @FXML private TableColumn<Customer, String> lastName;
+  @FXML private TableColumn<Pet, String> petType;
+  @FXML private TableColumn<MyDate, String> startDate;
+  @FXML private TableColumn<MyDate, String> endDate;
+  @FXML private TableColumn<Integer, String> price;
+
+  @FXML private void initialize()
+  {
+    //setupTableColumns();
+    defaultSelectionModel = allBookingsTable.getSelectionModel();
+  }
 
   public void changeSelectableState(boolean bool)
   {

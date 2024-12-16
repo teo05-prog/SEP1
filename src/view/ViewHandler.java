@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import model.ModelManager;
 import view.customers.MainCustomersViewController;
 import view.kennel.KennelViewController;
-import view.main.MainViewController;
+import view.mainview.MainViewController;
 import view.pets.PetsViewController;
 import view.purchases.PurchasesViewController;
 
@@ -36,7 +36,7 @@ public class ViewHandler
     try
     {
       FXMLLoader loader = new FXMLLoader();
-      loader.setLocation(getClass().getResource("/view/main/MainView.fxml"));
+      loader.setLocation(getClass().getResource("/view/mainview/MainView.fxml"));
 
       Parent root = loader.load();
       Scene scene = new Scene(root);
@@ -57,7 +57,7 @@ public class ViewHandler
   public void openView(String id)
   {
     FXMLLoader loader = new FXMLLoader(
-        getClass().getResource("/view/main/MainView.fxml"));
+        getClass().getResource("/view/mainview/MainView.fxml"));
     try
     {
       Parent root = loader.load();

@@ -85,7 +85,7 @@ public class CatsViewController
       TextFieldTableCell<Cat, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
       cell.textProperty().addListener((obs, oldText, newText) -> {
-        if (newText.length() > 1)
+        if (newText != null && newText.length() > 1)
         {
           cell.setText(oldText);
         }
