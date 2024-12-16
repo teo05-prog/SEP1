@@ -2,18 +2,20 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
 
-<TableView fx:id="allBookingsTable" maxHeight="-Infinity" maxWidth="-Infinity"
-           minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0"
-           prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="view.kennel.CurrentViewController"
-           xmlns="http://javafx.com/javafx/23.0.1">
-    <columns>
-        <TableColumn prefWidth="90.0" text="First Name"/>
-        <TableColumn prefWidth="90.0" text="Last Name"/>
-        <TableColumn text="Pet Type"/>
-        <TableColumn prefWidth="90.0" text="Start Date"/>
-        <TableColumn prefWidth="90.0" text="End Date"/>
-        <TableColumn text="Total Price"/>
-    </columns>
-</TableView>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.kennel.CurrentViewController">
+   <children>
+      <TableView fx:id="allBookingsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0">
+          <columns>
+              <TableColumn fx:id="firstName" prefWidth="90.0" text="First Name" />
+              <TableColumn fx:id="lastName" prefWidth="90.0" text="Last Name" />
+              <TableColumn fx:id="petType" text="Pet Type" />
+              <TableColumn fx:id="startDate" prefWidth="90.0" text="Start Date" />
+              <TableColumn fx:id="endDate" prefWidth="90.0" text="End Date" />
+              <TableColumn fx:id="price" text="Total Price" />
+          </columns>
+      </TableView>
+   </children>
+</VBox>

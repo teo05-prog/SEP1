@@ -17,7 +17,7 @@
     <MenuBar>
         <Menu mnemonicParsing="false" text="File">
             <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
-                      onAction="#handleActions" text="Close"/>
+                      onAction="#handleActions" text="Exit"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
             <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"

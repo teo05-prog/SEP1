@@ -5,6 +5,7 @@ import model.Pets.Pet;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Booking implements Serializable
@@ -25,7 +26,7 @@ public class Booking implements Serializable
     this.startDate = startDate;
     this.endDate = endDate;
     this.pricePerDay = 20;
-    this.rooms = rooms;
+    this.rooms = rooms != null ? rooms : new ArrayList<>();
   }
 
   public Booking(Customer customer, Pet petInfo, MyDate startDate,
@@ -36,6 +37,7 @@ public class Booking implements Serializable
     this.startDate = startDate;
     this.endDate = endDate;
     this.pricePerDay = 20;
+    this.rooms = new ArrayList<>();
   }
 
   public MyDate getStartDate()
@@ -109,8 +111,17 @@ public class Booking implements Serializable
 
   public String toString()
   {
-    return "Customer: " + customer.getFirstName() + " " + customer.getLastName()
-        + ", Pet: " + petInfo.getName() + ", Booked from: " + startDate
+    String customerName = customer != null
+        ? customer.getFirstName() + " " + customer.getLastName()
+        : "Unknown Customer";
+
+    String petName = petInfo != null
+        ? petInfo.getName()
+        : "Unknown Pet";
+
+    return "Customer: " + customerName
+        + ", Pet: " + petName
+        + ", Booked from: " + startDate
         + " Until: " + endDate;
   }
 

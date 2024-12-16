@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="trying to solve some bugs">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="writing data now works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="49860" />
+    <option name="totalTimeSeconds" value="66243" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -21,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -42,12 +46,12 @@
     &quot;assignee&quot;: &quot;teo05-prog&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/teo05-prog/VIAPets.git",
-    "accountId": "a5749d79-1b8a-4c11-bc7c-8deef3e8c63a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets&quot;,
+    &quot;accountId&quot;: &quot;0f67eb8a-44ca-4392-88e2-8c6ca53db332&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -67,6 +71,7 @@
     &quot;Application.FileWriter.executor&quot;: &quot;Run&quot;,
     &quot;Application.StartApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
@@ -393,15 +398,55 @@
       <option name="project" value="LOCAL" />
       <updated>1734277981171</updated>
     </task>
-    <task id="LOCAL-00031" summary="trying to solve some bugs">
+    <task id="LOCAL-00031" summary="kennel view">
       <option name="closed" value="true" />
-      <created>1734286458566</created>
+      <created>1734291871780</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1734286458566</updated>
+      <updated>1734291871780</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="half of the app done">
+      <option name="closed" value="true" />
+      <created>1734298908648</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1734298908648</updated>
+    </task>
+    <task id="LOCAL-00033" summary="half of the app done">
+      <option name="closed" value="true" />
+      <created>1734339718522</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1734339718522</updated>
+    </task>
+    <task id="LOCAL-00034" summary="formatted files">
+      <option name="closed" value="true" />
+      <created>1734349429739</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1734349429739</updated>
+    </task>
+    <task id="LOCAL-00035" summary="formatted files&#10;&#10;Took 1 hour 4 minutes">
+      <option name="closed" value="true" />
+      <created>1734350768919</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1734350768919</updated>
+    </task>
+    <task id="LOCAL-00036" summary="writing data now works">
+      <option name="closed" value="true" />
+      <created>1734380900515</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1734380900515</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,13 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formatting" />
-    <MESSAGE value="booking class" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
-    <MESSAGE value="made it work, YAY" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
-    <MESSAGE value="Made it work, YAY" />
-    <MESSAGE value="added fileHandler" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes&#10;&#10;Took 31 minutes" />
@@ -439,9 +477,16 @@
     <MESSAGE value="added buttons to Pets" />
     <MESSAGE value="added extra windows for adding pets" />
     <MESSAGE value="something" />
+    <MESSAGE value="booking now works" />
+    <MESSAGE value="booking now works&#10;&#10;Took 21 minutes" />
     <MESSAGE value="kennel view" />
-    <MESSAGE value="trying to solve some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to solve some bugs" />
+    <MESSAGE value="half of the app done" />
+    <MESSAGE value="half of the app done&#10;&#10;Took 2 minutes" />
+    <MESSAGE value="formatted files" />
+    <MESSAGE value="formatted files&#10;&#10;Took 1 hour 4 minutes" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/RodentsViewController.java&#10;#&#9;src/view/pets/VariousViewController.java&#10;&#10;Took 14 seconds" />
+    <MESSAGE value="writing data now works" />
+    <option name="LAST_COMMIT_MESSAGE" value="writing data now works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

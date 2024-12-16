@@ -1,4 +1,4 @@
-package view.main;
+package view.mainview;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
