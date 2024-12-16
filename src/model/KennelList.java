@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class KennelList
+public class KennelList implements Serializable
 {
   private ArrayList<Booking> bookings;
 
@@ -23,7 +24,7 @@ public class KennelList
 
   public Booking getBooking(int index)
   {
-    if(index >= 0 && index < bookings.size())
+    if (index >= 0 && index < bookings.size())
     {
       return bookings.get(index);
     }
@@ -33,9 +34,9 @@ public class KennelList
   public String toString()
   {
     String temp = "";
-    for(int i = 0; i < bookings.size(); i++)
+    for (int i = 0; i < bookings.size(); i++)
     {
-      if(bookings.get(i) != null)
+      if (bookings.get(i) != null)
         temp += bookings.get(i);
     }
     return temp;

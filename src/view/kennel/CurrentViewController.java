@@ -50,15 +50,17 @@ public class CurrentViewController
     for (int i = 0; i < bookings.size(); i++)
     {
       Booking booking = bookings.get(i);
-      if (isCurrentBooking(booking, today)) {
+      if (isCurrentBooking(booking, today))
+      {
         allBookingsTable.getItems().add(booking);
       }
     }
   }
 
-  private boolean isCurrentBooking(Booking booking, MyDate today) {
-    return (today.compareTo(booking.getStartDate()) >= 0 &&
-        today.compareTo(booking.getEndDate()) <= 0);
+  private boolean isCurrentBooking(Booking booking, MyDate today)
+  {
+    return (today.compareTo(booking.getStartDate()) >= 0
+        && today.compareTo(booking.getEndDate()) <= 0);
   }
 }
 

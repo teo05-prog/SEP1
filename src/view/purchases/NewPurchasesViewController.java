@@ -10,6 +10,7 @@ import model.Pets.PetList;
 import view.ViewHandler;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class NewPurchasesViewController
 {
@@ -167,7 +168,13 @@ public class NewPurchasesViewController
     alert.setContentText(
         "The customer with this email or phone number does not exist in the system. "
             + "Please add the customer first before making a purchase.");
-    alert.showAndWait();
+    ButtonType addCustomerButton = new ButtonType("Add Customer");
+    alert.getButtonTypes().setAll(addCustomerButton, ButtonType.CANCEL);
+    Optional<ButtonType> result = alert.showAndWait();
+    if (result.isPresent() && result.get() == addCustomerButton)
+    {
+      viewHandler.openView("AddPurchaseCustomer");
+    }
   }
 
   private void initializePetTypes()

@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.ComboBox?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="300.0" prefWidth="520.0" spacing="20.0"
       xmlns="http://javafx.com/javafx/23.0.1"
@@ -101,8 +102,7 @@
                     <Insets top="8.0"/>
                 </VBox.margin>
             </Button>
-            <Button fx:id="updateButton" mnemonicParsing="false"
-                    text="Save">
+            <Button fx:id="updateButton" mnemonicParsing="false" text="Save" onAction="#handleActions">
                 <VBox.margin>
                     <Insets top="9.0"/>
                 </VBox.margin>
@@ -121,12 +121,12 @@
             <FlowPane.margin>
                 <Insets left="5.0"/>
             </FlowPane.margin>
-            <TableView prefHeight="150.0" prefWidth="520.0">
+            <TableView fx:id="customerTable" prefHeight="150.0" prefWidth="520.0">
                 <columns>
-                    <TableColumn prefWidth="110.0" text="First Name"/>
-                    <TableColumn prefWidth="110.0" text="Last Name"/>
-                    <TableColumn prefWidth="110.0" text="Phone No."/>
-                    <TableColumn prefWidth="170.0" text="E-mail"/>
+                    <TableColumn fx:id="firstNameColumn" prefWidth="110.0" text="First Name"/>
+                    <TableColumn fx:id="lastNameColumn" prefWidth="110.0" text="Last Name"/>
+                    <TableColumn fx:id="phoneColumn" prefWidth="110.0" text="Phone No."/>
+                    <TableColumn fx:id="emailColumn" prefWidth="170.0" text="E-mail"/>
                 </columns>
             </TableView>
         </ScrollPane>

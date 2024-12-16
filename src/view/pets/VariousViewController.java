@@ -44,6 +44,7 @@ public class VariousViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -56,6 +57,7 @@ public class VariousViewController
     commentColumn.setCellValueFactory(new PropertyValueFactory<>("comment"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
+
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
@@ -99,27 +101,6 @@ public class VariousViewController
       Various various = event.getRowValue();
       various.setComment(event.getNewValue());
     });
-    updateTableDate();
-  }
-
-  private void updateTableDate()
-  {
-    observableVarious = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
-    {
-      try
-      {
-        if (petList.getPets(i) instanceof Various)
-        {
-          observableVarious.add((Various) petList.getPets(i));
-        }
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-      }
-    }
-    variousTable.setItems(observableVarious);
   }
 
   @FXML private void handleAddVarious()
@@ -150,6 +131,27 @@ public class VariousViewController
 
   }
 
+  private void updateTableData()
+  {
+    observableVarious = FXCollections.observableArrayList();
+    for (int i = 0; i < petList.getPetsCount(); i++)
+    {
+      try
+      {
+        if (petList.getPets(i) instanceof Various)
+        {
+          observableVarious.add((Various) petList.getPets(i));
+        }
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    variousTable.setItems(observableVarious);
+  }
+
+  @FXML
   private void handleRemoveVarious()
   {
     Various selectedVarious = variousTable.getSelectionModel()
@@ -160,7 +162,8 @@ public class VariousViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection",
+          "Please select a various pet to remove.");
     }
   }
 

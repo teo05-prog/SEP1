@@ -45,6 +45,7 @@ public class BirdsViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -108,7 +109,6 @@ public class BirdsViewController
       Bird bird = event.getRowValue();
       bird.setSpecie(event.getNewValue());
     });
-    updateTableData();
   }
 
   @FXML private void handleAddBird()
@@ -139,7 +139,7 @@ public class BirdsViewController
 
   }
 
-  private void handleRemoveBird()
+  @FXML private void handleRemoveBird()
   {
     Bird selectedBird = birdTable.getSelectionModel().getSelectedItem();
     if (selectedBird != null)
@@ -148,7 +148,7 @@ public class BirdsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a bird to remove.");
     }
   }
 

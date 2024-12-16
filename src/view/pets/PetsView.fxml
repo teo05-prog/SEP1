@@ -27,22 +27,22 @@
     <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="587.0"
              tabClosingPolicy="UNAVAILABLE">
         <Tab fx:id="dogsTab" text="Dogs">
-            <fx:include source="/view/pets/DogsView.fxml"/>
+            <fx:include fx:id="dogsView" source="DogsView.fxml"/>
         </Tab>
         <Tab fx:id="catsTab" text="Cats">
-            <fx:include source="CatsView.fxml"/>
+            <fx:include fx:id="catsView" source="CatsView.fxml"/>
         </Tab>
         <Tab fx:id="birdsTab" text="Birds">
-            <fx:include source="BirdsView.fxml"/>
+            <fx:include fx:id="birdsView" source="BirdsView.fxml"/>
         </Tab>
         <Tab fx:id="fishTab" text="Fish">
-            <fx:include source="FishView.fxml"/>
+            <fx:include fx:id="fishView" source="FishView.fxml"/>
         </Tab>
         <Tab fx:id="rodentsTab" text="Rodents">
-            <fx:include source="RodentsView.fxml"/>
+            <fx:include fx:id="rodentsView" source="RodentsView.fxml"/>
         </Tab>
         <Tab fx:id="variousTab" text="Various">
-            <fx:include source="VariousView.fxml"/>
+            <fx:include fx:id="variousView" source="VariousView.fxml"/>
         </Tab>
     </TabPane>
     <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions"

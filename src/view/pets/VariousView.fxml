@@ -46,7 +46,7 @@
                     <Insets left="10.0"/>
                 </padding>
             </Label>
-            <Button mnemonicParsing="false" onAction="#handleAddVarious"
+            <Button mnemonicParsing="false" onAction="#handleRemoveVarious"
                     prefHeight="26.0" prefWidth="96.0" text="Remove">
                 <VBox.margin>
                     <Insets left="10.0"/>

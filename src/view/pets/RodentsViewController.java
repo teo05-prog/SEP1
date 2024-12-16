@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
-import model.Pets.Fish;
 import model.Pets.PetList;
 import model.Pets.Rodent;
 import view.ViewHandler;
@@ -47,6 +46,7 @@ public class RodentsViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -111,27 +111,6 @@ public class RodentsViewController
       Rodent rodent = event.getRowValue();
       rodent.setSpecie(event.getNewValue());
     });
-    updateTableDate();
-  }
-
-  private void updateTableDate()
-  {
-    observableRodents = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
-    {
-      try
-      {
-        if (petList.getPets(i) instanceof Rodent)
-        {
-          observableRodents.add((Rodent) petList.getPets(i));
-        }
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-      }
-    }
-    rodentTable.setItems(observableRodents);
   }
 
   @FXML private void handleAddRodent()
@@ -162,6 +141,7 @@ public class RodentsViewController
 
   }
 
+  @FXML
   private void handleRemoveRodent()
   {
     Rodent selectedRodent = rodentTable.getSelectionModel().getSelectedItem();
@@ -171,7 +151,8 @@ public class RodentsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection",
+          "Please select a rodent to remove.");
     }
   }
 
@@ -190,6 +171,26 @@ public class RodentsViewController
     {
       updateRodents();
     }
+  }
+
+  private void updateTableData()
+  {
+    observableRodents = FXCollections.observableArrayList();
+    for (int i = 0; i < petList.getPetsCount(); i++)
+    {
+      try
+      {
+        if (petList.getPets(i) instanceof Rodent)
+        {
+          observableRodents.add((Rodent) petList.getPets(i));
+        }
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    rodentTable.setItems(observableRodents);
   }
 
   private void updateRodents()

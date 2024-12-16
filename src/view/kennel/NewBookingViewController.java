@@ -8,6 +8,8 @@ import model.Pets.*;
 import utils.MyFileHandler;
 import view.ViewHandler;
 
+import java.util.Optional;
+
 public class NewBookingViewController
 {
   private ModelManager modelManager;
@@ -104,11 +106,27 @@ public class NewBookingViewController
       return null;
     }
 
-    String firstName = "John";
-    String lastName = "Doe";
+    Customer existingCustomer = findCustomerByContact(contactDetail);
 
-    Customer customer = new Customer(firstName, lastName, contactDetail,
-        contactDetail);
+    Customer customer;
+    if (existingCustomer == null)
+    {
+      boolean addCustomer = showCustomerNotFoundAlert();
+
+      if (addCustomer)
+      {
+        viewHandler.openView("AddKennelCustomer");
+        return null;
+      }
+      else
+      {
+        return null;
+      }
+    }
+    else
+    {
+      customer = existingCustomer;
+    }
 
     String petName = petNameField.getText().trim();
     String petComment = petInfoArea.getText().trim();
@@ -127,13 +145,47 @@ public class NewBookingViewController
       return null;
     }
 
-    Booking newBooking = new Booking(customer, pet, bookingStartDate, bookingEndDate);
+    Booking newBooking = new Booking(customer, pet, bookingStartDate,
+        bookingEndDate);
     newBooking.setStartDate(bookingStartDate);
     newBooking.setEndDate(bookingEndDate);
     newBooking.setCustomer(customer);
     newBooking.setPetInfo(pet);
 
     return newBooking;
+  }
+
+  private Customer findCustomerByContact(String contactInfo)
+  {
+    CustomerList allCustomers = modelManager.getAllCustomers();
+    for (int i = 0; i < allCustomers.size(); i++)
+    {
+      Customer customer = allCustomers.get(i);
+      if (contactInfo.equals(customer.getEmail()) || contactInfo.equals(
+          customer.getPhone()))
+      {
+        return customer;
+      }
+    }
+    return null;
+  }
+
+  private boolean showCustomerNotFoundAlert()
+  {
+    Alert alert = new Alert(Alert.AlertType.WARNING);
+    alert.setTitle("Customer Not Found");
+    alert.setHeaderText("Customer Does Not Exist");
+    alert.setContentText(
+        "The customer with this email or phone number does not exist in the system. "
+            + "Would you like to add a new customer?");
+    ButtonType addCustomerButton = new ButtonType("Add Customer");
+    ButtonType cancelButton = new ButtonType("Cancel",
+        ButtonType.CANCEL.getButtonData());
+
+    alert.getButtonTypes().setAll(addCustomerButton, ButtonType.CANCEL);
+    Optional<ButtonType> result = alert.showAndWait();
+
+    return result.isPresent() && result.get() == addCustomerButton;
   }
 
   private void saveBooking(Booking booking)

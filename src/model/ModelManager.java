@@ -1,16 +1,11 @@
 package model;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.Region;
-import javafx.stage.Stage;
 import model.Pets.*;
 import utils.MyFileHandler;
-import view.ViewHandler;
 import view.main.MainViewController;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 public class ModelManager
 {
@@ -31,125 +26,63 @@ public class ModelManager
     this.purchasesFileName = purchasesFileName;
   }
 
-//  public void start()
-//  {
-//    ModelManager modelManager = new ModelManager("customers.bin", "pets.bin",
-//        "kennel.bin", "purchases.bin");
-//
-//    loadViewMain(modelManager);
-//    loadViewCustomers(modelManager);
-//    loadViewPets(modelManager);
-//    loadViewKennel(modelManager);
-//    loadViewPurchases(modelManager);
-//    openView("MainView");
-//  }
-
-//  private void loadViewMain(ModelManager modelManager)
-//  {
-//    try
-//    {
-//      FXMLLoader loader = new FXMLLoader();
-//      loader.setLocation(getClass().getResource("MainView.fxml"));
-//      Region root = loader.load();
-//      mainViewController = loader.getController();
-//      ViewHandler viewHandler = new ViewHandler(new Stage(), modelManager);
-//      mainViewController.init(viewHandler, new Scene(root), modelManager);
-//    }
-//    catch (IOException e)
-//    {
-//      e.printStackTrace();
-//    }
-//  }
-//
-//  private void loadViewCustomers(ModelManager modelManager)
-//  {
-//    try
-//    {
-//      FXMLLoader loader = new FXMLLoader();
-//      loader.setLocation(getClass().getResource("MainCustomersView.fxml"));
-//      Region root = loader.load();
-//      mainViewController = loader.getController();
-//      ViewHandler viewHandler = new ViewHandler(new Stage(), modelManager);
-//      mainViewController.init(viewHandler, new Scene(root), modelManager);
-//    }
-//    catch (IOException e)
-//    {
-//      e.printStackTrace();
-//    }
-//  }
-//
-//  private void loadViewPets(ModelManager modelManager)
-//  {
-//    try
-//    {
-//      FXMLLoader loader = new FXMLLoader();
-//      loader.setLocation(getClass().getResource("PetsView.fxml"));
-//      Region root = loader.load();
-//      mainViewController = loader.getController();
-//      ViewHandler viewHandler = new ViewHandler(new Stage(), modelManager);
-//      mainViewController.init(viewHandler, new Scene(root), modelManager);
-//    }
-//    catch (IOException e)
-//    {
-//      e.printStackTrace();
-//    }
-//  }
-//
-//  private void loadViewKennel(ModelManager modelManager)
-//  {
-//    try
-//    {
-//      FXMLLoader loader = new FXMLLoader();
-//      loader.setLocation(getClass().getResource("KennelView.fxml"));
-//      Region root = loader.load();
-//      mainViewController = loader.getController();
-//      ViewHandler viewHandler = new ViewHandler(new Stage(), modelManager);
-//      mainViewController.init(viewHandler, new Scene(root), modelManager);
-//    }
-//    catch (IOException e)
-//    {
-//      e.printStackTrace();
-//    }
-//  }
-//
-//  private void loadViewPurchases(ModelManager modelManager)
-//  {
-//    try
-//    {
-//      FXMLLoader loader = new FXMLLoader();
-//      loader.setLocation(getClass().getResource("PurchasesView.fxml"));
-//      Region root = loader.load();
-//      mainViewController = loader.getController();
-//      ViewHandler viewHandler = new ViewHandler(new Stage(), modelManager);
-//      mainViewController.init(viewHandler, new Scene(root), modelManager);
-//    }
-//    catch (IOException e)
-//    {
-//      e.printStackTrace();
-//    }
-//  }
-
   public CustomerList getAllCustomers()
   {
     CustomerList allCustomers = new CustomerList();
 
     try
     {
-      allCustomers = (CustomerList) MyFileHandler.readFromBinaryFile(
-          customersFileName);
+      ArrayList<Object> objects = new ArrayList<>();
+      ObjectInputStream readFromFile = null;
+
+      try
+      {
+        FileInputStream fileInStream = new FileInputStream(customersFileName);
+        readFromFile = new ObjectInputStream(fileInStream);
+
+        while (true)
+        {
+          try
+          {
+            Object obj = readFromFile.readObject();
+            if (obj instanceof CustomerList)
+            {
+              return (CustomerList) obj;
+            }
+            else if (obj instanceof Customer)
+            {
+              allCustomers.add((Customer) obj);
+            }
+          }
+          catch (EOFException eof)
+          {
+            break;
+          }
+        }
+      }
+      finally
+      {
+        if (readFromFile != null)
+        {
+          readFromFile.close();
+        }
+      }
     }
     catch (FileNotFoundException e)
     {
-      System.out.println("File not found");
+      System.out.println("File not found - Creating new customer list");
     }
     catch (IOException e)
     {
       System.out.println("IO Error reading file");
+      e.printStackTrace();
     }
     catch (ClassNotFoundException e)
     {
       System.out.println("Class Not Found");
+      e.printStackTrace();
     }
+
     return allCustomers;
   }
 
@@ -207,13 +140,10 @@ public class ModelManager
     {
       MyFileHandler.writeToBinaryFile(customersFileName, customers);
     }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("File not found");
-    }
     catch (IOException e)
     {
       System.out.println("IO Error writing to file");
+      e.printStackTrace();
     }
   }
 

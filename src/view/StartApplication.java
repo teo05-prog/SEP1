@@ -20,7 +20,8 @@ public class StartApplication extends Application
     catch (Exception e)
     {
       e.printStackTrace();
-      System.err.println("Error initializing the application: " + e.getMessage());
+      System.err.println(
+          "Error initializing the application: " + e.getMessage());
     }
   }
 

@@ -32,8 +32,19 @@ public class PetsViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  public void initialize()
+  @FXML public void initialize()
   {
+    // Leave empty or handle only UI setup that doesn't require dependencies
+  }
+
+  public void init(ViewHandler viewHandler, Scene scene,
+      ModelManager modelManager)
+  {
+    this.modelManager = modelManager;
+    this.viewHandler = viewHandler;
+    this.scene = scene;
+
+    // Initialize all child controllers after dependencies are set
     if (dogsViewController != null)
       dogsViewController.init(viewHandler, modelManager, scene);
     if (catsViewController != null)
@@ -48,17 +59,33 @@ public class PetsViewController
       variousViewController.init(viewHandler, modelManager, scene);
   }
 
-  public void init(ViewHandler viewHandler, Scene scene,
-      ModelManager modelManager)
-  {
-    this.modelManager = modelManager;
-    this.viewHandler = viewHandler;
-    this.scene = scene;
-  }
-
   public void reset()
   {
-
+    // Reset the current tab's view
+    if (dogsTab.isSelected())
+    {
+      dogsViewController.reset();
+    }
+    else if (catsTab.isSelected())
+    {
+      catsViewController.reset();
+    }
+    else if (birdsTab.isSelected())
+    {
+      birdsViewController.reset();
+    }
+    else if (fishTab.isSelected())
+    {
+      fishViewController.reset();
+    }
+    else if (rodentsTab.isSelected())
+    {
+      rodentsViewController.reset();
+    }
+    else if (variousTab.isSelected())
+    {
+      variousViewController.reset();
+    }
   }
 
   public Scene getScene()
@@ -66,7 +93,7 @@ public class PetsViewController
     return scene;
   }
 
-  public void tabChanged(Event event)
+  @FXML public void tabChanged(Event event)
   {
     if (dogsTab.isSelected())
     {
@@ -94,7 +121,7 @@ public class PetsViewController
     }
   }
 
-  public void handleActions(ActionEvent e)
+  @FXML public void handleActions(ActionEvent e)
   {
     if (e.getSource() == exitMenuItem)
     {
@@ -117,7 +144,7 @@ public class PetsViewController
       alert.setHeaderText(null);
       alert.setTitle("About");
       alert.setContentText(
-          "This is just a little program that demonstrates some of the GUI features in Java");
+          "Here you can check existing pets in the shop, while also being able to add new or to remove existing pets.");
       alert.showAndWait();
     }
     else if (e.getSource() == backButton)

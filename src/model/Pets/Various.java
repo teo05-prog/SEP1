@@ -29,8 +29,7 @@ public class Various extends Pet
 
   public String toString()
   {
-    return "Various: " + super.toString() + ", specie: "
-        + specie;
+    return "Various: " + super.toString() + ", specie: " + specie;
   }
 
   public boolean equals(Object obj)

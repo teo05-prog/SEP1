@@ -9,11 +9,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0"
-      xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.purchases.PurchasesViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.purchases.PurchasesViewController">
     <MenuBar>
         <Menu mnemonicParsing="false" text="File">
             <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
@@ -29,12 +25,12 @@
         <Tab fx:id="allPurchasesTab" onSelectionChanged="#tabChanged"
              text="Purchases">
             <fx:include fx:id="allPurchasesView"
-                        source="/view/purchases/AllPurchasesView.fxml"/>
+                        source="AllPurchasesView.fxml"/>
         </Tab>
         <Tab fx:id="newPurchaseTab" onSelectionChanged="#tabChanged"
              text="New">
             <fx:include fx:id="newPurchasesView"
-                        source="/view/purchases/NewPurchasesView.fxml"/>
+                        source="NewPurchasesView.fxml"/>
         </Tab>
     </TabPane>
     <Button fx:id="backButton" mnemonicParsing="false" text="Back">

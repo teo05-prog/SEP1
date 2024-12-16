@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Booking implements Serializable
 {
+  private static final long serialVersionUID = 5898788688332424564L;
   private Pet petInfo;
   private Customer customer;
   private MyDate startDate;
@@ -16,7 +17,8 @@ public class Booking implements Serializable
   private int pricePerDay;
   private List<Room> rooms;
 
-  public Booking(Customer customer, Pet petInfo, MyDate startDate, MyDate endDate, List<Room> rooms)
+  public Booking(Customer customer, Pet petInfo, MyDate startDate,
+      MyDate endDate, List<Room> rooms)
   {
     this.customer = customer;
     this.petInfo = petInfo;
@@ -26,7 +28,8 @@ public class Booking implements Serializable
     this.rooms = rooms;
   }
 
-  public Booking(Customer customer, Pet petInfo, MyDate startDate, MyDate endDate)
+  public Booking(Customer customer, Pet petInfo, MyDate startDate,
+      MyDate endDate)
   {
     this.customer = customer;
     this.petInfo = petInfo;
@@ -106,7 +109,8 @@ public class Booking implements Serializable
 
   public String toString()
   {
-    return "Customer: " + customer.getFirstName() + " " + customer.getLastName() + ", Pet: " + petInfo.getName() + ", Booked from: " + startDate
+    return "Customer: " + customer.getFirstName() + " " + customer.getLastName()
+        + ", Pet: " + petInfo.getName() + ", Booked from: " + startDate
         + " Until: " + endDate;
   }
 

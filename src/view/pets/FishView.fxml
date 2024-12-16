@@ -48,7 +48,7 @@
                     <Insets left="10.0"/>
                 </padding>
             </Label>
-            <Button mnemonicParsing="false" onAction="#handleAddFish"
+            <Button mnemonicParsing="false" onAction="#handleRemoveFish"
                     prefHeight="26.0" prefWidth="96.0" text="Remove">
                 <VBox.margin>
                     <Insets left="10.0"/>

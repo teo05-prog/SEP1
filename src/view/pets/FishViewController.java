@@ -47,6 +47,7 @@ public class FishViewController
     this.modelManager = modelManager;
     this.scene = scene;
     this.petList = modelManager.getAllPets();
+    updateTableData();
   }
 
   @FXML public void initialize()
@@ -117,7 +118,6 @@ public class FishViewController
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
     });
-    updateTableData();
   }
 
   private void updateTableData()
@@ -165,10 +165,9 @@ public class FishViewController
     {
       System.out.println("Error opening window: " + e.getMessage());
     }
-
   }
 
-  private void handleRemoveFish()
+  @FXML private void handleRemoveFish()
   {
     Fish selectedFish = fishTable.getSelectionModel().getSelectedItem();
     if (selectedFish != null)
@@ -177,7 +176,7 @@ public class FishViewController
     }
     else
     {
-      showAlert("No selection", "Please select a dog to remove.");
+      showAlert("No selection", "Please select a fish to remove.");
     }
   }
 

@@ -23,11 +23,12 @@ public class MainViewController
   @FXML MenuItem exitMenuItem;
   @FXML MenuItem aboutMenuItem;
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager, Scene scene)
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
-    this.scene=scene;
+    this.scene = scene;
   }
 
   public void handleActions(ActionEvent e)
@@ -78,6 +79,7 @@ public class MainViewController
       alert.showAndWait();
     }
   }
+
   public void setScene(Scene scene)
   {
     this.scene = scene;
