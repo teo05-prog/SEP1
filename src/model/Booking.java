@@ -3,6 +3,7 @@ package model;
 import model.Pets.Pet;
 
 import java.io.Serializable;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -70,14 +71,20 @@ public class Booking implements Serializable
     this.customer = customer;
   }
 
-  public long getDuration()
+  public double getDuration()
   {
-    LocalDate date1 = LocalDate.of(startDate.getYear(), startDate.getMonth(),
-        startDate.getDay());
-    LocalDate date2 = LocalDate.of(endDate.getYear(), endDate.getMonth(),
-        endDate.getDay());
-
-    return ChronoUnit.DAYS.between(date1, date2);
+    try
+    {
+      LocalDate date1 = LocalDate.of(startDate.getYear(), startDate.getMonth(),
+          startDate.getDay());
+      LocalDate date2 = LocalDate.of(endDate.getYear(), endDate.getMonth(),
+          endDate.getDay());
+      return Math.abs(ChronoUnit.DAYS.between(date1, date2));
+    }
+    catch (DateTimeException e)
+    {
+      return 1;
+    }
   }
 
   public String getPetInfo()
@@ -85,7 +92,7 @@ public class Booking implements Serializable
     return petInfo.toString();
   }
 
-  public long getPrice()
+  public double getPrice()
   {
     return pricePerDay * getDuration();
   }
@@ -111,18 +118,14 @@ public class Booking implements Serializable
 
   public String toString()
   {
-    String customerName = customer != null
-        ? customer.getFirstName() + " " + customer.getLastName()
-        : "Unknown Customer";
+    String customerName = customer != null ?
+        customer.getFirstName() + " " + customer.getLastName() :
+        "Unknown Customer";
 
-    String petName = petInfo != null
-        ? petInfo.getName()
-        : "Unknown Pet";
+    String petName = petInfo != null ? petInfo.getName() : "Unknown Pet";
 
-    return "Customer: " + customerName
-        + ", Pet: " + petName
-        + ", Booked from: " + startDate
-        + " Until: " + endDate;
+    return "Customer: " + customerName + ", Pet: " + petName + ", Booked from: "
+        + startDate + " Until: " + endDate;
   }
 
   public boolean equals(Object obj)
@@ -130,7 +133,9 @@ public class Booking implements Serializable
     if (obj == null || getClass() != obj.getClass())
       return false;
     Booking other = (Booking) obj;
-    return petInfo.equals(other.petInfo) && customer.equals(other.customer)
+    return (petInfo == null ?
+        other.petInfo == null :
+        petInfo.equals(other.petInfo)) && customer.equals(other.customer)
         && startDate.equals(other.startDate) && endDate.equals(other.endDate)
         && pricePerDay == other.pricePerDay;
   }
@@ -138,5 +143,40 @@ public class Booking implements Serializable
   public void setPetInfo(Pet petInfo)
   {
     this.petInfo = petInfo;
+  }
+
+  public int getPricePerDay()
+  {
+    return pricePerDay;
+  }
+
+  public String getEndDateString()
+  {
+    return getEndDate().toString();
+  }
+
+  public String getCustomerFirstName()
+  {
+    return getCustomer().getFirstName();
+  }
+
+  public String getCustomerLastName()
+  {
+    return getCustomer().getLastName();
+  }
+
+  public String getPetType()
+  {
+    return petInfo != null ? petInfo.getClass().getSimpleName() : "Unknown";
+  }
+
+  public String getPetName()
+  {
+    return petInfo != null ? petInfo.getName() : "Unknown";
+  }
+
+  public String getStartDateString()
+  {
+    return getStartDate().toString();
   }
 }

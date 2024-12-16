@@ -69,4 +69,9 @@ public class Dog extends Pet implements Serializable
         && other.getPrice() == super.getPrice() && other.getBreed()
         .equals(breed) && other.getBreederName().equals(breederName);
   }
+
+  public String getType()
+  {
+    return "Dog";
+  }
 }

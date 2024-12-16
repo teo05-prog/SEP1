@@ -24,25 +24,48 @@ public class PurchasesViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  public void initialize()
-  {
-    if (allPurchasesViewController != null)
-      allPurchasesViewController.init(viewHandler, modelManager, scene);
-    if (newPurchasesViewController != null)
-      newPurchasesViewController.init(viewHandler, modelManager);
-  }
-
   public void init(ViewHandler viewHandler, Scene scene,
       ModelManager modelManager)
   {
     this.modelManager = modelManager;
     this.viewHandler = viewHandler;
     this.scene = scene;
+
+    if (allPurchasesViewController != null)
+    {
+      allPurchasesViewController.init(viewHandler, modelManager, scene);
+      allPurchasesViewController.reset();
+    }
+
+    if (newPurchasesViewController != null)
+    {
+      newPurchasesViewController.init(viewHandler, modelManager);
+      newPurchasesViewController.reset();
+    }
+
+    tabPane.getSelectionModel().selectedItemProperty()
+        .addListener((observable, oldTab, newTab) -> {
+          if (newTab == allPurchasesTab)
+          {
+            allPurchasesViewController.reset();
+          }
+          else if (newTab == newPurchaseTab)
+          {
+            newPurchasesViewController.reset();
+          }
+        });
   }
 
   public void reset()
   {
-
+    if (allPurchasesViewController != null)
+    {
+      allPurchasesViewController.reset();
+    }
+    if (newPurchasesViewController != null)
+    {
+      newPurchasesViewController.reset();
+    }
   }
 
   public Scene getScene()
@@ -85,7 +108,7 @@ public class PurchasesViewController
       alert.setHeaderText(null);
       alert.setTitle("About");
       alert.setContentText(
-          "This is just a little program that demonstrates some of the GUI features in Java");
+          "Here you can see all the purchases in the system and also add new ones.");
       alert.showAndWait();
     }
     else if (e.getSource() == backButton)

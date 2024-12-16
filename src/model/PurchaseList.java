@@ -60,12 +60,12 @@ public class PurchaseList implements Serializable
 
   public int size()
   {
-    return purchases.size();
+    return purchases != null ? purchases.size() : 0;
   }
 
   public Purchase get(int index)
   {
-    return purchases.get(index);
+    return purchases != null ? purchases.get(index) : null;
   }
 
   public void add(Purchase purchase)

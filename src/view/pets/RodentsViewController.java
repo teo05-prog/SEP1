@@ -14,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.converter.BooleanStringConverter;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
@@ -101,7 +102,7 @@ public class RodentsViewController
       rodent.setPrice(event.getNewValue());
     });
     doesItBiteColumn.setCellFactory(
-        CheckBoxTableCell.forTableColumn(doesItBiteColumn));
+        TextFieldTableCell.forTableColumn(new BooleanStringConverter()));
     doesItBiteColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setDoesItBite(event.getNewValue());
@@ -141,8 +142,7 @@ public class RodentsViewController
 
   }
 
-  @FXML
-  private void handleRemoveRodent()
+  @FXML private void handleRemoveRodent()
   {
     Rodent selectedRodent = rodentTable.getSelectionModel().getSelectedItem();
     if (selectedRodent != null)
@@ -151,8 +151,7 @@ public class RodentsViewController
     }
     else
     {
-      showAlert("No selection",
-          "Please select a rodent to remove.");
+      showAlert("No selection", "Please select a rodent to remove.");
     }
   }
 

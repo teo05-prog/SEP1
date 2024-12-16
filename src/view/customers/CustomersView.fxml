@@ -2,19 +2,15 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-
 <?import javafx.scene.layout.VBox?>
-<VBox fx:controller="view.customers.CustomersViewController"
-      xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1">
-    <TableView fx:id="allCustomersTable" maxHeight="-Infinity" maxWidth="-Infinity"
-               minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0"
-               prefWidth="520.0">
+
+<VBox prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.customers.CustomersViewController">
+    <TableView fx:id="allCustomersTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0">
         <columns>
-            <TableColumn fx:id="firstNameColumn" prefWidth="115.0" text="First Name"/>
-            <TableColumn fx:id="lastNameColumn" prefWidth="115.0" text="Last Name"/>
-            <TableColumn fx:id="phoneColumn" prefWidth="115.0" text="Phone"/>
-            <TableColumn fx:id="emailColumn" prefWidth="179.0" text="E-mail"/>
+            <TableColumn fx:id="firstNameColumn" prefWidth="150.0" text="First Name" />
+            <TableColumn fx:id="lastNameColumn" prefWidth="150.0" text="Last Name" />
+            <TableColumn fx:id="phoneColumn" prefWidth="115.0" text="Phone" />
+            <TableColumn fx:id="emailColumn" prefWidth="185.0" text="E-mail" />
         </columns>
     </TableView>
 </VBox>

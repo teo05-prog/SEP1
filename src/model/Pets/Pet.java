@@ -92,7 +92,7 @@ public abstract class Pet implements Serializable
   }
 
   public abstract Pet copy();
-
+  public abstract String getType();
   public abstract boolean equals(Object obj);
 
   public String toString()

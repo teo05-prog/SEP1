@@ -36,7 +36,8 @@ public class ViewHandler
     try
     {
       FXMLLoader loader = new FXMLLoader();
-      loader.setLocation(getClass().getResource("/view/mainview/MainView.fxml"));
+      loader.setLocation(
+          getClass().getResource("/view/mainview/MainView.fxml"));
 
       Parent root = loader.load();
       Scene scene = new Scene(root);
@@ -87,8 +88,8 @@ public class ViewHandler
     {
       Parent root = loader.load();
       Scene scene = new Scene(root);
-      MainViewController controller = loader.getController();
-      controller.init(this, modelManager, scene);
+      KennelViewController controller = loader.getController();
+      controller.init(this, scene, modelManager);
       stage.setScene(scene);
       stage.show();
     }
@@ -112,8 +113,8 @@ public class ViewHandler
     {
       Parent root = loader.load();
       Scene scene = new Scene(root);
-      MainViewController controller = loader.getController();
-      controller.init(this, modelManager, scene);
+      PurchasesViewController controller = loader.getController();
+      controller.init(this, scene, modelManager);
       stage.setScene(scene);
       stage.show();
     }

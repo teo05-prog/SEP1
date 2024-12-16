@@ -2,13 +2,20 @@ package view.pets;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.ModelManager;
 import model.Pets.Dog;
+import model.Pets.PetList;
+import view.ViewHandler;
 
 public class AddDogViewController
 {
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
 
   @FXML private TextField nameField;
   @FXML private TextField ageField;
@@ -20,6 +27,14 @@ public class AddDogViewController
   @FXML private TextField breederNameField;
 
   private Dog newDog;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML private void handleSave(ActionEvent event)
   {
@@ -37,12 +52,17 @@ public class AddDogViewController
       newDog = new Dog(name, age, color, gender, comment, price, breed,
           breederName);
 
+      PetList pets = modelManager.getAllPets();
+      pets.addPet(newDog);
+      modelManager.savePets(pets);
+
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();
     }
     catch (Exception e)
     {
       System.out.println("Invalid input: " + e.getMessage());
+      e.printStackTrace();
     }
   }
 
@@ -56,5 +76,10 @@ public class AddDogViewController
   public Dog getNewDog()
   {
     return newDog;
+  }
+
+  public Scene getScene()
+  {
+    return scene;
   }
 }

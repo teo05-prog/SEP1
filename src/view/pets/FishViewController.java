@@ -60,8 +60,7 @@ public class FishViewController
     commentColumn.setCellValueFactory(new PropertyValueFactory<>("comment"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     waterColumn.setCellValueFactory(new PropertyValueFactory<>("water"));
-    predatorColumn.setCellValueFactory(
-        new PropertyValueFactory<>("predators"));
+    predatorColumn.setCellValueFactory(new PropertyValueFactory<>("predators"));
     specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());

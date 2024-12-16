@@ -62,4 +62,9 @@ public class Rodent extends Pet implements Serializable
         && other.getDoesItBite() == doesItBite && other.getSpecie()
         .equals(specie);
   }
+
+  public String getType()
+  {
+    return "Rodent";
+  }
 }
