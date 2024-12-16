@@ -55,9 +55,8 @@ public class Fish extends Pet implements Serializable
 
   public String toString()
   {
-    return "Fish: " + super.toString()
-        + ", type of water: " + water + ", predator: " + predators
-        + ", specie: " + specie;
+    return "Fish: " + super.toString() + ", type of water: " + water
+        + ", predator: " + predators + ", specie: " + specie;
   }
 
   public boolean equals(Object obj)

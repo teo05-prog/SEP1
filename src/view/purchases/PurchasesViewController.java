@@ -50,9 +50,9 @@ public class PurchasesViewController
     return scene;
   }
 
-  public void tabChanged(Event event)
+  @FXML public void tabChanged(Event event)
   {
-    if(allPurchasesTab.isSelected())
+    if (allPurchasesTab.isSelected())
     {
       allPurchasesViewController.reset();
     }
@@ -62,13 +62,13 @@ public class PurchasesViewController
     }
   }
 
-  public void handleActions(ActionEvent e)
+  @FXML public void handleActions(ActionEvent e)
   {
     if (e.getSource() == exitMenuItem)
     {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-          "Do you really want to exit the program?",
-          ButtonType.YES, ButtonType.NO);
+          "Do you really want to exit the program?", ButtonType.YES,
+          ButtonType.NO);
       alert.setTitle("Exit");
       alert.setHeaderText(null);
 
@@ -84,7 +84,8 @@ public class PurchasesViewController
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
       alert.setTitle("About");
-      alert.setContentText("This is just a little program that demonstrates some of the GUI features in Java");
+      alert.setContentText(
+          "This is just a little program that demonstrates some of the GUI features in Java");
       alert.showAndWait();
     }
     else if (e.getSource() == backButton)
@@ -92,6 +93,5 @@ public class PurchasesViewController
       viewHandler.openView("MainView");
     }
   }
-
 
 }

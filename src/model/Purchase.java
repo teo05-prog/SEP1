@@ -42,7 +42,8 @@ public class Purchase implements Serializable
 
   public String toString()
   {
-    return "Customer: " + customer + ", Pet: " + pet + ", Discount: " + discount + "%" + " ,Date: " + date;
+    return "Customer: " + customer + ", Pet: " + pet + ", Discount: " + discount
+        + "%" + " ,Date: " + date;
   }
 
   public boolean equals(Object obj)
@@ -52,9 +53,8 @@ public class Purchase implements Serializable
       return false;
     }
     Purchase other = (Purchase) obj;
-    return other.getDiscount() == discount &&
-        other.getDateOfPurchase().equals(date) &&
-        other.customer.equals(customer) &&
-        other.pet.equals(pet);
+    return other.getDiscount() == discount && other.getDateOfPurchase()
+        .equals(date) && other.customer.equals(customer) && other.pet.equals(
+        pet);
   }
 }

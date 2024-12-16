@@ -43,8 +43,8 @@ public class Rodent extends Pet implements Serializable
 
   public String toString()
   {
-    return "Rodent: " + super.toString()
-        + ", does it bite?: " + doesItBite + ", specie: " + specie;
+    return "Rodent: " + super.toString() + ", does it bite?: " + doesItBite
+        + ", specie: " + specie;
   }
 
   public boolean equals(Object obj)

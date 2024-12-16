@@ -24,7 +24,7 @@ public class KennelList implements Serializable
 
   public Booking getBooking(int index)
   {
-    if(index >= 0 && index < bookings.size())
+    if (index >= 0 && index < bookings.size())
     {
       return bookings.get(index);
     }
@@ -34,9 +34,9 @@ public class KennelList implements Serializable
   public String toString()
   {
     String temp = "";
-    for(int i = 0; i < bookings.size(); i++)
+    for (int i = 0; i < bookings.size(); i++)
     {
-      if(bookings.get(i) != null)
+      if (bookings.get(i) != null)
         temp += bookings.get(i);
     }
     return temp;

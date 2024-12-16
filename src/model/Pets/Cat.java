@@ -51,8 +51,8 @@ public class Cat extends Pet implements Serializable
 
   public String toString()
   {
-    return "Cat: " + super.toString() + ", breed: " + breed
-        + ", breeder name: " + breederName;
+    return "Cat: " + super.toString() + ", breed: " + breed + ", breeder name: "
+        + breederName;
   }
 
   public boolean equals(Object obj)

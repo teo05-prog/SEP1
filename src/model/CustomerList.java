@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class CustomerList implements Serializable
-{   private static final long serialVersionUID = -8680388145644152994L;
+{
+  private static final long serialVersionUID = -8680388145644152994L;
   private ArrayList<Customer> customers;
 
   public CustomerList()
@@ -24,7 +25,7 @@ public class CustomerList implements Serializable
 
   public Customer get(int index)
   {
-    if(index<customers.size())
+    if (index < customers.size())
     {
       return customers.get(index);
     }
@@ -39,7 +40,8 @@ public class CustomerList implements Serializable
     return customers.size();
   }
 
-  public Customer getCustomerByPhone(String phone){
+  public Customer getCustomerByPhone(String phone)
+  {
     for (Customer customer : customers)
     {
       if (customer.getPhone().equals(phone))

@@ -24,19 +24,14 @@ public class MainCustomersViewController
   private ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  @FXML
-  private void initialize() {
-//    ModelManager modelManager = new ModelManager(
-//        "customers.bin",
-//        "pets.bin",
-//        "kennel.bin",
-//        "purchases.bin"
-//    );
+  @FXML private void initialize()
+  {
     customersController.init(viewHandler, modelManager, scene);
     manageCustomersController.init(viewHandler, modelManager, scene);
   }
 
-  public void init(ViewHandler viewHandler, Scene scene, ModelManager modelManager)
+  public void init(ViewHandler viewHandler, Scene scene,
+      ModelManager modelManager)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;

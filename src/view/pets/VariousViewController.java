@@ -57,6 +57,7 @@ public class VariousViewController
     commentColumn.setCellValueFactory(new PropertyValueFactory<>("comment"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
+
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     nameColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
@@ -102,26 +103,6 @@ public class VariousViewController
     });
   }
 
-  private void updateTableDate()
-  {
-    observableVarious = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
-    {
-      try
-      {
-        if (petList.getPets(i) instanceof Various)
-        {
-          observableVarious.add((Various) petList.getPets(i));
-        }
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-      }
-    }
-    variousTable.setItems(observableVarious);
-  }
-
   @FXML private void handleAddVarious()
   {
     try
@@ -149,7 +130,8 @@ public class VariousViewController
     }
 
   }
-  private void updateTableData() // was updateTableDate
+
+  private void updateTableData()
   {
     observableVarious = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)
@@ -168,17 +150,20 @@ public class VariousViewController
     }
     variousTable.setItems(observableVarious);
   }
-  @FXML // Add this annotation
+
+  @FXML
   private void handleRemoveVarious()
   {
-    Various selectedVarious = variousTable.getSelectionModel().getSelectedItem();
+    Various selectedVarious = variousTable.getSelectionModel()
+        .getSelectedItem();
     if (selectedVarious != null)
     {
       observableVarious.remove(selectedVarious);
     }
     else
     {
-      showAlert("No selection", "Please select a various pet to remove."); // Fix message
+      showAlert("No selection",
+          "Please select a various pet to remove.");
     }
   }
 

@@ -1,9 +1,7 @@
 package utils;
 
-import model.Customer;
 import model.CustomerList;
 import model.*;
-import model.Pets.Pet;
 import model.Pets.PetList;
 
 import java.io.*;
@@ -12,7 +10,6 @@ public class FileReader
 {
   public static void main(String[] args)
   {
-    // Read Customers
     try
     {
       FileInputStream customersFileIn = new FileInputStream("customers.bin");
@@ -20,7 +17,7 @@ public class FileReader
       try
       {
         CustomerList customerList = (CustomerList) readCustomers.readObject();
-        for(int i = 0; i < customerList.size(); i++)
+        for (int i = 0; i < customerList.size(); i++)
         {
           System.out.println(customerList.get(i));
         }
@@ -49,7 +46,6 @@ public class FileReader
       System.exit(1);
     }
 
-    // Read Pets
     try
     {
       FileInputStream petsFileIn = new FileInputStream("pets.bin");
@@ -57,7 +53,7 @@ public class FileReader
       try
       {
         PetList petList = (PetList) readPets.readObject();
-        for(int i = 0; i < petList.size(); i++)
+        for (int i = 0; i < petList.size(); i++)
         {
           System.out.println(petList.get(i));
         }
@@ -86,7 +82,6 @@ public class FileReader
       System.exit(1);
     }
 
-    // Read Purchases
     try
     {
       FileInputStream purchasesFileIn = new FileInputStream("purchases.bin");
@@ -124,7 +119,6 @@ public class FileReader
       System.exit(1);
     }
 
-    // Read Bookings
     try
     {
       FileInputStream bookingsFileIn = new FileInputStream("bookings.bin");

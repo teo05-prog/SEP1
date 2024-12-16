@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
-import model.Pets.Fish;
 import model.Pets.PetList;
 import model.Pets.Rodent;
 import view.ViewHandler;
@@ -114,26 +113,6 @@ public class RodentsViewController
     });
   }
 
-  private void updateTableDate()
-  {
-    observableRodents = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
-    {
-      try
-      {
-        if (petList.getPets(i) instanceof Rodent)
-        {
-          observableRodents.add((Rodent) petList.getPets(i));
-        }
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-      }
-    }
-    rodentTable.setItems(observableRodents);
-  }
-
   @FXML private void handleAddRodent()
   {
     try
@@ -162,7 +141,7 @@ public class RodentsViewController
 
   }
 
-  @FXML // Add this annotation
+  @FXML
   private void handleRemoveRodent()
   {
     Rodent selectedRodent = rodentTable.getSelectionModel().getSelectedItem();
@@ -172,7 +151,8 @@ public class RodentsViewController
     }
     else
     {
-      showAlert("No selection", "Please select a rodent to remove."); // Fix message
+      showAlert("No selection",
+          "Please select a rodent to remove.");
     }
   }
 
@@ -192,7 +172,8 @@ public class RodentsViewController
       updateRodents();
     }
   }
-  private void updateTableData() // was updateTableDate
+
+  private void updateTableData()
   {
     observableRodents = FXCollections.observableArrayList();
     for (int i = 0; i < petList.getPetsCount(); i++)
@@ -211,6 +192,7 @@ public class RodentsViewController
     }
     rodentTable.setItems(observableRodents);
   }
+
   private void updateRodents()
   {
     rodentTable.getItems().clear();
