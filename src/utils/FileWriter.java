@@ -185,7 +185,6 @@ public class FileWriter
       Customer[] customers = new Customer[10];
       Pet[] pets = new Pet[20];
 
-      // Reuse the existing customers and pets arrays from previous serialization
       customers[0] = new Customer("John", "Doe", "12345678",
           "john.doe@mail.com");
       customers[1] = new Customer("Jane", "Smith", "87654321",

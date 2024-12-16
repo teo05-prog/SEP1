@@ -7,29 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="formatted files&#10;&#10;Took 1 hour 4 minutes">
-      <change afterPath="$PROJECT_DIR$/purchases.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="writing data now works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PurchaseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/MainCustomersViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/CurrentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/CurrentViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/main/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/mainview/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/main/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/mainview/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/FishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/PetsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="65785" />
+    <option name="totalTimeSeconds" value="66243" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -458,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734350768919</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="writing data now works">
+      <option name="closed" value="true" />
+      <created>1734380900515</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1734380900515</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,8 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made it work, YAY" />
-    <MESSAGE value="added fileHandler" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes" />
     <MESSAGE value="added the guis&#10;&#10;Took 1 hour 51 minutes&#10;&#10;Took 31 minutes" />
@@ -498,7 +484,9 @@
     <MESSAGE value="half of the app done&#10;&#10;Took 2 minutes" />
     <MESSAGE value="formatted files" />
     <MESSAGE value="formatted files&#10;&#10;Took 1 hour 4 minutes" />
-    <option name="LAST_COMMIT_MESSAGE" value="formatted files&#10;&#10;Took 1 hour 4 minutes" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/RodentsViewController.java&#10;#&#9;src/view/pets/VariousViewController.java&#10;&#10;Took 14 seconds" />
+    <MESSAGE value="writing data now works" />
+    <option name="LAST_COMMIT_MESSAGE" value="writing data now works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
