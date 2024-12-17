@@ -7,8 +7,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalTime;
-import java.util.Random;
+import java.util.Objects;
 
+/**
+ * A class that manages the purchase of a pet
+ *
+ * @author Bianca Buzdugan
+ * @author Teodora Stoicescu
+ */
 public class Purchase implements Serializable
 {
   private static final long serialVersionUID = 6525559988221736930L;
@@ -19,6 +25,15 @@ public class Purchase implements Serializable
   private Customer customer;
   private Pet pet;
 
+  /**
+   * A constructor that makes a new purchase for a pet using information about the customer, taking the date and time
+   *
+   * @param customer The customer that buys the pet
+   * @param pet      The pet that is bought
+   * @param date     The date of the purchase
+   * @param time     The time of purchase
+   * @param discount The discount of the purchase
+   */
   public Purchase(Customer customer, Pet pet, MyDate date, LocalTime time,
       int discount)
   {
@@ -29,55 +44,110 @@ public class Purchase implements Serializable
     this.customer = customer;
   }
 
-  private MyDate generateRandomDateAfter()
-  {
-    Random rand = new java.util.Random();
-    int maxDaysInMonth = 31;
-    int randomDay = rand.nextInt(maxDaysInMonth) + 1;
-    int randomMonth = rand.nextInt(8) + 5;
-    return new MyDate(randomDay, randomMonth, 2024);
-  }
-
+  /**
+   * Returns the applied discount
+   *
+   * @return the discount
+   */
   public int getDiscount()
   {
     return discount;
   }
 
+  /**
+   * Sets the discount that will be applied
+   *
+   * @param discount the discount to set
+   */
   public void setDiscount(int discount)
   {
     this.discount = discount;
   }
 
+  /**
+   * Returns the buying customer
+   *
+   * @return the customer
+   */
   public Customer getCustomer()
   {
     return customer;
   }
 
+  /**
+   * Sets the buying customer
+   *
+   * @param customer the customer that will buy the pet
+   */
+  public void setCustomer(Customer customer)
+  {
+    this.customer = customer;
+  }
+
+  /**
+   * Returns the bought pet
+   *
+   * @return the pet
+   */
   public Pet getPet()
   {
     return pet;
   }
 
+  /**
+   * Sets the pet that will be bought
+   *
+   * @param pet the pet that will be bought
+   */
+  public void setPet(Pet pet)
+  {
+    this.pet = pet;
+  }
+
+  /**
+   * Returns the purchase date
+   *
+   * @return the date of purchase
+   */
   public MyDate getDateOfPurchase()
   {
     return date;
   }
 
-  public LocalTime getTimeOfPurchase()
-  {
-    return time;
-  }
-
+  /**
+   * Sets the date of the purchase
+   *
+   * @param date the date of the purchase
+   */
   public void setDateOfPurchase(MyDate date)
   {
     this.date = date;
   }
 
+  /**
+   * Returns the time of purchase
+   *
+   * @return the time of purchase
+   */
+  public LocalTime getTimeOfPurchase()
+  {
+    return time;
+  }
+
+  /**
+   * Sets the time of the purchase
+   *
+   * @param time the time of the purchase
+   */
   public void setTimeOfPurchase(LocalTime time)
   {
     this.time = time;
   }
 
+  /**
+   *
+   * @return
+   */
   public String toString()
   {
     LocalTime currentTime = getTimeOfPurchase();
@@ -89,6 +159,11 @@ public class Purchase implements Serializable
         + "%, Date: " + date + ", Time: " + timeStr;
   }
 
+  /**
+   *
+   * @param obj
+   * @return
+   */
   public boolean equals(Object obj)
   {
     if (obj == null || getClass() != obj.getClass())
@@ -99,36 +174,7 @@ public class Purchase implements Serializable
     LocalTime thisTime = getTimeOfPurchase();
     LocalTime otherTime = other.getTimeOfPurchase();
     return other.getDiscount() == discount && other.getDateOfPurchase()
-        .equals(date) && (thisTime == null ?
-        otherTime == null :
-        thisTime.equals(otherTime)) && other.customer.equals(customer)
+        .equals(date) && (Objects.equals(thisTime, otherTime)) && other.customer.equals(customer)
         && other.pet.equals(pet);
-  }
-
-  private void writeObject(ObjectOutputStream out) throws IOException
-  {
-    out.defaultWriteObject();
-    if (time != null)
-    {
-      out.writeInt(time.getHour());
-      out.writeInt(time.getMinute());
-    }
-    else
-    {
-      out.writeInt(-1);
-      out.writeInt(-1);
-    }
-  }
-
-  private void readObject(ObjectInputStream in)
-      throws IOException, ClassNotFoundException
-  {
-    in.defaultReadObject();
-    int hour = in.readInt();
-    int minute = in.readInt();
-    if (hour >= 0 && minute >= 0)
-    {
-      this.time = LocalTime.of(hour, minute);
-    }
   }
 }

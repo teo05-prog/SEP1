@@ -2,6 +2,11 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * A class that manages personal information about a customer
+ *
+ * @author Jan Lewek
+ */
 public class Customer implements Serializable
 {
   private static final long serialVersionUID = 5898788688332424564L;
@@ -10,6 +15,14 @@ public class Customer implements Serializable
   private String phone;
   private String email;
 
+  /**
+   * A constructor that makes a new Customer with specified personal details
+   *
+   * @param firstName The customer's first name
+   * @param lastName  The customer's last name
+   * @param phone     The customer's phone number
+   * @param email     The customer's email address
+   */
   public Customer(String firstName, String lastName, String phone, String email)
   {
     setFirstName(firstName);
@@ -18,16 +31,32 @@ public class Customer implements Serializable
     setEmail(email);
   }
 
+  /**
+   * Returns the customer's first name
+   *
+   * @return the first name of the customer
+   */
   public String getFirstName()
   {
     return firstName;
   }
 
+  /**
+   * Returns the customer's last name
+   *
+   * @return the last name of the customer
+   */
   public String getLastName()
   {
     return lastName;
   }
 
+  /**
+   * Sets the customer's first name with validation
+   *
+   * @param firstName the first name to set
+   * @throws IllegalArgumentException if the first name is null or less than 2 characters
+   */
   public void setFirstName(String firstName)
   {
     if (firstName == null)
@@ -44,6 +73,12 @@ public class Customer implements Serializable
             .toLowerCase();
   }
 
+  /**
+   * Sets the customer's last name with validation
+   *
+   * @param lastName the last name to set
+   * @throws IllegalArgumentException if the last name is null or less than 2 characters
+   */
   public void setLastName(String lastName)
   {
     if (lastName == null)
@@ -60,11 +95,22 @@ public class Customer implements Serializable
             .toLowerCase();
   }
 
+  /**
+   * Returns the customer's phone number
+   *
+   * @return the phone number of the customer
+   */
   public String getPhone()
   {
     return phone;
   }
 
+  /**
+   * Sets the customer's phone number with validation
+   *
+   * @param phone the phone number to set
+   * @throws IllegalArgumentException if the phone number is null, not 8 digits long, or contains non-digit characters
+   */
   public void setPhone(String phone)
   {
     if (phone == null)
@@ -90,11 +136,22 @@ public class Customer implements Serializable
     this.phone = phone;
   }
 
+  /**
+   * Returns the customer's email address
+   *
+   * @return the email address of the customer
+   */
   public String getEmail()
   {
     return email;
   }
 
+  /**
+   * Sets the customer's email address with basic validation
+   *
+   * @param email the email address to set
+   * @throws IllegalArgumentException if the email is null or does not contain '@' and '.'
+   */
   public void setEmail(String email)
   {
     if (email == null)
@@ -108,12 +165,23 @@ public class Customer implements Serializable
     this.email = email;
   }
 
+  /**
+   * Provides a String representation of the customer's details
+   *
+   * @return a formatted String with customer's first name, last name, phone, and email
+   */
   public String toString()
   {
     return "First name: " + firstName + ", Last name: " + lastName + ", Phone: "
         + phone + ", Email: " + email;
   }
 
+  /**
+   * Compares this customer with another object for equality
+   *
+   * @param obj the object to compare with this customer
+   * @return true if the objects are equal, false otherwise
+   */
   public boolean equals(Object obj)
   {
     if (obj == null || getClass() != obj.getClass())

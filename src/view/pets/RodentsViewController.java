@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Modality;
@@ -18,6 +17,7 @@ import javafx.util.converter.BooleanStringConverter;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
+import model.Pets.Dog;
 import model.Pets.PetList;
 import model.Pets.Rodent;
 import view.ViewHandler;
@@ -67,18 +67,24 @@ public class RodentsViewController
     nameColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setName(event.getNewValue());
+      savePetList();
     });
+
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setAge(event.getNewValue());
+      savePetList();
     });
+
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setColour(event.getNewValue());
+      savePetList();
     });
+
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Rodent, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
@@ -90,27 +96,40 @@ public class RodentsViewController
       });
       return cell;
     });
+    genderColumn.setOnEditCommit(event -> {
+      Rodent rodent = event.getRowValue();
+      rodent.setGender(event.getNewValue());
+      savePetList();
+    });
+
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setComment(event.getNewValue());
+      savePetList();
     });
+
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setPrice(event.getNewValue());
+      savePetList();
     });
+
     doesItBiteColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new BooleanStringConverter()));
     doesItBiteColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setDoesItBite(event.getNewValue());
+      savePetList();
     });
+
     specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     specieColumn.setOnEditCommit(event -> {
       Rodent rodent = event.getRowValue();
       rodent.setSpecie(event.getNewValue());
+      savePetList();
     });
   }
 
@@ -122,24 +141,29 @@ public class RodentsViewController
           getClass().getResource("/view/pets/AddRodentView.fxml"));
       Parent root = loader.load();
 
+      AddRodentViewController controller = loader.getController();
+      Scene scene = new Scene(root);
+      controller.init(viewHandler, modelManager, scene);
+
       Stage stage = new Stage();
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.setTitle("Add a New Rodent");
-      stage.setScene(new Scene(root));
+      stage.setScene(scene);
       stage.showAndWait();
 
-      AddRodentViewController controller = loader.getController();
       Rodent newRodent = controller.getNewRodent();
       if (newRodent != null)
       {
-        observableRodents.add(newRodent);
+        petList.add(newRodent);
+        savePetList();
+        updateTableData();
       }
     }
     catch (Exception e)
     {
       System.out.println("Error opening window: " + e.getMessage());
+      e.printStackTrace();
     }
-
   }
 
   @FXML private void handleRemoveRodent()
@@ -147,12 +171,19 @@ public class RodentsViewController
     Rodent selectedRodent = rodentTable.getSelectionModel().getSelectedItem();
     if (selectedRodent != null)
     {
-      observableRodents.remove(selectedRodent);
+      petList.removePet(selectedRodent);
+      savePetList();
+      updateTableData();
     }
     else
     {
       showAlert("No selection", "Please select a rodent to remove.");
     }
+  }
+
+  private void savePetList()
+  {
+    modelManager.savePets(petList);
   }
 
   private void showAlert(String title, String content)
@@ -162,14 +193,6 @@ public class RodentsViewController
     alert.setHeaderText(null);
     alert.setContentText(content);
     alert.showAndWait();
-  }
-
-  public void reset()
-  {
-    if (modelManager != null)
-    {
-      updateRodents();
-    }
   }
 
   private void updateTableData()
@@ -192,14 +215,12 @@ public class RodentsViewController
     rodentTable.setItems(observableRodents);
   }
 
-  private void updateRodents()
+  public void reset()
   {
-    rodentTable.getItems().clear();
-    PetList rodents = modelManager.getAllRodents(petList);
-
-    for (int i = 0; i < rodents.size(); i++)
+    if (modelManager != null)
     {
-      rodentTable.getItems().add(rodents.getRodent(i));
+      petList = modelManager.getAllPets();
+      updateTableData();
     }
   }
 }

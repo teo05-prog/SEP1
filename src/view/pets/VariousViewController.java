@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
+import model.Pets.Dog;
 import model.Pets.PetList;
 import model.Pets.Various;
 import view.ViewHandler;
@@ -62,18 +63,24 @@ public class VariousViewController
     nameColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
       various.setName(event.getNewValue());
+      savePetList();
     });
+
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
       various.setAge(event.getNewValue());
+      savePetList();
     });
+
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
       various.setColour(event.getNewValue());
+      savePetList();
     });
+
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Various, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
@@ -85,21 +92,32 @@ public class VariousViewController
       });
       return cell;
     });
+    genderColumn.setOnEditCommit(event -> {
+      Various various = event.getRowValue();
+      various.setGender(event.getNewValue());
+      savePetList();
+    });
+
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
       various.setComment(event.getNewValue());
+      savePetList();
     });
+
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
       various.setPrice(event.getNewValue());
+      savePetList();
     });
+
     specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     specieColumn.setOnEditCommit(event -> {
       Various various = event.getRowValue();
       various.setComment(event.getNewValue());
+      savePetList();
     });
   }
 
@@ -111,24 +129,59 @@ public class VariousViewController
           getClass().getResource("/view/pets/AddVariousView.fxml"));
       Parent root = loader.load();
 
+      AddVariousViewController controller = loader.getController();
+      Scene scene = new Scene(root);
+      controller.init(viewHandler, modelManager, scene);
+
       Stage stage = new Stage();
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.setTitle("Add a New Various");
-      stage.setScene(new Scene(root));
+      stage.setScene(scene);
       stage.showAndWait();
 
-      AddVariousViewController controller = loader.getController();
       Various newVarious = controller.getNewVarious();
       if (newVarious != null)
       {
-        observableVarious.add(newVarious);
+        petList.add(newVarious);
+        savePetList();
+        updateTableData();
       }
     }
     catch (Exception e)
     {
       System.out.println("Error opening window: " + e.getMessage());
+      e.printStackTrace();
     }
+  }
 
+  @FXML private void handleRemoveVarious()
+  {
+    Various selectedVarious = variousTable.getSelectionModel()
+        .getSelectedItem();
+    if (selectedVarious != null)
+    {
+      petList.removePet(selectedVarious);
+      savePetList();
+      updateTableData();
+    }
+    else
+    {
+      showAlert("No selection", "Please select a various pet to remove.");
+    }
+  }
+
+  private void savePetList()
+  {
+    modelManager.savePets(petList);
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   private void updateTableData()
@@ -151,45 +204,12 @@ public class VariousViewController
     variousTable.setItems(observableVarious);
   }
 
-  @FXML private void handleRemoveVarious()
-  {
-    Various selectedVarious = variousTable.getSelectionModel()
-        .getSelectedItem();
-    if (selectedVarious != null)
-    {
-      observableVarious.remove(selectedVarious);
-    }
-    else
-    {
-      showAlert("No selection", "Please select a various pet to remove.");
-    }
-  }
-
-  private void showAlert(String title, String content)
-  {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(null);
-    alert.setContentText(content);
-    alert.showAndWait();
-  }
-
   public void reset()
   {
     if (modelManager != null)
     {
-      updateVarious();
-    }
-  }
-
-  private void updateVarious()
-  {
-    variousTable.getItems().clear();
-    PetList various = modelManager.getAllVarious(petList);
-
-    for (int i = 0; i < various.size(); i++)
-    {
-      variousTable.getItems().add(various.getVarious(i));
+      petList = modelManager.getAllPets();
+      updateTableData();
     }
   }
 

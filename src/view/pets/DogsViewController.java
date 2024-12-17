@@ -66,18 +66,24 @@ public class DogsViewController
     nameColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setName(event.getNewValue());
+      savePetList();
     });
+
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setAge(event.getNewValue());
+      savePetList();
     });
+
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setColour(event.getNewValue());
+      savePetList();
     });
+
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Dog, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
@@ -89,28 +95,102 @@ public class DogsViewController
       });
       return cell;
     });
+    genderColumn.setOnEditCommit(event -> {
+      Dog dog = event.getRowValue();
+      dog.setGender(event.getNewValue());
+      savePetList();
+    });
+
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setComment(event.getNewValue());
+      savePetList();
     });
+
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setPrice(event.getNewValue());
+      savePetList();
     });
+
     breedColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     breedColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setBreed(event.getNewValue());
+      savePetList();
     });
+
     breederNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     breederNameColumn.setOnEditCommit(event -> {
       Dog dog = event.getRowValue();
       dog.setBreederName(event.getNewValue());
+      savePetList();
     });
+  }
 
+  @FXML private void handleAddDog()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("/view/pets/AddDogView.fxml"));
+      Parent root = loader.load();
+
+      AddDogViewController controller = loader.getController();
+      Scene scene = new Scene(root);
+      controller.init(viewHandler, modelManager, scene);
+
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Dog");
+      stage.setScene(scene);
+      stage.showAndWait();
+
+      Dog newDog = controller.getNewDog();
+      if (newDog != null)
+      {
+        petList.add(newDog);
+        savePetList();
+        updateTableData();
+      }
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+  @FXML private void handleRemoveDog()
+  {
+    Dog selectedDog = dogTable.getSelectionModel().getSelectedItem();
+    if (selectedDog != null)
+    {
+      petList.removePet(selectedDog);
+      savePetList();
+      updateTableData();
+    }
+    else
+    {
+      showAlert("No selection", "Please select a dog to remove.");
+    }
+  }
+
+  private void savePetList()
+  {
+    modelManager.savePets(petList);
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   private void updateTableData()
@@ -133,72 +213,12 @@ public class DogsViewController
     dogTable.setItems(observableDogs);
   }
 
-  @FXML private void handleAddDog()
-  {
-    try
-    {
-      FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("/view/pets/AddDogView.fxml"));
-      Parent root = loader.load();
-
-      Stage stage = new Stage();
-      stage.initModality(Modality.APPLICATION_MODAL);
-      stage.setTitle("Add a New Dog");
-      stage.setScene(new Scene(root));
-      stage.showAndWait();
-
-      AddDogViewController controller = loader.getController();
-      Dog newDog = controller.getNewDog();
-      if (newDog != null)
-      {
-        observableDogs.add(newDog);
-      }
-    }
-    catch (Exception e)
-    {
-      System.out.println("Error opening window: " + e.getMessage());
-    }
-
-  }
-
-  @FXML private void handleRemoveDog()
-  {
-    Dog selectedDog = dogTable.getSelectionModel().getSelectedItem();
-    if (selectedDog != null)
-    {
-      observableDogs.remove(selectedDog);
-    }
-    else
-    {
-      showAlert("No selection", "Please select a dog to remove.");
-    }
-  }
-
-  private void showAlert(String title, String content)
-  {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(null);
-    alert.setContentText(content);
-    alert.showAndWait();
-  }
-
   public void reset()
   {
     if (modelManager != null)
     {
-      updateDog();
-    }
-  }
-
-  private void updateDog()
-  {
-    dogTable.getItems().clear();
-    PetList dogs = modelManager.getAllDogs(petList);
-
-    for (int i = 0; i < dogs.size(); i++)
-    {
-      dogTable.getItems().add(dogs.getDog(i));
+      petList = modelManager.getAllPets();
+      updateTableData();
     }
   }
 }

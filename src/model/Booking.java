@@ -8,7 +8,13 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
+/**
+ * A class that manages pet boarding reservations
+ *
+ * @author Teodora Stoicescu
+ */
 public class Booking implements Serializable
 {
   private static final long serialVersionUID = 5898788688332424564L;
@@ -19,6 +25,15 @@ public class Booking implements Serializable
   private int pricePerDay;
   private List<Room> rooms;
 
+  /**
+   * A constructor that initializes a Booking object
+   *
+   * @param customer  The customer making the booking
+   * @param petInfo   The pet being booked for kennel
+   * @param startDate The start date of the booking
+   * @param endDate   The end date of the booking
+   * @param rooms     The list of rooms assigned to this booking
+   */
   public Booking(Customer customer, Pet petInfo, MyDate startDate,
       MyDate endDate, List<Room> rooms)
   {
@@ -30,6 +45,14 @@ public class Booking implements Serializable
     this.rooms = rooms != null ? rooms : new ArrayList<>();
   }
 
+  /**
+   * A constructor that creates a Booking object, used when no specific rooms are initially assigned to the booking
+   *
+   * @param customer  The customer making the booking
+   * @param petInfo   The pet being booked for kennel
+   * @param startDate The start date of the booking
+   * @param endDate   The end date of the booking
+   */
   public Booking(Customer customer, Pet petInfo, MyDate startDate,
       MyDate endDate)
   {
@@ -41,36 +64,171 @@ public class Booking implements Serializable
     this.rooms = new ArrayList<>();
   }
 
+  /**
+   * Returns the start date of the booking
+   *
+   * @return the startDate of the booking
+   */
   public MyDate getStartDate()
   {
     return startDate;
   }
 
+  /**
+   * Updates the start date of the booking
+   *
+   * @param startDate The start date of the booking
+   */
   public void setStartDate(MyDate startDate)
   {
     this.startDate = startDate;
   }
 
+  /**
+   * Returns the end date of the booking
+   *
+   * @return the endDate of the booking
+   */
   public MyDate getEndDate()
   {
     return endDate;
   }
 
+  /**
+   * Updates the end date of the booking
+   *
+   * @param endDate The end date of the booking
+   */
   public void setEndDate(MyDate endDate)
   {
     this.endDate = endDate;
   }
 
+  /**
+   * Returns the customer associated with this booking
+   *
+   * @return The Customer object for this booking
+   */
   public Customer getCustomer()
   {
     return customer;
   }
 
+  /**
+   * Updates the customer associated with this booking
+   *
+   * @param customer The new Customer object to be set for this booking
+   */
   public void setCustomer(Customer customer)
   {
     this.customer = customer;
   }
 
+  /**
+   * Returns the pet information as a string representation
+   *
+   * @return a String description of the pet in this booking
+   */
+  public String getPetInfo()
+  {
+    return petInfo.toString();
+  }
+
+  /**
+   * Updates the pet information for this booking
+   *
+   * @param petInfo the new Pet object to be set for this booking
+   */
+  public void setPetInfo(Pet petInfo)
+  {
+    this.petInfo = petInfo;
+  }
+
+  /**
+   * Calculates the total price for the entire booking period
+   *
+   * @return the total price calculated by multiplying the price per day with the booking duration
+   */
+  public double getPrice()
+  {
+    return pricePerDay * getDuration();
+  }
+
+  /**
+   * Returns the daily cost for the booking
+   *
+   * @return the price charged per day
+   */
+  public int getPricePerDay()
+  {
+    return pricePerDay;
+  }
+
+  /**
+   * Returns the end date of the booking as a formatted string
+   *
+   * @return the end date converted to a string
+   */
+  public String getEndDateString()
+  {
+    return getEndDate().toString();
+  }
+
+  /**
+   * Returns the first name of the customer who made the booking
+   *
+   * @return the customer's first name
+   */
+  public String getCustomerFirstName()
+  {
+    return getCustomer().getFirstName();
+  }
+
+  /**
+   * Returns the last name of the customer who made the booking
+   *
+   * @return the customer's last name
+   */
+  public String getCustomerLastName()
+  {
+    return getCustomer().getLastName();
+  }
+
+  /**
+   * Determines the type of pet in this booking
+   *
+   * @return the simple class name of the pet, or "Unknown" if pet is null
+   */
+  public String getPetType()
+  {
+    return petInfo != null ? petInfo.getClass().getSimpleName() : "Unknown";
+  }
+
+  /**
+   * Returns the name of the pet in this booking
+   *
+   * @return the pet's name, or "Unknown" if pet is null
+   */
+  public String getPetName()
+  {
+    return petInfo != null ? petInfo.getName() : "Unknown";
+  }
+
+  /**
+   * Returns the start date of the booking as a formatted String
+   *
+   * @return the start date converted to a string
+   */
+  public String getStartDateString()
+  {
+    return getStartDate().toString();
+  }
+
+  /**
+   * Calculates the duration of the booking in days
+   *
+   * @return the number of days between the start and end dates, with a minimum of 1 day
+   */
   public double getDuration()
   {
     try
@@ -87,16 +245,13 @@ public class Booking implements Serializable
     }
   }
 
-  public String getPetInfo()
-  {
-    return petInfo.toString();
-  }
-
-  public double getPrice()
-  {
-    return pricePerDay * getDuration();
-  }
-
+  /**
+   * Checks if the room in the booking is available during the specified date range
+   *
+   * @param startDate the proposed start date to check availability
+   * @param endDate   the proposed end date to check availability
+   * @return true if the room is available during the specified period, false otherwise
+   */
   public boolean isAvailable(MyDate startDate, MyDate endDate)
   {
     for (Room room : rooms)
@@ -107,6 +262,14 @@ public class Booking implements Serializable
     return true;
   }
 
+  /**
+   * Updates the booking with new customer, pet, start, and end date information
+   *
+   * @param customer  the new customer for the booking
+   * @param petInfo   the new pet for the booking
+   * @param startDate the new start date for the booking
+   * @param endDate   the new end date for the booking
+   */
   public void bookTo(Customer customer, Pet petInfo, MyDate startDate,
       MyDate endDate)
   {
@@ -116,6 +279,11 @@ public class Booking implements Serializable
     this.endDate = endDate;
   }
 
+  /**
+   * Provides a String representation of the booking
+   *
+   * @return a formatted String with customer name, pet name, and booking dates
+   */
   public String toString()
   {
     String customerName = customer != null ?
@@ -128,55 +296,19 @@ public class Booking implements Serializable
         + startDate + " Until: " + endDate;
   }
 
+  /**
+   * Compares this booking with another object for equality
+   *
+   * @param obj the object to compare with this booking
+   * @return true if the objects are equal, false otherwise
+   */
   public boolean equals(Object obj)
   {
     if (obj == null || getClass() != obj.getClass())
       return false;
     Booking other = (Booking) obj;
-    return (petInfo == null ?
-        other.petInfo == null :
-        petInfo.equals(other.petInfo)) && customer.equals(other.customer)
+    return (Objects.equals(petInfo, other.petInfo)) && customer.equals(other.customer)
         && startDate.equals(other.startDate) && endDate.equals(other.endDate)
         && pricePerDay == other.pricePerDay;
-  }
-
-  public void setPetInfo(Pet petInfo)
-  {
-    this.petInfo = petInfo;
-  }
-
-  public int getPricePerDay()
-  {
-    return pricePerDay;
-  }
-
-  public String getEndDateString()
-  {
-    return getEndDate().toString();
-  }
-
-  public String getCustomerFirstName()
-  {
-    return getCustomer().getFirstName();
-  }
-
-  public String getCustomerLastName()
-  {
-    return getCustomer().getLastName();
-  }
-
-  public String getPetType()
-  {
-    return petInfo != null ? petInfo.getClass().getSimpleName() : "Unknown";
-  }
-
-  public String getPetName()
-  {
-    return petInfo != null ? petInfo.getName() : "Unknown";
-  }
-
-  public String getStartDateString()
-  {
-    return getStartDate().toString();
   }
 }

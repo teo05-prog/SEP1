@@ -69,18 +69,24 @@ public class CatsViewController
     nameColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setName(event.getNewValue());
+      savePetList();
     });
+
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setAge(event.getNewValue());
+      savePetList();
     });
+
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setColour(event.getNewValue());
+      savePetList();
     });
+
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Cat, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
@@ -92,28 +98,102 @@ public class CatsViewController
       });
       return cell;
     });
+    genderColumn.setOnEditCommit(event -> {
+      Cat cat = event.getRowValue();
+      cat.setGender(event.getNewValue());
+      savePetList();
+    });
+
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setComment(event.getNewValue());
+      savePetList();
     });
+
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setPrice(event.getNewValue());
+      savePetList();
     });
+
     breedColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     breedColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setBreed(event.getNewValue());
+      savePetList();
     });
+
     breederNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     breederNameColumn.setOnEditCommit(event -> {
       Cat cat = event.getRowValue();
       cat.setBreederName(event.getNewValue());
+      savePetList();
     });
+  }
 
+  @FXML private void handleAddCat()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("/view/pets/AddCatView.fxml"));
+      Parent root = loader.load();
+
+      AddCatViewController controller = loader.getController();
+      Scene scene = new Scene(root);
+      controller.init(viewHandler, modelManager, scene);
+
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Cat");
+      stage.setScene(scene);
+      stage.showAndWait();
+
+      Cat newCat = controller.getNewCat();
+      if (newCat != null)
+      {
+        petList.add(newCat);
+        savePetList();
+        updateTableData();
+      }
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+  @FXML private void handleRemoveCat()
+  {
+    Cat selectedCat = catTable.getSelectionModel().getSelectedItem();
+    if (selectedCat != null)
+    {
+      petList.removePet(selectedCat);
+      savePetList();
+      updateTableData();
+    }
+    else
+    {
+      showAlert("No selection", "Please select a cat to remove.");
+    }
+  }
+
+  private void savePetList()
+  {
+    modelManager.savePets(petList);
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   private void updateTableData()
@@ -136,72 +216,12 @@ public class CatsViewController
     catTable.setItems(observableCats);
   }
 
-  @FXML private void handleAddCat()
-  {
-    try
-    {
-      FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("/view/pets/AddCatView.fxml"));
-      Parent root = loader.load();
-
-      Stage stage = new Stage();
-      stage.initModality(Modality.APPLICATION_MODAL);
-      stage.setTitle("Add a New Cat");
-      stage.setScene(new Scene(root));
-      stage.showAndWait();
-
-      AddCatViewController controller = loader.getController();
-      Cat newCat = controller.getNewCat();
-      if (newCat != null)
-      {
-        observableCats.add(newCat);
-      }
-    }
-    catch (Exception e)
-    {
-      System.out.println("Error opening window: " + e.getMessage());
-    }
-
-  }
-
-  @FXML private void handleRemoveCat()
-  {
-    Cat selectedCat = catTable.getSelectionModel().getSelectedItem();
-    if (selectedCat != null)
-    {
-      observableCats.remove(selectedCat);
-    }
-    else
-    {
-      showAlert("No selection", "Please select a cat to remove.");
-    }
-  }
-
-  private void showAlert(String title, String content)
-  {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(null);
-    alert.setContentText(content);
-    alert.showAndWait();
-  }
-
   public void reset()
   {
     if (modelManager != null)
     {
-      updateCat();
-    }
-  }
-
-  private void updateCat()
-  {
-    catTable.getItems().clear();
-    PetList cats = modelManager.getAllCats(petList);
-
-    for (int i = 0; i < cats.size(); i++)
-    {
-      catTable.getItems().add(cats.getCat(i));
+      petList = modelManager.getAllPets();
+      updateTableData();
     }
   }
 }

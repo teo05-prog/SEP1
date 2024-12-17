@@ -17,6 +17,7 @@ import javafx.util.converter.BooleanStringConverter;
 import javafx.util.converter.CharacterStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
+import model.Pets.Dog;
 import model.Pets.Fish;
 import model.Pets.PetList;
 import view.ViewHandler;
@@ -67,18 +68,24 @@ public class FishViewController
     nameColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setName(event.getNewValue());
+      savePetList();
     });
+
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setAge(event.getNewValue());
+      savePetList();
     });
+
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setColour(event.getNewValue());
+      savePetList();
     });
+
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Fish, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
@@ -90,33 +97,110 @@ public class FishViewController
       });
       return cell;
     });
+    genderColumn.setOnEditCommit(event -> {
+      Fish fish = event.getRowValue();
+      fish.setGender(event.getNewValue());
+      savePetList();
+    });
+
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
+      savePetList();
     });
+
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setPrice(event.getNewValue());
+      savePetList();
     });
+
     waterColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     waterColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
+      savePetList();
     });
+
     predatorColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new BooleanStringConverter()));
     predatorColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setComment(String.valueOf(event.getNewValue()));
+      savePetList();
     });
+
     specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     specieColumn.setOnEditCommit(event -> {
       Fish fish = event.getRowValue();
       fish.setComment(event.getNewValue());
+      savePetList();
     });
+  }
+
+  @FXML private void handleAddFish()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("/view/pets/AddFishView.fxml"));
+      Parent root = loader.load();
+
+      AddFishViewController controller = loader.getController();
+      Scene scene = new Scene(root);
+      controller.init(viewHandler, modelManager, scene);
+
+      Stage stage = new Stage();
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.setTitle("Add a New Fish");
+      stage.setScene(scene);
+      stage.showAndWait();
+
+      Fish newFish = controller.getNewFish();
+      if (newFish != null)
+      {
+        petList.add(newFish);
+        savePetList();
+        updateTableData();
+      }
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error opening window: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+  @FXML private void handleRemoveFish()
+  {
+    Fish selectedFish = fishTable.getSelectionModel().getSelectedItem();
+    if (selectedFish != null)
+    {
+      petList.removePet(selectedFish);
+      savePetList();
+      updateTableData();
+    }
+    else
+    {
+      showAlert("No selection", "Please select a fish to remove.");
+    }
+  }
+
+  private void savePetList()
+  {
+    modelManager.savePets(petList);
+  }
+
+  private void showAlert(String title, String content)
+  {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    alert.showAndWait();
   }
 
   private void updateTableData()
@@ -139,72 +223,12 @@ public class FishViewController
     fishTable.setItems(observableFish);
   }
 
-  @FXML private void handleAddFish()
-  {
-    try
-    {
-      FXMLLoader loader = new FXMLLoader(
-          getClass().getResource("/view/pets/AddFishView.fxml"));
-      Parent root = loader.load();
-
-      Stage stage = new Stage();
-      stage.initModality(Modality.APPLICATION_MODAL);
-      stage.setTitle("Add a New Fish");
-      stage.setScene(new Scene(root));
-      stage.showAndWait();
-
-      AddFishViewController controller = loader.getController();
-      Fish newFish = controller.getNewFish();
-      if (newFish != null)
-      {
-        observableFish.add(newFish);
-      }
-    }
-    catch (Exception e)
-    {
-      System.out.println("Error opening window: " + e.getMessage());
-    }
-  }
-
-  @FXML private void handleRemoveFish()
-  {
-    Fish selectedFish = fishTable.getSelectionModel().getSelectedItem();
-    if (selectedFish != null)
-    {
-      observableFish.remove(selectedFish);
-    }
-    else
-    {
-      showAlert("No selection", "Please select a fish to remove.");
-    }
-  }
-
-  private void showAlert(String title, String content)
-  {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(null);
-    alert.setContentText(content);
-    alert.showAndWait();
-  }
-
   public void reset()
   {
     if (modelManager != null)
     {
-      updateFish();
+      petList = modelManager.getAllPets();
+      updateTableData();
     }
   }
-
-  private void updateFish()
-  {
-    fishTable.getItems().clear();
-    PetList fish = modelManager.getAllFish(petList);
-
-    for (int i = 0; i < fish.size(); i++)
-    {
-      fishTable.getItems().add(fish.getFish(i));
-    }
-  }
-
 }
