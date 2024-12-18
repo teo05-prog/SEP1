@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="trying to solve some bugs">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="my changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,12 +42,12 @@
     &quot;assignee&quot;: &quot;teo05-prog&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/teo05-prog/VIAPets.git",
-    "accountId": "a5749d79-1b8a-4c11-bc7c-8deef3e8c63a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets.git&quot;,
+    &quot;accountId&quot;: &quot;a5749d79-1b8a-4c11-bc7c-8deef3e8c63a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -401,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734286458566</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="my changes">
+      <option name="closed" value="true" />
+      <created>1734370046449</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1734370046449</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,7 +424,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formatting" />
     <MESSAGE value="booking class" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
@@ -441,7 +448,8 @@
     <MESSAGE value="something" />
     <MESSAGE value="kennel view" />
     <MESSAGE value="trying to solve some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to solve some bugs" />
+    <MESSAGE value="my changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="my changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
