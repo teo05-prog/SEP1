@@ -19,6 +19,7 @@ import model.Pets.Cat;
 import model.Pets.Dog;
 import model.Pets.PetList;
 import javafx.scene.control.TableView;
+import utils.PetsXML;
 import view.ViewHandler;
 
 import java.awt.*;
@@ -175,6 +176,8 @@ public class CatsViewController
       petList.remove(selectedCat);
       savePetList();
       updateTableData();
+
+      new PetsXML();
     }
     else
     {

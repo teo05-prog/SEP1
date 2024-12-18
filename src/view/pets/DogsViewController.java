@@ -17,6 +17,7 @@ import model.Pets.PetList;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.CharacterStringConverter;
+import utils.PetsXML;
 import view.ViewHandler;
 
 import javafx.scene.control.Alert;
@@ -131,34 +132,27 @@ public class DogsViewController
     });
   }
 
-  @FXML private void handleAddDog()
-  {
-    try
-    {
+  @FXML private void handleAddDog() {
+    try {
       FXMLLoader loader = new FXMLLoader(
           getClass().getResource("/view/pets/AddDogView.fxml"));
       Parent root = loader.load();
-
       AddDogViewController controller = loader.getController();
       Scene scene = new Scene(root);
       controller.init(viewHandler, modelManager, scene);
-
       Stage stage = new Stage();
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.setTitle("Add a New Dog");
       stage.setScene(scene);
       stage.showAndWait();
-
       Dog newDog = controller.getNewDog();
-      if (newDog != null)
-      {
+      if (newDog != null) {
         petList.add(newDog);
         savePetList();
         updateTableData();
       }
     }
-    catch (Exception e)
-    {
+    catch (Exception e) {
       System.out.println("Error opening window: " + e.getMessage());
       e.printStackTrace();
     }
@@ -172,6 +166,8 @@ public class DogsViewController
       petList.remove(selectedDog);
       savePetList();
       updateTableData();
+
+      new PetsXML();
     }
     else
     {

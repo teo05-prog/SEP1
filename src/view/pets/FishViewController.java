@@ -20,6 +20,7 @@ import model.ModelManager;
 import model.Pets.Dog;
 import model.Pets.Fish;
 import model.Pets.PetList;
+import utils.PetsXML;
 import view.ViewHandler;
 
 public class FishViewController
@@ -182,6 +183,8 @@ public class FishViewController
       petList.remove(selectedFish);
       savePetList();
       updateTableData();
+
+      new PetsXML();
     }
     else
     {

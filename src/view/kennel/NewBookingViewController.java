@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.*;
 import model.Pets.*;
+import utils.KennelXML;
 import utils.MyFileHandler;
 import view.ViewHandler;
 
@@ -234,6 +235,8 @@ public class NewBookingViewController
       bookings.add(booking);
       MyFileHandler.writeToBinaryFile("bookings.bin", bookings);
       showSuccessAlert("Booking added successfully!");
+
+      new KennelXML();
     }
     catch (Exception e)
     {

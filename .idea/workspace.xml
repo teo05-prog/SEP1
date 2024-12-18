@@ -1,45 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Added some comments in model and made pets work">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Finished JavaDoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookings.bin" beforeDir="false" afterPath="$PROJECT_DIR$/bookings.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets.bin" beforeDir="false" afterPath="$PROJECT_DIR$/pets.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purchases.bin" beforeDir="false" afterPath="$PROJECT_DIR$/purchases.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/CustomerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CustomerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/KennelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/KennelList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Bird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Fish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/PetList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/PetList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Rodent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Rodent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pets/Various.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pets/Various.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Purchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PurchaseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/PetsXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PetsXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/KennelViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/kennel/NewBookingView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/mainview/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/mainview/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddBirdViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddBirdViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddCatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddCatViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddFishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddFishViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddRodentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddRodentViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/AddVariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddVariousViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/BirdsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/CatsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/FishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/FishViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/RodentsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/VariousViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/purchases/NewPurchasesViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="115276" />
+    <option name="totalTimeSeconds" value="116948" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -508,7 +479,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734543006738</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Finished JavaDoc">
+      <option name="closed" value="true" />
+      <created>1734562262276</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1734562262276</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -523,8 +502,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/customers/CustomersView.fxml&#10;#&#9;src/view/kennel/KennelView.fxml&#10;#&#9;src/view/purchases/PurchasesView.fxml&#10;&#10;Took 49 seconds" />
-    <MESSAGE value="finished guis" />
     <MESSAGE value="customer fix&#10;&#10;Took 20 minutes" />
     <MESSAGE value="more work on guis" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/PetsViewController.java" />
@@ -548,7 +525,9 @@
     <MESSAGE value="Finished app and created JavaDoc" />
     <MESSAGE value="Finished app and created JavaDoc&#10;&#10;Took 5 seconds" />
     <MESSAGE value="Added some comments in model and made pets work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some comments in model and made pets work" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 10 seconds" />
+    <MESSAGE value="Finished JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished JavaDoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

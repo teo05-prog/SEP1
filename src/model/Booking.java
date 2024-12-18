@@ -6,8 +6,6 @@ import java.io.Serializable;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -23,30 +21,10 @@ public class Booking implements Serializable
   private MyDate startDate;
   private MyDate endDate;
   private int pricePerDay;
-  private List<Room> rooms;
+  private Room room;
 
   /**
    * A constructor that initializes a Booking object
-   *
-   * @param customer  The customer making the booking
-   * @param petInfo   The pet being booked for kennel
-   * @param startDate The start date of the booking
-   * @param endDate   The end date of the booking
-   * @param rooms     The list of rooms assigned to this booking
-   */
-  public Booking(Customer customer, Pet petInfo, MyDate startDate,
-      MyDate endDate, List<Room> rooms)
-  {
-    this.customer = customer;
-    this.petInfo = petInfo;
-    this.startDate = startDate;
-    this.endDate = endDate;
-    this.pricePerDay = 20;
-    this.rooms = rooms != null ? rooms : new ArrayList<>();
-  }
-
-  /**
-   * A constructor that creates a Booking object, used when no specific rooms are initially assigned to the booking
    *
    * @param customer  The customer making the booking
    * @param petInfo   The pet being booked for kennel
@@ -61,7 +39,7 @@ public class Booking implements Serializable
     this.startDate = startDate;
     this.endDate = endDate;
     this.pricePerDay = 20;
-    this.rooms = new ArrayList<>();
+    this.room = null;
   }
 
   /**
@@ -246,20 +224,36 @@ public class Booking implements Serializable
   }
 
   /**
-   * Checks if the room in the booking is available during the specified date range
+   * Assigns a room to this booking
+   *
+   * @param room the room to assign
+   */
+  public void setRoom(Room room) {
+    this.room = room;
+  }
+
+  /**
+   * Gets the room assigned to this booking
+   *
+   * @return the assigned room, or null if no room is assigned
+   */
+  public Room getRoom() {
+    return room;
+  }
+
+  /**
+   * Checks if the assigned room is available during the specified date range.
+   * If no room is assigned, returns true since it can still be booked.
    *
    * @param startDate the proposed start date to check availability
    * @param endDate   the proposed end date to check availability
-   * @return true if the room is available during the specified period, false otherwise
+   * @return true if the room is available or no room is assigned, false if the room is occupied
    */
-  public boolean isAvailable(MyDate startDate, MyDate endDate)
-  {
-    for (Room room : rooms)
-    {
-      if (!room.isAvailableDuring(startDate, endDate))
-        return false;
+  public boolean isAvailable(MyDate startDate, MyDate endDate) {
+    if (room == null) {
+      return true;  // No room assigned yet, so it's available for booking
     }
-    return true;
+    return room.isAvailableDuring(startDate, endDate);
   }
 
   /**
@@ -307,8 +301,8 @@ public class Booking implements Serializable
     if (obj == null || getClass() != obj.getClass())
       return false;
     Booking other = (Booking) obj;
-    return (Objects.equals(petInfo, other.petInfo)) && customer.equals(other.customer)
-        && startDate.equals(other.startDate) && endDate.equals(other.endDate)
-        && pricePerDay == other.pricePerDay;
+    return (Objects.equals(petInfo, other.petInfo)) && customer.equals(
+        other.customer) && startDate.equals(other.startDate) && endDate.equals(
+        other.endDate) && pricePerDay == other.pricePerDay;
   }
 }
