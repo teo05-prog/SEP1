@@ -65,9 +65,4 @@ public class KennelXML {
       throw new RuntimeException(e);
     }
   }
-
-  public static void main(String[] args)
-  {
-    new KennelXML();
-  }
 }
