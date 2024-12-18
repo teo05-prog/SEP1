@@ -19,6 +19,7 @@ import model.ModelManager;
 import model.Pets.Dog;
 import model.Pets.PetList;
 import model.Pets.Various;
+import utils.PetsXML;
 import view.ViewHandler;
 
 public class VariousViewController
@@ -163,6 +164,8 @@ public class VariousViewController
       petList.remove(selectedVarious);
       savePetList();
       updateTableData();
+
+      new PetsXML();
     }
     else
     {
