@@ -94,9 +94,6 @@ public class ManageCustomersViewController
     }
   }
 
-  /**
-   * Handles the update button action
-   */
   private void handleUpdateAction()
   {
     Customer selectedCustomer = customerTable.getSelectionModel()
@@ -116,11 +113,7 @@ public class ManageCustomersViewController
     {
       return;
     }
-
-    // Get the current customer list
     CustomerList customers = modelManager.getAllCustomers();
-
-    // Find and update the customer in the list
     for (int i = 0; i < customers.size(); i++)
     {
       Customer customer = customers.get(i);
@@ -133,16 +126,11 @@ public class ManageCustomersViewController
         break;
       }
     }
-
-    // Save the updated list
     modelManager.saveCustomers(customers);
     updateCustomerTable();
     clearFields();
   }
 
-  /**
-   * Handles the add button action
-   */
   private void handleAddAction()
   {
     String firstName = firstNameField.getText().trim();
@@ -166,9 +154,6 @@ public class ManageCustomersViewController
     clearFields();
   }
 
-  /**
-   * Handles the remove button action
-   */
   private void handleRemoveAction()
   {
     Customer selectedCustomer = customerTable.getSelectionModel()
@@ -186,9 +171,6 @@ public class ManageCustomersViewController
     clearFields();
   }
 
-  /**
-   * Validates the input fields
-   */
   private boolean validateInput(String firstName, String lastName)
   {
     if (firstName.isEmpty() || lastName.isEmpty())
@@ -199,9 +181,6 @@ public class ManageCustomersViewController
     return true;
   }
 
-  /**
-   * Updates an existing customer's information
-   */
   private void updateCustomer(Customer customer, String firstName,
       String lastName, String phone, String email)
   {
@@ -214,9 +193,6 @@ public class ManageCustomersViewController
     customer.setEmail(email);
   }
 
-  /**
-   * Shows an alert dialog with the specified message
-   */
   private void showAlert(String message)
   {
     Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -226,9 +202,6 @@ public class ManageCustomersViewController
     alert.showAndWait();
   }
 
-  /**
-   * Clears all input fields
-   */
   private void clearFields()
   {
     firstNameField.clear();
@@ -237,9 +210,6 @@ public class ManageCustomersViewController
     emailField.clear();
   }
 
-  /**
-   * Updates the customer table with the current data
-   */
   private void updateCustomerTable()
   {
     customerTable.getItems().clear();
@@ -250,9 +220,6 @@ public class ManageCustomersViewController
     }
   }
 
-  /**
-   * Returns the scene associated with this controller
-   */
   public Scene getScene()
   {
     return scene;

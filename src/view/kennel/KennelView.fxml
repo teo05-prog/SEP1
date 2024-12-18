@@ -10,16 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0"
+      minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/23.0.1"
-      fx:controller="view.kennel.KennelViewController"
-      xmlns:fx="http://javafx.com/fxml/1">
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.kennel.KennelViewController">
     <MenuBar>
         <Menu mnemonicParsing="false" text="File">
-            <MenuItem fx:id="changePriceMenuItem"
-                      mnemonicParsing="false"
-                      onAction="#handleActions"
-                      text="Change Price"/>
+            <MenuItem fx:id="changePriceMenuItem" mnemonicParsing="false"
+                      onAction="#handleActions" text="Change Price"/>
             <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
                       onAction="#handleActions" text="Exit"/>
         </Menu>
@@ -28,24 +26,22 @@
                       onAction="#handleActions" text="About"/>
         </Menu>
     </MenuBar>
-    <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
+    <TabPane fx:id="tabPane" prefHeight="330.0" prefWidth="600.0"
              tabClosingPolicy="UNAVAILABLE">
-        <Tab text="Current">
-            <fx:include fx:id="currentTab"
-                        source="/view/kennel/CurrentView.fxml"/>
+        <Tab fx:id="currentTab" text="Current and Upcoming" onSelectionChanged="#tabChanged">
+            <fx:include fx:id="current" source="CurrentView.fxml"/>
         </Tab>
-        <Tab text="Past">
-            <fx:include fx:id="pastTab" source="/view/kennel/PastView.fxml"/>
+        <Tab fx:id="pastTab" text="Past" onSelectionChanged="#tabChanged">
+            <fx:include fx:id="past" source="PastView.fxml"/>
         </Tab>
-        <Tab text="New">
-            <fx:include fx:id="newBookingTab"
-                        source="/view/kennel/NewBookingView.fxml"/>
+        <Tab fx:id="newBookingTab" text="New" onSelectionChanged="#tabChanged">
+            <fx:include fx:id="newBooking" source="NewBookingView.fxml"/>
         </Tab>
     </TabPane>
-    <Button fx:id="backButton" mnemonicParsing="false"
-            onAction="#handleActions" text="Back">
+    <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions"
+            text="Back">
         <VBox.margin>
-            <Insets left="5.0" top="5.0"/>
+            <Insets left="10.0" top="10.0"/>
         </VBox.margin>
     </Button>
 </VBox>

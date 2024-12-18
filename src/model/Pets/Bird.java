@@ -69,4 +69,9 @@ public class Bird extends Pet implements Serializable
         && other.getPrice() == super.getPrice() && other.getPreferredFood()
         .equals(preferredFood) && other.getSpecie().equals(specie);
   }
+
+  public String getType()
+  {
+    return "Bird";
+  }
 }

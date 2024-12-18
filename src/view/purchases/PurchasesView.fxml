@@ -9,33 +9,26 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.purchases.PurchasesViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.purchases.PurchasesViewController">
     <MenuBar>
         <Menu mnemonicParsing="false" text="File">
-            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false"
-                      onAction="#handleActions" text="Exit"/>
+            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Exit" />
         </Menu>
         <Menu mnemonicParsing="false" text="About">
-            <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false"
-                      onAction="#handleActions" text="About"/>
+            <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleActions" text="About" />
         </Menu>
     </MenuBar>
-    <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0"
-             tabClosingPolicy="UNAVAILABLE">
-        <Tab fx:id="allPurchasesTab" onSelectionChanged="#tabChanged"
-             text="Purchases">
-            <fx:include fx:id="allPurchasesView"
-                        source="AllPurchasesView.fxml"/>
+    <TabPane fx:id="tabPane" prefHeight="320.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="allPurchasesTab" onSelectionChanged="#tabChanged" text="Purchases">
+            <fx:include fx:id="allPurchasesView" source="AllPurchasesView.fxml" />
         </Tab>
-        <Tab fx:id="newPurchaseTab" onSelectionChanged="#tabChanged"
-             text="New">
-            <fx:include fx:id="newPurchasesView"
-                        source="NewPurchasesView.fxml"/>
+        <Tab fx:id="newPurchaseTab" onSelectionChanged="#tabChanged" text="New">
+            <fx:include fx:id="newPurchasesView" source="NewPurchasesView.fxml" />
         </Tab>
     </TabPane>
-    <Button fx:id="backButton" mnemonicParsing="false" text="Back">
+    <Button fx:id="backButton" mnemonicParsing="false" text="Back" onAction="#handleActions">
         <VBox.margin>
-            <Insets left="5.0" top="5.0"/>
+            <Insets left="10.0" top="15.0" />
         </VBox.margin>
     </Button>
 </VBox>

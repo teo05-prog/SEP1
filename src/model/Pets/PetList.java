@@ -8,7 +8,6 @@ public class PetList implements Serializable
 {
   private static final long serialVersionUID = -1818279810449535543L;
   private ArrayList<Pet> pets;
-  private int maxNumberOfPets;
 
   public PetList()
   {
@@ -69,8 +68,7 @@ public class PetList implements Serializable
       return false;
     }
     PetList other = (PetList) obj;
-    return maxNumberOfPets == other.maxNumberOfPets && Objects.equals(pets,
-        other.pets);
+    return Objects.equals(pets, other.pets);
   }
 
   public int size()

@@ -17,13 +17,9 @@ public class CustomersViewController
   private ViewHandler viewHandler;
 
   @FXML private TableView<Customer> allCustomersTable;
-
   @FXML private TableColumn<Customer, String> firstNameColumn;
-
   @FXML private TableColumn<Customer, String> lastNameColumn;
-
   @FXML private TableColumn<Customer, String> phoneColumn;
-
   @FXML private TableColumn<Customer, String> emailColumn;
 
   private TableView.TableViewSelectionModel<Customer> defaultSelectionModel;

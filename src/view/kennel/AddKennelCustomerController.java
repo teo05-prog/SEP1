@@ -14,6 +14,7 @@ public class AddKennelCustomerController
   @FXML private TextField emailField;
 
   private Customer newCustomer;
+
   @FXML private void handleSave(ActionEvent event)
   {
     try
@@ -22,7 +23,6 @@ public class AddKennelCustomerController
       String lastName = lastNameField.getText().trim();
       String phone = phoneField.getText().trim();
       String email = emailField.getText().trim();
-
 
       newCustomer = new Customer(firstName, lastName, phone, email);
 

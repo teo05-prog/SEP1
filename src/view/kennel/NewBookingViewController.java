@@ -2,47 +2,130 @@ package view.kennel;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import model.*;
 import model.Pets.*;
 import utils.MyFileHandler;
 import view.ViewHandler;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class NewBookingViewController
 {
   private ModelManager modelManager;
   private ViewHandler viewHandler;
+  private Customer selectedCustomer;
 
   @FXML private DatePicker startDate;
   @FXML private DatePicker endDate;
-  @FXML private TextField emailAndPhoneField;
+  @FXML private TextField phoneField;
   @FXML private TextField petNameField;
   @FXML private TextArea petInfoArea;
   @FXML private ChoiceBox<String> petTypes;
   @FXML private Button addButton;
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager)
+  @FXML private void initialize()
   {
-    this.viewHandler = viewHandler;
-    this.modelManager = modelManager;
-    reset();
+    setupListeners();
+  }
+
+  private void setupListeners()
+  {
+    phoneField.textProperty().addListener((observable, oldValue, newValue) -> {
+      if (modelManager != null && !newValue.equals(oldValue))
+      {
+        lookupCustomer(newValue);
+      }
+    });
+  }
+
+  private void lookupCustomer(String contactInfo)
+  {
+    if (contactInfo == null || contactInfo.trim().isEmpty())
+    {
+      selectedCustomer = null;
+      return;
+    }
+
+    CustomerList allCustomers = modelManager.getAllCustomers();
+    for (int i = 0; i < allCustomers.size(); i++)
+    {
+      Customer customer = allCustomers.get(i);
+      if (contactInfo.equals(customer.getEmail()) || contactInfo.equals(
+          customer.getPhone()))
+      {
+        selectedCustomer = customer;
+        showSuccessAlert("Customer found: " + customer.getFirstName() + " "
+            + customer.getLastName());
+        return;
+      }
+    }
+    selectedCustomer = null;
+    if (contactInfo.trim().length() >= 8)
+    {
+      showCustomerNotFoundAlert();
+    }
+  }
+
+  private void openAddCustomerDialog()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader(
+          getClass().getResource("/view/kennel/AddKennelCustomer.fxml"));
+      Parent root = loader.load();
+
+      Stage stage = new Stage();
+      stage.setTitle("Add New Customer");
+      stage.setScene(new Scene(root));
+
+      AddKennelCustomerController controller = loader.getController();
+
+      stage.showAndWait();
+
+      Customer newCustomer = controller.getNewCustomer();
+      if (newCustomer != null)
+      {
+        CustomerList customers = modelManager.getAllCustomers();
+        customers.add(newCustomer);
+        modelManager.saveCustomers(customers);
+
+        selectedCustomer = newCustomer;
+        phoneField.setText(newCustomer.getPhone());
+        showSuccessAlert(
+            "Customer added successfully: " + newCustomer.getFirstName() + " "
+                + newCustomer.getLastName());
+      }
+    }
+    catch (IOException e)
+    {
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText(null);
+      alert.setContentText(
+          "Error opening add customer window: " + e.getMessage());
+      alert.showAndWait();
+    }
   }
 
   public void reset()
   {
     startDate.setValue(null);
     endDate.setValue(null);
-    emailAndPhoneField.clear();
+    phoneField.clear();
     petNameField.clear();
     petInfoArea.clear();
     petTypes.getSelectionModel().clearSelection();
+    selectedCustomer = null;
 
     if (petTypes.getItems().isEmpty())
     {
-      petTypes.getItems()
-          .addAll("Dog", "Cat", "Bird", "Fish", "Rodent", "Various");
+      petTypes.getItems().addAll("Dog", "Cat", "Bird");
     }
   }
 
@@ -55,8 +138,11 @@ public class NewBookingViewController
         return;
       }
       Booking newBooking = createBooking();
-      saveBooking(newBooking);
-      reset();
+      if (newBooking != null)
+      {
+        saveBooking(newBooking);
+        reset();
+      }
     }
   }
 
@@ -82,9 +168,14 @@ public class NewBookingViewController
       showAlert("Please enter pet name.");
       return false;
     }
-    if (emailAndPhoneField.getText().trim().isEmpty())
+    if (phoneField.getText().trim().isEmpty())
     {
       showAlert("Please enter customer email or phone number.");
+      return false;
+    }
+    if (selectedCustomer == null)
+    {
+      showAlert("Please select a valid customer before creating a booking.");
       return false;
     }
 
@@ -93,40 +184,10 @@ public class NewBookingViewController
 
   private Booking createBooking()
   {
-    MyDate bookingStartDate = new MyDate(startDate.getValue().getYear(),
-        startDate.getValue().getMonthValue(),
-        startDate.getValue().getDayOfMonth());
-    MyDate bookingEndDate = new MyDate(endDate.getValue().getYear(),
-        endDate.getValue().getMonthValue(), endDate.getValue().getDayOfMonth());
-
-    String contactDetail = emailAndPhoneField.getText().trim();
-    if (contactDetail.isEmpty())
-    {
-      showAlert("Please provide either a phone number or an email address.");
-      return null;
-    }
-
-    Customer existingCustomer = findCustomerByContact(contactDetail);
-
-    Customer customer;
-    if (existingCustomer == null)
-    {
-      boolean addCustomer = showCustomerNotFoundAlert();
-
-      if (addCustomer)
-      {
-        viewHandler.openView("AddKennelCustomer");
-        return null;
-      }
-      else
-      {
-        return null;
-      }
-    }
-    else
-    {
-      customer = existingCustomer;
-    }
+    MyDate bookingStartDate = new MyDate(startDate.getValue().getDayOfMonth(),
+        startDate.getValue().getMonthValue(), startDate.getValue().getYear());
+    MyDate bookingEndDate = new MyDate(endDate.getValue().getDayOfMonth(),
+        endDate.getValue().getMonthValue(), endDate.getValue().getYear());
 
     String petName = petNameField.getText().trim();
     String petComment = petInfoArea.getText().trim();
@@ -145,29 +206,40 @@ public class NewBookingViewController
       return null;
     }
 
-    Booking newBooking = new Booking(customer, pet, bookingStartDate,
+    Booking newBooking = new Booking(selectedCustomer, pet, bookingStartDate,
         bookingEndDate);
     newBooking.setStartDate(bookingStartDate);
     newBooking.setEndDate(bookingEndDate);
-    newBooking.setCustomer(customer);
+    newBooking.setCustomer(selectedCustomer);
     newBooking.setPetInfo(pet);
 
     return newBooking;
   }
 
-  private Customer findCustomerByContact(String contactInfo)
+  private void saveBooking(Booking booking)
   {
-    CustomerList allCustomers = modelManager.getAllCustomers();
-    for (int i = 0; i < allCustomers.size(); i++)
+    if (booking == null)
     {
-      Customer customer = allCustomers.get(i);
-      if (contactInfo.equals(customer.getEmail()) || contactInfo.equals(
-          customer.getPhone()))
-      {
-        return customer;
-      }
+      showAlert("Cannot save null booking");
+      return;
     }
-    return null;
+
+    try
+    {
+      KennelList bookings = modelManager.getAllBookings();
+      if (bookings == null)
+      {
+        bookings = new KennelList();
+      }
+      bookings.add(booking);
+      MyFileHandler.writeToBinaryFile("bookings.bin", bookings);
+      showSuccessAlert("Booking added successfully!");
+    }
+    catch (Exception e)
+    {
+      showAlert("Error saving booking: " + e.getMessage());
+      e.printStackTrace();
+    }
   }
 
   private boolean showCustomerNotFoundAlert()
@@ -185,23 +257,32 @@ public class NewBookingViewController
     alert.getButtonTypes().setAll(addCustomerButton, ButtonType.CANCEL);
     Optional<ButtonType> result = alert.showAndWait();
 
-    return result.isPresent() && result.get() == addCustomerButton;
+    if (result.isPresent() && result.get() == addCustomerButton)
+    {
+      openAddCustomerDialog();
+      return true;
+    }
+    return false;
   }
 
-  private void saveBooking(Booking booking)
+  private Pet createSpecificPet(String petType, String name, String comment)
   {
-    try
-    {
-      KennelList bookings = modelManager.getAllBookings();
-      bookings.add(booking);
-      MyFileHandler.writeToBinaryFile("bookings.bin", bookings);
+    int age = 3;
+    String colour = "Brown";
+    char gender = 'M';
+    int price = 50;
+    String tempStr = "Just a string";
 
-      showSuccessAlert("Booking added successfully!");
-    }
-    catch (Exception e)
+    return switch (petType)
     {
-      showAlert("Error saving booking: " + e.getMessage());
-    }
+      case "Dog" ->
+          new Dog(name, age, colour, gender, comment, price, tempStr, tempStr);
+      case "Cat" ->
+          new Cat(name, age, colour, gender, comment, price, tempStr, tempStr);
+      case "Bird" ->
+          new Bird(name, age, colour, gender, comment, price, tempStr, tempStr);
+      default -> null;
+    };
   }
 
   private void showAlert(String message)
@@ -222,36 +303,10 @@ public class NewBookingViewController
     alert.showAndWait();
   }
 
-  private Pet createSpecificPet(String petType, String name, String comment)
+  public void init(ViewHandler viewHandler, ModelManager modelManager)
   {
-    int age = 3;
-    String colour = "Brown";
-    char gender = 'M';
-    int price = 50;
-    String tempStr = "Just a string";
-    boolean tempBoo = true;
-
-    switch (petType)
-    {
-      case "Dog":
-        return new Dog(name, age, colour, gender, comment, price, tempStr,
-            tempStr);
-      case "Cat":
-        return new Cat(name, age, colour, gender, comment, price, tempStr,
-            tempStr);
-      case "Bird":
-        return new Bird(name, age, colour, gender, comment, price, tempStr,
-            tempStr);
-      case "Fish":
-        return new Fish(name, age, colour, gender, comment, price, tempStr,
-            tempBoo, tempStr);
-      case "Rodent":
-        return new Rodent(name, age, colour, gender, comment, price, tempBoo,
-            tempStr);
-      case "Various":
-        return new Various(name, age, colour, gender, comment, price, tempStr);
-      default:
-        return null;
-    }
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    reset();
   }
 }

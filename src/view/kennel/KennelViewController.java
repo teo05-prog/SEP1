@@ -5,14 +5,15 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import model.KennelList;
 import model.ModelManager;
 import view.ViewHandler;
 
 public class KennelViewController
 {
-  @FXML private CurrentViewController currentViewController;
-  @FXML private PastViewController pastViewController;
-  @FXML private NewBookingViewController newBookingViewController;
+  @FXML private CurrentViewController currentController;
+  @FXML private PastViewController pastController;
+  @FXML private NewBookingViewController newBookingController;
 
   @FXML private TabPane tabPane;
   @FXML private Tab currentTab;
@@ -29,12 +30,13 @@ public class KennelViewController
 
   public void initialize()
   {
-    if (currentViewController != null)
-      currentViewController.init(viewHandler, modelManager);
-    if (pastViewController != null)
-      pastViewController.init(viewHandler, modelManager);
-    if (newBookingViewController != null)
-      newBookingViewController.init(viewHandler, modelManager);
+    tabPane.getSelectionModel().selectedItemProperty()
+        .addListener((obs, oldTab, newTab) -> {
+          if (modelManager != null)
+          {
+            KennelList bookings = modelManager.getAllBookings();
+          }
+        });
   }
 
   public void init(ViewHandler viewHandler, Scene scene,
@@ -43,6 +45,19 @@ public class KennelViewController
     this.modelManager = modelManager;
     this.viewHandler = viewHandler;
     this.scene = scene;
+
+    if (currentController != null)
+    {
+      currentController.init(viewHandler, modelManager);
+    }
+    if (pastController != null)
+    {
+      pastController.init(viewHandler, modelManager);
+    }
+    if (newBookingController != null)
+    {
+      newBookingController.init(viewHandler, modelManager);
+    }
   }
 
   public void reset()
@@ -57,17 +72,29 @@ public class KennelViewController
 
   public void tabChanged(Event event)
   {
-    if (currentTab.isSelected())
+    if (modelManager != null)
     {
-      currentViewController.reset();
-    }
-    else if (pastTab.isSelected())
-    {
-      pastViewController.reset();
-    }
-    else if (newBookingTab.isSelected())
-    {
-      newBookingViewController.reset();
+      if (currentTab.isSelected())
+      {
+        if (currentController != null)
+        {
+          currentController.reset();
+        }
+      }
+      else if (pastTab.isSelected())
+      {
+        if (pastController != null)
+        {
+          pastController.reset();
+        }
+      }
+      else if (newBookingTab.isSelected())
+      {
+        if (newBookingController != null)
+        {
+          newBookingController.reset();
+        }
+      }
     }
   }
 
@@ -94,12 +121,12 @@ public class KennelViewController
       alert.setHeaderText(null);
       alert.setTitle("About");
       alert.setContentText(
-          "This is just a little program that demonstrates some of the GUI features in Java");
+          "Here you can see the current bookings, the ones in the past and also add a new booking.");
       alert.showAndWait();
     }
     else if (e.getSource() == backButton)
     {
-      viewHandler.openKennelView("KennelView");
+      viewHandler.openView("MainView");
     }
     else if (e.getSource() == changePriceMenuItem)
     {
@@ -122,9 +149,9 @@ public class KennelViewController
             return;
           }
           modelManager.updatePrice(newPrice);
-          currentViewController.reset();
-          pastViewController.reset();
-          newBookingViewController.reset();
+          currentController.reset();
+          pastController.reset();
+          newBookingController.reset();
           showInfoAlert("Price successfully updated to $" + newPrice);
 
         }

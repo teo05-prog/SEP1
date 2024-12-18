@@ -34,7 +34,7 @@ public class PetsViewController
 
   @FXML public void initialize()
   {
-    // Leave empty or handle only UI setup that doesn't require dependencies
+
   }
 
   public void init(ViewHandler viewHandler, Scene scene,
@@ -44,7 +44,6 @@ public class PetsViewController
     this.viewHandler = viewHandler;
     this.scene = scene;
 
-    // Initialize all child controllers after dependencies are set
     if (dogsViewController != null)
       dogsViewController.init(viewHandler, modelManager, scene);
     if (catsViewController != null)
@@ -61,7 +60,6 @@ public class PetsViewController
 
   public void reset()
   {
-    // Reset the current tab's view
     if (dogsTab.isSelected())
     {
       dogsViewController.reset();

@@ -84,22 +84,21 @@ public class FileReader
 
     try
     {
-      FileInputStream purchasesFileIn = new FileInputStream("purchases.bin");
-      ObjectInputStream readPurchases = new ObjectInputStream(purchasesFileIn);
-      while (true)
+      FileInputStream bookingsFileIn = new FileInputStream("bookings.bin");
+      ObjectInputStream readBookings = new ObjectInputStream(bookingsFileIn);
+      try
       {
-        try
+        KennelList kennelList = (KennelList) readBookings.readObject();
+        for (int i = 0; i < kennelList.size(); i++)
         {
-          Purchase purchase = (Purchase) readPurchases.readObject();
-          System.out.println(purchase);
-        }
-        catch (EOFException eof)
-        {
-          System.out.println("End of file");
-          break;
+          System.out.println(kennelList.get(i));
         }
       }
-      readPurchases.close();
+      catch (EOFException eof)
+      {
+        System.out.println("End of file");
+      }
+      readBookings.close();
     }
     catch (FileNotFoundException e)
     {
@@ -121,22 +120,21 @@ public class FileReader
 
     try
     {
-      FileInputStream bookingsFileIn = new FileInputStream("bookings.bin");
-      ObjectInputStream readBookings = new ObjectInputStream(bookingsFileIn);
-      while (true)
+      FileInputStream purchasesFileIn = new FileInputStream("purchases.bin");
+      ObjectInputStream readPurchases = new ObjectInputStream(purchasesFileIn);
+      try
       {
-        try
+        PurchaseList purchaseList = (PurchaseList) readPurchases.readObject();
+        for (int i = 0; i < purchaseList.size(); i++)
         {
-          Booking booking = (Booking) readBookings.readObject();
-          System.out.println(booking);
-        }
-        catch (EOFException eof)
-        {
-          System.out.println("End of file");
-          break;
+          System.out.println(purchaseList.get(i));
         }
       }
-      readBookings.close();
+      catch (EOFException eof)
+      {
+        System.out.println("End of file");
+      }
+      readPurchases.close();
     }
     catch (FileNotFoundException e)
     {

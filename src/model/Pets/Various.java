@@ -46,4 +46,9 @@ public class Various extends Pet
         && other.getPrice() == super.getPrice() && other.getSpecie()
         .equals(specie);
   }
+
+  public String getType()
+  {
+    return "Various";
+  }
 }

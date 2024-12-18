@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PurchaseList
+public class PurchaseList implements Serializable
 {
   private ArrayList<Purchase> purchases;
   private Purchase purchase;
@@ -59,11 +60,16 @@ public class PurchaseList
 
   public int size()
   {
-    return purchases.size();
+    return purchases != null ? purchases.size() : 0;
   }
 
   public Purchase get(int index)
   {
-    return purchases.get(index);
+    return purchases != null ? purchases.get(index) : null;
+  }
+
+  public void add(Purchase purchase)
+  {
+    purchases.add(purchase);
   }
 }

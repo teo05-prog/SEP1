@@ -78,7 +78,7 @@ public class VariousViewController
       TextFieldTableCell<Various, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
       cell.textProperty().addListener((obs, oldText, newText) -> {
-        if (newText.length() > 1)
+        if (newText != null && newText.length() > 1)
         {
           cell.setText(oldText);
         }
@@ -151,8 +151,7 @@ public class VariousViewController
     variousTable.setItems(observableVarious);
   }
 
-  @FXML
-  private void handleRemoveVarious()
+  @FXML private void handleRemoveVarious()
   {
     Various selectedVarious = variousTable.getSelectionModel()
         .getSelectedItem();
@@ -162,8 +161,7 @@ public class VariousViewController
     }
     else
     {
-      showAlert("No selection",
-          "Please select a various pet to remove.");
+      showAlert("No selection", "Please select a various pet to remove.");
     }
   }
 

@@ -2,13 +2,20 @@ package view.pets;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.ModelManager;
+import model.Pets.PetList;
 import model.Pets.Rodent;
+import view.ViewHandler;
 
 public class AddRodentViewController
 {
+  private Scene scene;
+  private ModelManager modelManager;
+  private ViewHandler viewHandler;
 
   @FXML private TextField nameField;
   @FXML private TextField ageField;
@@ -20,6 +27,14 @@ public class AddRodentViewController
   @FXML private TextField doesItBiteField;
 
   private Rodent newRodent;
+
+  public void init(ViewHandler viewHandler, ModelManager modelManager,
+      Scene scene)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.scene = scene;
+  }
 
   @FXML private void handleSave(ActionEvent event)
   {
@@ -38,12 +53,17 @@ public class AddRodentViewController
       newRodent = new Rodent(name, age, color, gender, comment, price,
           doesItBite, specie);
 
+      PetList pets = modelManager.getAllPets();
+      pets.addPet(newRodent);
+      modelManager.savePets(pets);
+
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();
     }
     catch (Exception e)
     {
       System.out.println("Invalid input: " + e.getMessage());
+      e.printStackTrace();
     }
   }
 
@@ -57,6 +77,11 @@ public class AddRodentViewController
   public Rodent getNewRodent()
   {
     return newRodent;
+  }
+
+  public Scene getScene()
+  {
+    return scene;
   }
 }
 

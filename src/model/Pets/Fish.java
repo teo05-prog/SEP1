@@ -74,4 +74,9 @@ public class Fish extends Pet implements Serializable
         .equals(water) && other.getPredators() == predators && other.getSpecie()
         .equals(specie);
   }
+
+  public String getType()
+  {
+    return "Fish";
+  }
 }

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pets>
+<pet type="dog">
+<name>Buddy</name>
+<age>5</age>
+<gender>m</gender>
+<colour>Brown</colour>
+<comment>Friendly</comment>
+<price>0</price>
+<breed>Golden Retriever</breed>
+<breederName>Golden Paws</breederName>
+</pet>
+<pet type="dog">
+<name>Daisy</name>
+<age>4</age>
+<gender>f</gender>
+<colour>White</colour>
+<comment>Cute</comment>
+<price>0</price>
+<breed>Poodle</breed>
+<breederName>Poodle Palace</breederName>
+</pet>
+<pet type="dog">
+<name>Max</name>
+<age>6</age>
+<gender>m</gender>
+<colour>Black</colour>
+<comment>Loyal</comment>
+<price>0</price>
+<breed>Labrador</breed>
+<breederName>Labrador Love</breederName>
+</pet>
+<pet type="dog">
+<name>Lucy</name>
+<age>3</age>
+<gender>f</gender>
+<colour>Brown</colour>
+<comment>Playful</comment>
+<price>0</price>
+<breed>Beagle</breed>
+<breederName>Beagle Buddies</breederName>
+</pet>
+<pet type="dog">
+<name>Charlie</name>
+<age>7</age>
+<gender>m</gender>
+<colour>Black</colour>
+<comment>Energetic</comment>
+<price>15000</price>
+<breed>German Shepherd</breed>
+<breederName>German Guard</breederName>
+</pet>
+<pet type="cat">
+<name>Whiskers</name>
+<age>3</age>
+<gender>f</gender>
+<colour>White</colour>
+<comment>Playful</comment>
+<price>0</price>
+<breed>Siamese</breed>
+<breederName>Siamese Cats</breederName>
+</pet>
+<pet type="cat">
+<name>Mittens</name>
+<age>2</age>
+<gender>f</gender>
+<colour>Black</colour>
+<comment>Cuddly</comment>
+<price>0</price>
+<breed>Persian</breed>
+<breederName>Persian Paws</breederName>
+</pet>
+<pet type="cat">
+<name>Tiger</name>
+<age>4</age>
+<gender>m</gender>
+<colour>Orange</colour>
+<comment>Curious</comment>
+<price>0</price>
+<breed>Savannah</breed>
+<breederName>Savannah Breeders</breederName>
+</pet>
+<pet type="cat">
+<name>Smokey</name>
+<age>5</age>
+<gender>m</gender>
+<colour>Grey</colour>
+<comment>Lazy</comment>
+<price>0</price>
+<breed>Chartreux</breed>
+<breederName>Chartreux Cats</breederName>
+</pet>
+<pet type="cat">
+<name>Luna</name>
+<age>1</age>
+<gender>f</gender>
+<colour>White</colour>
+<comment>Independent</comment>
+<price>17500</price>
+<breed>Ragdoll</breed>
+<breederName>Ragdoll Royalty</breederName>
+</pet>
+<pet type="bird">
+<name>Polly</name>
+<age>2</age>
+<gender>f</gender>
+<colour>Green</colour>
+<comment>Talkative</comment>
+<price>0</price>
+<preferredFood>Seeds</preferredFood>
+<specie>Budgerigar</specie>
+</pet>
+<pet type="bird">
+<name>Apollo</name>
+<age>2</age>
+<gender>m</gender>
+<colour>Gray</colour>
+<comment>eloquent</comment>
+<price>0</price>
+<preferredFood>pistachios</preferredFood>
+<specie>Parrot</specie>
+</pet>
+<pet type="bird">
+<name>Zeus</name>
+<age>1</age>
+<gender>m</gender>
+<colour>Yellow</colour>
+<comment>Loud</comment>
+<price>1600</price>
+<preferredFood>Sunflower seeds</preferredFood>
+<specie>Budgerigar</specie>
+</pet>
+<pet type="fish">
+<name>Bubbles</name>
+<age>1</age>
+<gender>m</gender>
+<colour>Orange</colour>
+<comment>Shy</comment>
+<price>80</price>
+<waterType>Freshwater</waterType>
+<predators>false</predators>
+<specie>Goldfish</specie>
+</pet>
+<pet type="fish">
+<name>Nemo</name>
+<age>1</age>
+<gender>m</gender>
+<colour>Orange</colour>
+<comment>Adventurous</comment>
+<price>160</price>
+<waterType>Saltwater</waterType>
+<predators>true</predators>
+<specie>Clownfish</specie>
+</pet>
+<pet type="fish">
+<name>Dory</name>
+<age>1</age>
+<gender>f</gender>
+<colour>Blue</colour>
+<comment>Forgetful</comment>
+<price>450</price>
+<waterType>Saltwater</waterType>
+<predators>true</predators>
+<specie>Regal Tang</specie>
+</pet>
+<pet type="rodent">
+<name>Nibbles</name>
+<age>1</age>
+<gender>m</gender>
+<colour>Grey</colour>
+<comment>Curious</comment>
+<price>200</price>
+<doesItBite>false</doesItBite>
+<specie>Hamster</specie>
+</pet>
+<pet type="rodent">
+<name>Squeaky</name>
+<age>1</age>
+<gender>f</gender>
+<colour>White</colour>
+<comment>Loud</comment>
+<price>180</price>
+<doesItBite>true</doesItBite>
+<specie>Rat</specie>
+</pet>
+<pet type="rodent">
+<name>Fluffy</name>
+<age>1</age>
+<gender>f</gender>
+<colour>Brown</colour>
+<comment>Soft</comment>
+<price>220</price>
+<doesItBite>false</doesItBite>
+<specie>Chinchilla</specie>
+</pet>
+<pet type="various">
+<name>Maturin</name>
+<age>100</age>
+<gender>m</gender>
+<colour>Green</colour>
+<comment>Wise</comment>
+<price>500</price>
+<specie>Turtle</specie>
+</pet>
+</pets>

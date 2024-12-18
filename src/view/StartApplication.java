@@ -12,7 +12,7 @@ public class StartApplication extends Application
     {
       primaryStage.setTitle("VIAPets App");
       ModelManager modelManager = new ModelManager("customers.bin", "pets.bin",
-          "kennel.bin", "purchases.bin");
+          "bookings.bin", "purchases.bin");
       ViewHandler viewHandler = new ViewHandler(primaryStage, modelManager);
       viewHandler.start();
       primaryStage.show();

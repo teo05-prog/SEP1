@@ -2,7 +2,7 @@ package model;
 
 import model.Pets.*;
 import utils.MyFileHandler;
-import view.main.MainViewController;
+import view.mainview.MainViewController;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -89,7 +89,6 @@ public class ModelManager
   public KennelList getAllBookings()
   {
     KennelList allBookings = new KennelList();
-
     try
     {
       allBookings = (KennelList) MyFileHandler.readFromBinaryFile(
@@ -97,15 +96,17 @@ public class ModelManager
     }
     catch (FileNotFoundException e)
     {
-      System.out.println("File not found");
+      System.out.println("File not found: " + kennelFileName);
     }
     catch (IOException e)
     {
       System.out.println("IO Error reading file");
+      e.printStackTrace();
     }
     catch (ClassNotFoundException e)
     {
       System.out.println("Class Not Found");
+      e.printStackTrace();
     }
     return allBookings;
   }
@@ -113,23 +114,28 @@ public class ModelManager
   public PurchaseList getAllPurchases()
   {
     PurchaseList allPurchases = new PurchaseList();
-
     try
     {
-      allPurchases = (PurchaseList) MyFileHandler.readFromBinaryFile(
-          purchasesFileName);
+      Object obj = MyFileHandler.readFromBinaryFile(purchasesFileName);
+      if (obj instanceof PurchaseList)
+      {
+        allPurchases = (PurchaseList) obj;
+      }
     }
     catch (FileNotFoundException e)
     {
-      System.out.println("File not found");
+      System.out.println("File not found: " + purchasesFileName
+          + ". Creating new purchase list.");
     }
     catch (IOException e)
     {
-      System.out.println("IO Error reading file");
+      System.out.println("IO Error reading file: " + purchasesFileName);
+      e.printStackTrace();
     }
     catch (ClassNotFoundException e)
     {
       System.out.println("Class Not Found");
+      e.printStackTrace();
     }
     return allPurchases;
   }
@@ -336,6 +342,35 @@ public class ModelManager
     catch (IOException e)
     {
       System.out.println("IO Error writing to file");
+    }
+  }
+
+  public void savePets(PetList pets)
+  {
+    try
+    {
+      MyFileHandler.writeToBinaryFile("pets.bin", pets);
+    }
+    catch (Exception e)
+    {
+      System.out.println("Error saving pets: " + e.getMessage());
+    }
+  }
+
+  public void savePurchases(PurchaseList purchases)
+  {
+    try
+    {
+      MyFileHandler.writeToBinaryFile(purchasesFileName, purchases);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found: " + purchasesFileName);
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file: " + purchasesFileName);
+      e.printStackTrace();
     }
   }
 }

@@ -65,49 +65,68 @@ public class BirdsViewController
     nameColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setName(event.getNewValue());
+      savePetList();
     });
+
     ageColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     ageColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setAge(event.getNewValue());
+      savePetList();
     });
+
     colourColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     colourColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setColour(event.getNewValue());
+      savePetList();
     });
+
     genderColumn.setCellFactory(column -> {
       TextFieldTableCell<Bird, Character> cell = new TextFieldTableCell<>(
           new CharacterStringConverter());
       cell.textProperty().addListener((obs, oldText, newText) -> {
-        if (newText.length() > 1)
+        if (newText != null && newText.length() > 1)
         {
           cell.setText(oldText);
         }
       });
       return cell;
     });
+    genderColumn.setOnEditCommit(event -> {
+      Bird bird = event.getRowValue();
+      bird.setGender(event.getNewValue());
+      savePetList();
+    });
+
     commentColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     commentColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setComment(event.getNewValue());
+      savePetList();
     });
+
     priceColumn.setCellFactory(
         TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
     priceColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setPrice(event.getNewValue());
+      savePetList();
     });
+
     preferredFoodColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     preferredFoodColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setPreferredFood(event.getNewValue());
+      savePetList();
     });
+
     specieColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     specieColumn.setOnEditCommit(event -> {
       Bird bird = event.getRowValue();
       bird.setSpecie(event.getNewValue());
+      savePetList();
     });
   }
 
@@ -119,24 +138,29 @@ public class BirdsViewController
           getClass().getResource("/view/pets/AddBirdView.fxml"));
       Parent root = loader.load();
 
+      AddBirdViewController controller = loader.getController();
+      Scene scene = new Scene(root);
+      controller.init(viewHandler, modelManager, scene);
+
       Stage stage = new Stage();
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.setTitle("Add a New Bird");
-      stage.setScene(new Scene(root));
+      stage.setScene(scene);
       stage.showAndWait();
 
-      AddBirdViewController controller = loader.getController();
       Bird newBird = controller.getNewBird();
       if (newBird != null)
       {
-        observableBirds.add(newBird);
+        petList.addPet(newBird);
+        savePetList();
+        updateTableData();
       }
     }
     catch (Exception e)
     {
       System.out.println("Error opening window: " + e.getMessage());
+      e.printStackTrace();
     }
-
   }
 
   @FXML private void handleRemoveBird()
@@ -144,12 +168,19 @@ public class BirdsViewController
     Bird selectedBird = birdTable.getSelectionModel().getSelectedItem();
     if (selectedBird != null)
     {
-      observableBirds.remove(selectedBird);
+      petList.removePet(selectedBird);
+      savePetList();
+      updateTableData();
     }
     else
     {
       showAlert("No selection", "Please select a bird to remove.");
     }
+  }
+
+  private void savePetList()
+  {
+    modelManager.savePets(petList);
   }
 
   private void showAlert(String title, String content)
@@ -185,18 +216,8 @@ public class BirdsViewController
   {
     if (modelManager != null)
     {
-      updateBird();
-    }
-  }
-
-  private void updateBird()
-  {
-    birdTable.getItems().clear();
-    PetList birds = modelManager.getAllBirds(petList);
-
-    for (int i = 0; i < birds.size(); i++)
-    {
-      birdTable.getItems().add(birds.getBird(i));
+      petList = modelManager.getAllPets();
+      updateTableData();
     }
   }
 }
