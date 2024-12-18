@@ -202,4 +202,14 @@
 <price>1000</price>
 <specie>Turtle</specie>
 </pet>
+<pet type="bird">
+<name>Duda</name>
+<age>4</age>
+<gender>M</gender>
+<colour>Red</colour>
+<comment>Swears a lot</comment>
+<price>100</price>
+<preferredFood>Sunflower seeds</preferredFood>
+<specie>Parrot</specie>
+</pet>
 </pets>

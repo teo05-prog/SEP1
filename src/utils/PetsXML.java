@@ -110,9 +110,4 @@ public class PetsXML {
       write.println("<specie>" + various.getSpecie() + "</specie>");
     }
   }
-
-  public static void main(String[] args)
-  {
-    new PetsXML();
-  }
 }

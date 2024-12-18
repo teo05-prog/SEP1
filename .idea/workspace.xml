@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="my changes">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="XML fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/PetsXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PetsXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddBirdViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddBirdViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddCatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddCatViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddFishViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddFishViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddRodentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddRodentViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddVariousViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddVariousViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="49860" />
+    <option name="totalTimeSeconds" value="52914" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -45,7 +53,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/teo05-prog/VIAPets.git&quot;,
-    &quot;accountId&quot;: &quot;a5749d79-1b8a-4c11-bc7c-8deef3e8c63a&quot;
+    &quot;accountId&quot;: &quot;2e0811e5-fa88-4508-a354-5330c5a858e3&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -409,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734370046449</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="XML fix">
+      <option name="closed" value="true" />
+      <created>1734522022092</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1734522022092</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,7 +440,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="booking class" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Customer.java" />
     <MESSAGE value="made it work, YAY" />
     <MESSAGE value="Merge branch 'master' of https://github.com/teo05-prog/VIAPets" />
@@ -449,7 +464,8 @@
     <MESSAGE value="kennel view" />
     <MESSAGE value="trying to solve some bugs" />
     <MESSAGE value="my changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="my changes" />
+    <MESSAGE value="XML fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="XML fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
