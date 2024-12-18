@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import model.ModelManager;
 import model.Pets.PetList;
 import model.Pets.Rodent;
+import utils.PetsXML;
 import view.ViewHandler;
 
 public class AddRodentViewController
@@ -56,6 +57,8 @@ public class AddRodentViewController
       PetList pets = modelManager.getAllPets();
       pets.addPet(newRodent);
       modelManager.savePets(pets);
+
+      new PetsXML();
 
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();
