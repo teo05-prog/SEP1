@@ -17,6 +17,7 @@ import model.Pets.PetList;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.CharacterStringConverter;
+import utils.PetsXML;
 import view.ViewHandler;
 
 import javafx.scene.control.Alert;
@@ -172,6 +173,8 @@ public class DogsViewController
       petList.removePet(selectedDog);
       savePetList();
       updateTableData();
+
+      new PetsXML();
     }
     else
     {

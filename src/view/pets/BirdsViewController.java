@@ -18,6 +18,7 @@ import javafx.util.converter.IntegerStringConverter;
 import model.ModelManager;
 import model.Pets.Bird;
 import model.Pets.PetList;
+import utils.PetsXML;
 import view.ViewHandler;
 
 public class BirdsViewController
@@ -171,6 +172,8 @@ public class BirdsViewController
       petList.removePet(selectedBird);
       savePetList();
       updateTableData();
+
+      new PetsXML();
     }
     else
     {
