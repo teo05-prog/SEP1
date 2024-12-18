@@ -175,7 +175,7 @@ public class KennelViewController
   private void showInfoAlert(String message)
   {
     Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
-    infoAlert.setTitle("Price Update");
+    infoAlert.setTitle("Success");
     infoAlert.setHeaderText(null);
     infoAlert.setContentText(message);
     infoAlert.showAndWait();

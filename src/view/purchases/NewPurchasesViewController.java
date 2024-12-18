@@ -224,7 +224,7 @@ public class NewPurchasesViewController
     {
       try
       {
-        Pet pet = filteredPets.getPets(i);
+        Pet pet = filteredPets.get(i);
         names.add(pet.getName());
       }
       catch (Exception e)
@@ -257,7 +257,7 @@ public class NewPurchasesViewController
     {
       try
       {
-        Pet pet = filteredPets.getPets(i);
+        Pet pet = filteredPets.get(i);
         if (pet.getName().equals(petName))
         {
           selectedPet = pet;
@@ -342,7 +342,7 @@ public class NewPurchasesViewController
         purchases.add(purchase);
 
         PetList pets = modelManager.getAllPets();
-        pets.removePet(selectedPet);
+        pets.remove(selectedPet);
 
         modelManager.savePurchases(purchases);
         modelManager.savePets(pets);

@@ -75,7 +75,7 @@ public class MainViewController
       alert.setHeaderText(null);
       alert.setTitle("About");
       alert.setContentText(
-          "This is just a little program that demonstrates some of the GUI features in Java");
+          "This is the app for VIAPets. Here you can choose where you want to make changes or simply check stuff.");
       alert.showAndWait();
     }
   }

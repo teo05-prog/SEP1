@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import model.ModelManager;
 import model.Pets.PetList;
 import model.Pets.Various;
+import utils.PetsXML;
 import view.ViewHandler;
 
 public class AddVariousViewController
@@ -51,8 +52,10 @@ public class AddVariousViewController
           specie);
 
       PetList pets = modelManager.getAllPets();
-      pets.addPet(newVarious);
+      pets.add(newVarious);
       modelManager.savePets(pets);
+
+      new PetsXML();
 
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();

@@ -38,7 +38,7 @@
             </GridPane.margin>
         </Label>
         <Label text="End Date:" GridPane.columnIndex="3" />
-        <Label text="E-mail/Phone no.:" GridPane.rowIndex="1">
+        <Label text="Phone no.:" GridPane.rowIndex="1">
             <GridPane.margin>
                 <Insets left="10.0" />
             </GridPane.margin>

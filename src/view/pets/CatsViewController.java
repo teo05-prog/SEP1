@@ -172,7 +172,7 @@ public class CatsViewController
     Cat selectedCat = catTable.getSelectionModel().getSelectedItem();
     if (selectedCat != null)
     {
-      petList.removePet(selectedCat);
+      petList.remove(selectedCat);
       savePetList();
       updateTableData();
     }
@@ -199,13 +199,13 @@ public class CatsViewController
   private void updateTableData()
   {
     observableCats = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Cat)
+        if (petList.get(i) instanceof Cat)
         {
-          observableCats.add((Cat) petList.getPets(i));
+          observableCats.add((Cat) petList.get(i));
         }
       }
       catch (Exception e)

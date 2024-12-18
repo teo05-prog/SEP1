@@ -171,7 +171,7 @@ public class RodentsViewController
     Rodent selectedRodent = rodentTable.getSelectionModel().getSelectedItem();
     if (selectedRodent != null)
     {
-      petList.removePet(selectedRodent);
+      petList.remove(selectedRodent);
       savePetList();
       updateTableData();
     }
@@ -198,13 +198,13 @@ public class RodentsViewController
   private void updateTableData()
   {
     observableRodents = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Rodent)
+        if (petList.get(i) instanceof Rodent)
         {
-          observableRodents.add((Rodent) petList.getPets(i));
+          observableRodents.add((Rodent) petList.get(i));
         }
       }
       catch (Exception e)

@@ -160,7 +160,7 @@ public class VariousViewController
         .getSelectedItem();
     if (selectedVarious != null)
     {
-      petList.removePet(selectedVarious);
+      petList.remove(selectedVarious);
       savePetList();
       updateTableData();
     }
@@ -187,13 +187,13 @@ public class VariousViewController
   private void updateTableData()
   {
     observableVarious = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Various)
+        if (petList.get(i) instanceof Various)
         {
-          observableVarious.add((Various) petList.getPets(i));
+          observableVarious.add((Various) petList.get(i));
         }
       }
       catch (Exception e)

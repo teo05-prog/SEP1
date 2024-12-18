@@ -151,7 +151,7 @@ public class BirdsViewController
       Bird newBird = controller.getNewBird();
       if (newBird != null)
       {
-        petList.addPet(newBird);
+        petList.add(newBird);
         savePetList();
         updateTableData();
       }
@@ -168,7 +168,7 @@ public class BirdsViewController
     Bird selectedBird = birdTable.getSelectionModel().getSelectedItem();
     if (selectedBird != null)
     {
-      petList.removePet(selectedBird);
+      petList.remove(selectedBird);
       savePetList();
       updateTableData();
     }
@@ -195,13 +195,13 @@ public class BirdsViewController
   private void updateTableData()
   {
     observableBirds = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Bird)
+        if (petList.get(i) instanceof Bird)
         {
-          observableBirds.add((Bird) petList.getPets(i));
+          observableBirds.add((Bird) petList.get(i));
         }
       }
       catch (Exception e)

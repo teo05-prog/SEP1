@@ -61,7 +61,7 @@ public class FishViewController
     commentColumn.setCellValueFactory(new PropertyValueFactory<>("comment"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     waterColumn.setCellValueFactory(new PropertyValueFactory<>("water"));
-    predatorColumn.setCellValueFactory(new PropertyValueFactory<>("predators"));
+    predatorColumn.setCellValueFactory(new PropertyValueFactory<>("predator"));
     specieColumn.setCellValueFactory(new PropertyValueFactory<>("specie"));
 
     nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -179,7 +179,7 @@ public class FishViewController
     Fish selectedFish = fishTable.getSelectionModel().getSelectedItem();
     if (selectedFish != null)
     {
-      petList.removePet(selectedFish);
+      petList.remove(selectedFish);
       savePetList();
       updateTableData();
     }
@@ -206,13 +206,13 @@ public class FishViewController
   private void updateTableData()
   {
     observableFish = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Fish)
+        if (petList.get(i) instanceof Fish)
         {
-          observableFish.add((Fish) petList.getPets(i));
+          observableFish.add((Fish) petList.get(i));
         }
       }
       catch (Exception e)

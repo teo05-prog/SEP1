@@ -45,24 +45,27 @@ public class PetsXML {
 
       write.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
       write.println("<pets>");
+      for (Pet pet : pets)
+      {
+        if (pet.getPrice() != 0)
+        {
+          // Determine pet type and write XML accordingly
+          String petType = determinePetType(pet);
+          write.println("<pet type=\"" + petType + "\">");
 
-      for (Pet pet : pets) {
-        // Determine pet type and write XML accordingly
-        String petType = determinePetType(pet);
-        write.println("<pet type=\"" + petType + "\">");
+          // Write common pet attributes
+          write.println("<name>" + pet.getName() + "</name>");
+          write.println("<age>" + pet.getAge() + "</age>");
+          write.println("<gender>" + pet.getGender() + "</gender>");
+          write.println("<colour>" + pet.getColour() + "</colour>");
+          write.println("<comment>" + pet.getComment() + "</comment>");
+          write.println("<price>" + pet.getPrice() + "</price>");
 
-        // Write common pet attributes
-        write.println("<name>" + pet.getName() + "</name>");
-        write.println("<age>" + pet.getAge() + "</age>");
-        write.println("<gender>" + pet.getGender() + "</gender>");
-        write.println("<colour>" + pet.getColour() + "</colour>");
-        write.println("<comment>" + pet.getComment() + "</comment>");
-        write.println("<price>" + pet.getPrice() + "</price>");
+          // Write specific pet type attributes
+          writeSpecificPetAttributes(write, pet);
 
-        // Write specific pet type attributes
-        writeSpecificPetAttributes(write, pet);
-
-        write.println("</pet>");
+          write.println("</pet>");
+        }
       }
 
       write.println("</pets>");
@@ -98,7 +101,7 @@ public class PetsXML {
       write.println("<breederName>" + dog.getBreederName() + "</breederName>");
     } else if (pet instanceof Fish fish) {
       write.println("<waterType>" + fish.getWater() + "</waterType>");
-      write.println("<predators>" + fish.getPredators() + "</predators>");
+      write.println("<predators>" + fish.getPredator() + "</predators>");
       write.println("<specie>" + fish.getSpecie() + "</specie>");
     } else if (pet instanceof Rodent rodent) {
       write.println("<doesItBite>" + rodent.getDoesItBite() + "</doesItBite>");

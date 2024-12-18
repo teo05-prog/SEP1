@@ -169,7 +169,7 @@ public class DogsViewController
     Dog selectedDog = dogTable.getSelectionModel().getSelectedItem();
     if (selectedDog != null)
     {
-      petList.removePet(selectedDog);
+      petList.remove(selectedDog);
       savePetList();
       updateTableData();
     }
@@ -196,13 +196,13 @@ public class DogsViewController
   private void updateTableData()
   {
     observableDogs = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Dog)
+        if (petList.get(i) instanceof Dog)
         {
-          observableDogs.add((Dog) petList.getPets(i));
+          observableDogs.add((Dog) petList.get(i));
         }
       }
       catch (Exception e)
