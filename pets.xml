@@ -195,89 +195,11 @@
 </pet>
 <pet type="various">
 <name>Maturin</name>
-<age>10000</age>
+<age>100</age>
 <gender>M</gender>
 <colour>Green</colour>
 <comment>Wise</comment>
 <price>1000</price>
 <specie>Turtle</specie>
-</pet>
-<pet type="bird">
-<name>Soul Eater</name>
-<age>1</age>
-<gender>M</gender>
-<colour>Black</colour>
-<comment>Dangerous</comment>
-<price>100</price>
-<preferredFood>Humans</preferredFood>
-<specie>Crow</specie>
-</pet>
-<pet type="dog">
-<name>Suzi</name>
-<age>15</age>
-<gender>F</gender>
-<colour>Golden</colour>
-<comment>Cute</comment>
-<price>1000</price>
-<breed>Labrador</breed>
-<breederName>Labrador Love</breederName>
-</pet>
-<pet type="cat">
-<name>Kitty</name>
-<age>8</age>
-<gender>F</gender>
-<colour>Striped</colour>
-<comment>Cute</comment>
-<price>99999</price>
-<breed>European</breed>
-<breederName>Teo's Cat</breederName>
-</pet>
-<pet type="fish">
-<name>Goldie</name>
-<age>2</age>
-<gender>F</gender>
-<colour>Golden</colour>
-<comment>Gulp Gulp</comment>
-<price>80</price>
-<waterType>Goldfish</waterType>
-<predators>false</predators>
-<specie>Freshwater</specie>
-</pet>
-<pet type="rodent">
-<name>Rich</name>
-<age>1</age>
-<gender>M</gender>
-<colour>Brown</colour>
-<comment>Fatty</comment>
-<price>10</price>
-<doesItBite>true</doesItBite>
-<specie>Mouse</specie>
-</pet>
-<pet type="various">
-<name>Mortimer</name>
-<age>3</age>
-<gender>M</gender>
-<colour>Brown</colour>
-<comment>BIG eyes</comment>
-<price>10</price>
-<specie>Lemmur</specie>
-</pet>
-<pet type="various">
-<name>Bober</name>
-<age>1</age>
-<gender>M</gender>
-<colour>Brown</colour>
-<comment>He built a dam</comment>
-<price>500</price>
-<specie>Beaver</specie>
-</pet>
-<pet type="various">
-<name>Perry</name>
-<age>3</age>
-<gender>M</gender>
-<colour>Teal</colour>
-<comment>Secretly a spy</comment>
-<price>300</price>
-<specie>Platypus</specie>
 </pet>
 </pets>
