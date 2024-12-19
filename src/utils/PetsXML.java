@@ -101,7 +101,7 @@ public class PetsXML {
       write.println("<breederName>" + dog.getBreederName() + "</breederName>");
     } else if (pet instanceof Fish fish) {
       write.println("<waterType>" + fish.getWater() + "</waterType>");
-      write.println("<predators>" + fish.getPredators() + "</predators>");
+      write.println("<predators>" + fish.getPredator() + "</predators>");
       write.println("<specie>" + fish.getSpecie() + "</specie>");
     } else if (pet instanceof Rodent rodent) {
       write.println("<doesItBite>" + rodent.getDoesItBite() + "</doesItBite>");

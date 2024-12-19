@@ -132,34 +132,27 @@ public class DogsViewController
     });
   }
 
-  @FXML private void handleAddDog()
-  {
-    try
-    {
+  @FXML private void handleAddDog() {
+    try {
       FXMLLoader loader = new FXMLLoader(
           getClass().getResource("/view/pets/AddDogView.fxml"));
       Parent root = loader.load();
-
       AddDogViewController controller = loader.getController();
       Scene scene = new Scene(root);
       controller.init(viewHandler, modelManager, scene);
-
       Stage stage = new Stage();
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.setTitle("Add a New Dog");
       stage.setScene(scene);
       stage.showAndWait();
-
       Dog newDog = controller.getNewDog();
-      if (newDog != null)
-      {
+      if (newDog != null) {
         petList.add(newDog);
         savePetList();
         updateTableData();
       }
     }
-    catch (Exception e)
-    {
+    catch (Exception e) {
       System.out.println("Error opening window: " + e.getMessage());
       e.printStackTrace();
     }
@@ -170,7 +163,7 @@ public class DogsViewController
     Dog selectedDog = dogTable.getSelectionModel().getSelectedItem();
     if (selectedDog != null)
     {
-      petList.removePet(selectedDog);
+      petList.remove(selectedDog);
       savePetList();
       updateTableData();
 
@@ -199,13 +192,13 @@ public class DogsViewController
   private void updateTableData()
   {
     observableDogs = FXCollections.observableArrayList();
-    for (int i = 0; i < petList.getPetsCount(); i++)
+    for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        if (petList.getPets(i) instanceof Dog)
+        if (petList.get(i) instanceof Dog)
         {
-          observableDogs.add((Dog) petList.getPets(i));
+          observableDogs.add((Dog) petList.get(i));
         }
       }
       catch (Exception e)

@@ -52,7 +52,7 @@ public class AddVariousViewController
           specie);
 
       PetList pets = modelManager.getAllPets();
-      pets.addPet(newVarious);
+      pets.add(newVarious);
       modelManager.savePets(pets);
 
       new PetsXML();

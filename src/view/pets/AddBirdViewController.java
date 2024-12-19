@@ -54,7 +54,7 @@ public class AddBirdViewController
           preferredFood, specie);
 
       PetList pets = modelManager.getAllPets();
-      pets.addPet(newBird);
+      pets.add(newBird);
       modelManager.savePets(pets);
 
       new PetsXML();

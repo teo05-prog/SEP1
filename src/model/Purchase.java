@@ -26,7 +26,8 @@ public class Purchase implements Serializable
   private Pet pet;
 
   /**
-   * A constructor that makes a new purchase for a pet using information about the customer, taking the date and time
+   * A constructor that makes a new purchase for a pet using information about the customer, taking the date and time.
+   * If no time is provided (time is null), defaults to 09:00.
    *
    * @param customer The customer that buys the pet
    * @param pet      The pet that is bought
@@ -45,9 +46,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Returns the applied discount
+   * Returns the percentage discount applied to this purchase.
    *
-   * @return the discount
+   * @return The discount percentage as an integer
    */
   public int getDiscount()
   {
@@ -55,9 +56,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Sets the discount that will be applied
+   * Sets the discount for this purchase.
    *
-   * @param discount the discount to set
+   * @param discount the discount to apply
    */
   public void setDiscount(int discount)
   {
@@ -65,9 +66,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Returns the buying customer
+   * Returns the customer who made the purchase.
    *
-   * @return the customer
+   * @return The Customer object representing the buyer
    */
   public Customer getCustomer()
   {
@@ -75,9 +76,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Sets the buying customer
+   * Sets the customer associated with this purchase.
    *
-   * @param customer the customer that will buy the pet
+   * @param customer The new Customer object to set
    */
   public void setCustomer(Customer customer)
   {
@@ -85,9 +86,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Returns the bought pet
+   * Returns the pet that was purchased.
    *
-   * @return the pet
+   * @return The Pet object that was bought
    */
   public Pet getPet()
   {
@@ -95,9 +96,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Sets the pet that will be bought
+   * Sets the pet associated with this purchase.
    *
-   * @param pet the pet that will be bought
+   * @param pet The new Pet object to set
    */
   public void setPet(Pet pet)
   {
@@ -105,9 +106,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Returns the purchase date
+   * Returns the date when the purchase was made.
    *
-   * @return the date of purchase
+   * @return The MyDate object representing the purchase date
    */
   public MyDate getDateOfPurchase()
   {
@@ -115,9 +116,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Sets the date of the purchase
+   * Sets the date of the purchase.
    *
-   * @param date the date of the purchase
+   * @param date The new MyDate object representing the purchase date
    */
   public void setDateOfPurchase(MyDate date)
   {
@@ -125,9 +126,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Returns the time of purchase
+   * Returns the time when the purchase was made.
    *
-   * @return the time of purchase
+   * @return The LocalTime object representing the purchase time
    */
   public LocalTime getTimeOfPurchase()
   {
@@ -135,9 +136,9 @@ public class Purchase implements Serializable
   }
 
   /**
-   * Sets the time of the purchase
+   * Sets the time of the purchase.
    *
-   * @param time the time of the purchase
+   * @param time The new LocalTime object representing the purchase time
    */
   public void setTimeOfPurchase(LocalTime time)
   {
@@ -145,8 +146,10 @@ public class Purchase implements Serializable
   }
 
   /**
+   * Returns a string representation of the purchase, including customer details,
+   * pet information, discount, date, and time. Time is formatted as HH:MM.
    *
-   * @return
+   * @return A formatted String containing all purchase details
    */
   public String toString()
   {
@@ -160,9 +163,10 @@ public class Purchase implements Serializable
   }
 
   /**
+   * Compares this purchase with another object for equality.
    *
-   * @param obj
-   * @return
+   * @param obj The object to compare with this purchase
+   * @return true if the objects are equal, false otherwise
    */
   public boolean equals(Object obj)
   {
@@ -174,7 +178,7 @@ public class Purchase implements Serializable
     LocalTime thisTime = getTimeOfPurchase();
     LocalTime otherTime = other.getTimeOfPurchase();
     return other.getDiscount() == discount && other.getDateOfPurchase()
-        .equals(date) && (Objects.equals(thisTime, otherTime)) && other.customer.equals(customer)
-        && other.pet.equals(pet);
+        .equals(date) && (Objects.equals(thisTime, otherTime))
+        && other.customer.equals(customer) && other.pet.equals(pet);
   }
 }

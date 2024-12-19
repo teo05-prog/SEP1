@@ -54,7 +54,7 @@ public class AddDogViewController
           breederName);
 
       PetList pets = modelManager.getAllPets();
-      pets.addPet(newDog);
+      pets.add(newDog);
       modelManager.savePets(pets);
 
       new PetsXML();

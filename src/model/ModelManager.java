@@ -2,11 +2,14 @@ package model;
 
 import model.Pets.*;
 import utils.MyFileHandler;
-import view.mainview.MainViewController;
 
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * The class handles all data management operations for the pet shop system.
+ * It manages file operations for customers, pets, kennel bookings, and purchases.
+ */
 public class ModelManager
 {
   private String customersFileName;
@@ -15,8 +18,14 @@ public class ModelManager
   private String purchasesFileName;
   private double price;
 
-  private MainViewController mainViewController;
-
+  /**
+   * Creates a new ModelManager with specified file paths for data storage.
+   *
+   * @param customersFileName The file path for storing customer data
+   * @param petsFileName      The file path for storing pet data
+   * @param kennelFileName    The file path for storing kennel booking data
+   * @param purchasesFileName The file path for storing purchase records
+   */
   public ModelManager(String customersFileName, String petsFileName,
       String kennelFileName, String purchasesFileName)
   {
@@ -26,20 +35,23 @@ public class ModelManager
     this.purchasesFileName = purchasesFileName;
   }
 
+  /**
+   * Retrieves all customers from the binary file.
+   * If the file doesn't exist, creates a new empty customer list.
+   *
+   * @return A CustomerList object containing all stored customers
+   */
   public CustomerList getAllCustomers()
   {
     CustomerList allCustomers = new CustomerList();
-
     try
     {
       ArrayList<Object> objects = new ArrayList<>();
       ObjectInputStream readFromFile = null;
-
       try
       {
         FileInputStream fileInStream = new FileInputStream(customersFileName);
         readFromFile = new ObjectInputStream(fileInStream);
-
         while (true)
         {
           try
@@ -82,10 +94,15 @@ public class ModelManager
       System.out.println("Class Not Found");
       e.printStackTrace();
     }
-
     return allCustomers;
   }
 
+  /**
+   * Retrieves all kennel bookings from the binary file.
+   * If the file doesn't exist, returns an empty booking list.
+   *
+   * @return A KennelList object containing all stored bookings
+   */
   public KennelList getAllBookings()
   {
     KennelList allBookings = new KennelList();
@@ -111,6 +128,11 @@ public class ModelManager
     return allBookings;
   }
 
+  /**
+   * Retrieves all purchases from the binary file.
+   *
+   * @return A PurchaseList object containing all stored purchases
+   */
   public PurchaseList getAllPurchases()
   {
     PurchaseList allPurchases = new PurchaseList();
@@ -140,38 +162,11 @@ public class ModelManager
     return allPurchases;
   }
 
-  public void saveCustomers(CustomerList customers)
-  {
-    try
-    {
-      MyFileHandler.writeToBinaryFile(customersFileName, customers);
-    }
-    catch (IOException e)
-    {
-      System.out.println("IO Error writing to file");
-      e.printStackTrace();
-    }
-  }
-
-  public void manageCustomers(String firstName, String lastName, String phone,
-      String email)
-  {
-    CustomerList allCustomers = getAllCustomers();
-
-    for (int i = 0; i < allCustomers.size(); i++)
-    {
-      Customer customer = allCustomers.get(i);
-
-      if (customer.getFirstName().equals(firstName) && customer.getLastName()
-          .equals(lastName))
-      {
-        customer.setPhone(phone);
-        customer.setEmail(email);
-      }
-    }
-    saveCustomers(allCustomers);
-  }
-
+  /**
+   * Retrieves all pets from the binary file.
+   *
+   * @return A PetList object containing all stored pets
+   */
   public PetList getAllPets()
   {
     PetList allPets = new PetList();
@@ -195,18 +190,23 @@ public class ModelManager
     return allPets;
   }
 
+  /**
+   * Filters the provided pet list to return only dogs.
+   *
+   * @param petList The complete list of pets to filter
+   * @return A new PetList containing only Dog objects
+   */
   public PetList getAllDogs(PetList petList)
   {
     PetList dogs = new PetList();
-
     for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        Pet pet = petList.getPets(i);
+        Pet pet = petList.get(i);
         if (pet.getClass() == Dog.class)
         {
-          dogs.addPet(pet);
+          dogs.add(pet);
         }
       }
       catch (Exception e)
@@ -217,18 +217,23 @@ public class ModelManager
     return dogs;
   }
 
+  /**
+   * Filters the provided pet list to return only cats.
+   *
+   * @param petList The complete list of pets to filter
+   * @return A new PetList containing only Cat objects
+   */
   public PetList getAllCats(PetList petList)
   {
     PetList cats = new PetList();
-
     for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        Pet pet = petList.getPets(i);
+        Pet pet = petList.get(i);
         if (pet.getClass() == Cat.class)
         {
-          cats.addPet(pet);
+          cats.add(pet);
         }
       }
       catch (Exception e)
@@ -239,18 +244,23 @@ public class ModelManager
     return cats;
   }
 
+  /**
+   * Filters the provided pet list to return only birds.
+   *
+   * @param petList The complete list of pets to filter
+   * @return A new PetList containing only Bird objects
+   */
   public PetList getAllBirds(PetList petList)
   {
     PetList birds = new PetList();
-
     for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        Pet pet = petList.getPets(i);
+        Pet pet = petList.get(i);
         if (pet.getClass() == Bird.class)
         {
-          birds.addPet(pet);
+          birds.add(pet);
         }
       }
       catch (Exception e)
@@ -261,18 +271,23 @@ public class ModelManager
     return birds;
   }
 
+  /**
+   * Filters the provided pet list to return only fish.
+   *
+   * @param petList The complete list of pets to filter
+   * @return A new PetList containing only Fish objects
+   */
   public PetList getAllFish(PetList petList)
   {
     PetList fish = new PetList();
-
     for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        Pet pet = petList.getPets(i);
+        Pet pet = petList.get(i);
         if (pet.getClass() == Fish.class)
         {
-          fish.addPet(pet);
+          fish.add(pet);
         }
       }
       catch (Exception e)
@@ -283,18 +298,23 @@ public class ModelManager
     return fish;
   }
 
+  /**
+   * Filters the provided pet list to return only rodents.
+   *
+   * @param petList The complete list of pets to filter
+   * @return A new PetList containing only Rodent objects
+   */
   public PetList getAllRodents(PetList petList)
   {
     PetList rodents = new PetList();
-
     for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        Pet pet = petList.getPets(i);
+        Pet pet = petList.get(i);
         if (pet.getClass() == Rodent.class)
         {
-          rodents.addPet(pet);
+          rodents.add(pet);
         }
       }
       catch (Exception e)
@@ -305,18 +325,23 @@ public class ModelManager
     return rodents;
   }
 
+  /**
+   * Filters the provided pet list to return only various pets.
+   *
+   * @param petList The complete list of pets to filter
+   * @return A new PetList containing only Various pet objects
+   */
   public PetList getAllVarious(PetList petList)
   {
     PetList various = new PetList();
-
     for (int i = 0; i < petList.size(); i++)
     {
       try
       {
-        Pet pet = petList.getPets(i);
+        Pet pet = petList.get(i);
         if (pet.getClass() == Various.class)
         {
-          various.addPet(pet);
+          various.add(pet);
         }
       }
       catch (Exception e)
@@ -327,6 +352,11 @@ public class ModelManager
     return various;
   }
 
+  /**
+   * Updates the price setting and saves it with the current bookings.
+   *
+   * @param newPrice The new price to be set for the kennel
+   */
   public void updatePrice(double newPrice)
   {
     this.price = newPrice;
@@ -345,6 +375,29 @@ public class ModelManager
     }
   }
 
+  /**
+   * Saves the provided CustomerList to the binary file.
+   *
+   * @param customers The CustomerList to be saved
+   */
+  public void saveCustomers(CustomerList customers)
+  {
+    try
+    {
+      MyFileHandler.writeToBinaryFile(customersFileName, customers);
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Saves the provided pet list to the binary file.
+   *
+   * @param pets The PetList to be saved
+   */
   public void savePets(PetList pets)
   {
     try
@@ -357,6 +410,11 @@ public class ModelManager
     }
   }
 
+  /**
+   * Saves the provided purchase list to the binary file.
+   *
+   * @param purchases The PurchaseList to be saved
+   */
   public void savePurchases(PurchaseList purchases)
   {
     try

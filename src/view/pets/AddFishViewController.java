@@ -56,7 +56,7 @@ public class AddFishViewController
           predator, water);
 
       PetList pets = modelManager.getAllPets();
-      pets.addPet(newFish);
+      pets.add(newFish);
       modelManager.savePets(pets);
 
       new PetsXML();

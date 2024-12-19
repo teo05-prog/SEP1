@@ -55,7 +55,7 @@ public class AddRodentViewController
           doesItBite, specie);
 
       PetList pets = modelManager.getAllPets();
-      pets.addPet(newRodent);
+      pets.add(newRodent);
       modelManager.savePets(pets);
 
       new PetsXML();
