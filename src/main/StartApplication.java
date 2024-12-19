@@ -1,8 +1,9 @@
-package view;
+package main;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.ModelManager;
+import view.ViewHandler;
 
 public class StartApplication extends Application
 {
