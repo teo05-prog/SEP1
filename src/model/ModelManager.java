@@ -43,26 +43,35 @@ public class ModelManager
    */
   public CustomerList getAllCustomers()
   {
+    // Base case: N/A - non-recursive method
+
+    // O(1) - Initialize empty customer list
     CustomerList allCustomers = new CustomerList();
     try
     {
+      // O(1) - Create ArrayList and stream variables
       ArrayList<Object> objects = new ArrayList<>();
       ObjectInputStream readFromFile = null;
       try
       {
+        // O(1) - Open file streams
         FileInputStream fileInStream = new FileInputStream(customersFileName);
         readFromFile = new ObjectInputStream(fileInStream);
+        // O(n) loop where n is number of objects in file
         while (true)
         {
           try
           {
+            // O(1) - Read single object from file
             Object obj = readFromFile.readObject();
+            // O(1) - Type checking and casting
             if (obj instanceof CustomerList)
             {
               return (CustomerList) obj;
             }
             else if (obj instanceof Customer)
             {
+              // O(1) - Add customer to list
               allCustomers.add((Customer) obj);
             }
           }
@@ -74,6 +83,7 @@ public class ModelManager
       }
       finally
       {
+        // O(1) - Resource cleanup
         if (readFromFile != null)
         {
           readFromFile.close();
@@ -95,6 +105,9 @@ public class ModelManager
       e.printStackTrace();
     }
     return allCustomers;
+    // Time complexity: T(n) = 4 + 3n where n is number of objects in file
+    // Dominating term is 3n from: read operation + type check + potential add
+    // Final complexity is O(n) where n is number of objects in file
   }
 
   /**

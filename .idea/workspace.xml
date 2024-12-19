@@ -7,10 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="Finished JavaDoc">
+    <list default="true" id="f201b2f6-e314-4ede-b135-5d85957a5c1f" name="Changes" comment="booking fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/DogsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets.bin" beforeDir="false" afterPath="$PROJECT_DIR$/pets.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/customers/ManageCustomersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pets/AddDogViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="116948" />
+    <option name="totalTimeSeconds" value="124537" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -487,7 +490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734562262276</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="booking fixed">
+      <option name="closed" value="true" />
+      <created>1734610913048</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1734610913048</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -502,8 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="customer fix&#10;&#10;Took 20 minutes" />
-    <MESSAGE value="more work on guis" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/view/pets/PetsViewController.java" />
     <MESSAGE value="Pets view and Bird(added specie)" />
     <MESSAGE value="Pets view and Bird and Rodent(added specie)" />
@@ -527,7 +536,9 @@
     <MESSAGE value="Added some comments in model and made pets work" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 10 seconds" />
     <MESSAGE value="Finished JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished JavaDoc" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;Took 11 seconds" />
+    <MESSAGE value="booking fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
