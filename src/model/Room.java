@@ -23,13 +23,14 @@ public class Room
    * A room is considered available if there are no overlapping bookings during the specified period.
    *
    * @param startDate The start date of the period to check
-   * @param endDate The end date of the period to check
+   * @param endDate   The end date of the period to check
    * @return true if the room is available during the entire period, false if there are any overlapping bookings
    */
   public boolean isAvailableDuring(MyDate startDate, MyDate endDate)
   {
-    for (Booking booking : bookings)
+    for (int i = 0; i < bookings.size(); i++)
     {
+      Booking booking = bookings.get(i);
       if (startDate.isBefore(booking.getEndDate()) && endDate.isAfter(
           booking.getStartDate()))
       {

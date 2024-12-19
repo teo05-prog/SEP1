@@ -37,10 +37,8 @@ public class AddDogViewController
     this.scene = scene;
   }
 
-  @FXML private void handleSave(ActionEvent event)
-  {
-    try
-    {
+  @FXML private void handleSave(ActionEvent event) {
+    try {
       String name = nameField.getText().trim();
       int age = Integer.parseInt(ageField.getText().trim());
       String color = colorField.getText().trim();
@@ -49,21 +47,16 @@ public class AddDogViewController
       int price = Integer.parseInt(priceField.getText().trim());
       String breed = breedField.getText().trim();
       String breederName = breederNameField.getText().trim();
-
       newDog = new Dog(name, age, color, gender, comment, price, breed,
           breederName);
-
       PetList pets = modelManager.getAllPets();
       pets.add(newDog);
       modelManager.savePets(pets);
-
       new PetsXML();
-
       Stage stage = (Stage) nameField.getScene().getWindow();
       stage.close();
     }
-    catch (Exception e)
-    {
+    catch (Exception e) {
       System.out.println("Invalid input: " + e.getMessage());
       e.printStackTrace();
     }

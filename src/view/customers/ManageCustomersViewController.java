@@ -212,12 +212,18 @@ public class ManageCustomersViewController
 
   private void updateCustomerTable()
   {
+    // O(k) where k is current number of items in TableView
     customerTable.getItems().clear();
+    // O(n) from previous getAllCustomers() analysis
     CustomerList customers = modelManager.getAllCustomers();
+    // O(m) where m is number of customers in CustomerList
     for (int i = 0; i < customers.size(); i++)
     {
+      // O(1) amortized time for ArrayList add operation
       customerTable.getItems().add(customers.get(i));
     }
+    // Total time complexity: T(n,k,m) = k + n + m
+    // where k = initial table items, n = file objects, m = customers
   }
 
   public Scene getScene()
